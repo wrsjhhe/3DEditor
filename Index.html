@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link href="css/main.css" rel="stylesheet">
+
+    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet">
+    <link href="kendo/styles/kendo.default.min.css" rel="stylesheet">
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.all.min.js"></script>
+
+    <script src="js/libs/three.js"></script>
+    <script src="js/libs/Projector.js"></script>
+    <script src="js/libs/signals.min.js"></script>
+
+    <script src="js/Loaders/OBJLoader.js"></script>
+    <script src="js/Exporters/OBJExporter.js"></script>
+    <script src="js/Exporters/STLExporter.js"></script>
+
+    <script src="js/Project.js"></script>
+    <script src="js/Viewport.js"></script>
+    <script src="js/Store.js"></script>
+    <script src="js/Loader.js"></script>
+    <script src="js/CreateObj.js"></script>
+
+    <script src="js/LeftSideBar.js"></script>
+    <script src="js/RightSideBar.js"></script>
+    <script src="js/TopBar.js"></script>
+    <script src="js/Window.js"></script>
+
+    <script src = "js/controls/EditorControls.js"></script>
+    <script src = "js/controls/TransformControls.js"></script>
+
+
+    <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<script>
+
+    var project = new Project();
+
+    //主体视口
+    var viewport = new Viewport(project);
+    document.body.appendChild(viewport);
+
+    var leftSideBar = new LeftSideBar(project);
+    document.body.appendChild(leftSideBar);
+
+    var rightSideBar = new RightSideBar(project);
+    document.body.appendChild(rightSideBar);
+
+    var topBar = new TopBar(project);
+    $(document.body).append(topBar);
+
+    var loader = new Loader(project);
+    var cWindow = new CWindow(project);
+
+
+
+    //视口自动重置
+    function onWindowResize( event ) {
+
+        project.signals.windowResized.dispatch();
+
+    }
+
+    window.addEventListener( 'resize', onWindowResize, false );
+
+    onWindowResize();
+
+
+
+</script>
+</body>
+</html>
