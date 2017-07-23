@@ -1,86 +1,121 @@
-/**
- * Created by Administrator on 2017/6/21 0021.
- */
-var Project = function (){
+/**Project定义主要公共与全局参数**/
 
-    //相机基本参数
-    this.DEFAULT_CAMERA = new THREE.PerspectiveCamera( 50, 1, 0.1, 1000000 );
-    this.DEFAULT_CAMERA.name = 'Camera';
-    this.DEFAULT_CAMERA.position.set( 0, 300, 300);
-    this.DEFAULT_CAMERA.lookAt( new THREE.Vector3(0,0,0) );
+let Project ={
 
-    var Signal = signals.Signal; //这个对象保存各个事件声明
+    mouse:new THREE.Vector2(),
+    scope:null,
+    objects : [],
+    dataArray:[],
+    controls : null,
+    transformControls:null,
+    uuid : null,
+    scene:null,
+    sceneHelpers:null,
+    linesGroup:[]
 
-    //各种事件声明
-    this.signals = {
+};
 
-        windowResized:new Signal(), //窗口重置
+Project.camera = new THREE.PerspectiveCamera( 50, 1, 0.1, 1000000 );
+Project.camera.position.set( 0, 500, 500);
+Project.camera.lookAt(new THREE.Vector3(0,0,0));
 
-        cameraChanged:new Signal(), //视角变换
+Project.renderer = new THREE.WebGLRenderer({antialias:true});
+Project.renderer.autoClear = false;
+Project.renderer.autoUpdateScene = false;
+Project.renderer.setPixelRatio( window.devicePixelRatio );
 
-        createGraph:new Signal(), //生成图形
+Project.scene = new THREE.Scene();
+Project.scene.background = new THREE.Color( 0xaaaaaa );
 
-        grid:new Signal(), //生成表单
-        colorPanel:new Signal(), //生成调色板
+Project.sceneHelpers = new THREE.Scene(); //辅助对象的场景
 
-        importObject:new Signal(), //导入模型对象
+Project.getObjectByUuid  = function(objects,uuid){
+    for(let i in objects)
+    {
+        if (objects[i].uuid === uuid)
+            return objects[i];
+    }
+};
 
-        loadTexture:new Signal(), //导入纹理
+Project.save = function ( blob, filename ) {
 
-        ClickAddGraph:new Signal(), //点击建立对象
+    let link = document.createElement( 'a' );
+    link.style.display = 'none';
+    document.body.appendChild( link ); // Firefox workaround, see #6594
 
-        openWindow:new Signal(), //建立对象过程中弹出框
-        closeWindow:new Signal(),//关闭弹出框
+    link.href = URL.createObjectURL( blob );
+    link.download = filename || 'data.json';
+    link.click();
 
-        init:new Signal(), //初始化场景，从数据库中读取信息
+    // URL.revokeObjectURL( url ); breaks Firefox...
 
-        clear:new Signal() //清空所有数据
+};
 
+Project.saveString = function( text, filename ) {
 
-    };
+    Project.save( new Blob( [ text ], { type: 'text/plain' } ), filename );
 
-    this.objects = []; //对象数组
+};
 
-    this.scene = new THREE.Scene(); //绘制对象的场景
+Project.render = function() {
+    Project.renderer.render(Project.scene,Project.camera);
+    Project.renderer.render(Project.sceneHelpers,Project.camera);
+};
+Project.animate = function() {
+    requestAnimationFrame(Project.animate);
+    Project.render();
+};
 
-    this.sceneHelpers = new THREE.Scene(); //辅助对象的场景
+Project.windowResized = function() {
 
-    this.scene.background = new THREE.Color( 0xaaaaaa );
+    //重置相机视角范围
+    Project.camera.aspect = document.getElementById("viewport").clientWidth/document.getElementById("viewport").clientHeight;
+    Project.camera.updateProjectionMatrix();
 
-    this.camera = this.DEFAULT_CAMERA.clone();//相机
+    //重置渲染范围
+    Project.renderer.setSize( document.getElementById("viewport").clientWidth,document.getElementById("viewport").clientHeight);
 
-    this.controls = null;
+    Project.render();
+};
 
-    this.height = null;
-    this.width = null;
+Project.getSelected = function (mouse) {
+    event.preventDefault();
+    if (event.button !== 0) return; //如果不是鼠标左键点击return
+    //确定鼠标按下时的屏幕坐标
+    mouse.x = (( event.clientX / window.innerWidth ) * 2 - 1) / (document.getElementById("viewport").clientWidth / window.innerWidth);
+    mouse.y = (-( event.clientY / window.innerHeight ) * 2 + 1) / (document.getElementById("viewport").clientHeight / window.innerHeight);
 
-    this.id = null;
-    this.uuid = null;
+    let raycaster = new THREE.Raycaster(); //定义一条射线
+    raycaster.setFromCamera(mouse, Project.camera); //射线从相机到鼠标位置
+    let intersects = raycaster.intersectObjects([Project.sceneHelpers.children[0]]); //射线与基准面相交确定交点
+    return intersects[0];
+};
 
-    this.getObjectByUuid = function (objects,uuid) {
-        for(var i in objects)
-        {
-            if (objects[i].uuid === uuid)
-                return objects[i];
-        }
-    };
+Project.addObject = function (obj,ModelType) {
 
-    this.signals.clear.add(function () {
-        var length = project.scene.children.length;
-        for(var i = length-1;i >= 0;i--) {
-            if (project.scene.children[i].type === "Mesh") {
+     obj.geometry.computeBoundingSphere();
+     obj.position.set(
+         obj.geometry.boundingSphere.center.x,
+         obj.geometry.boundingSphere.center.y,
+         obj.geometry.boundingSphere.center.z
+     );
+     let matrix = new THREE.Matrix4(); //定义一个偏移矩阵 ，将圆心偏移，从而使鼠标点击的点为圆心
+     matrix.set(
+     1, 0, 0, -obj.geometry.boundingSphere.center.x,
+     0, 1, 0, -obj.geometry.boundingSphere.center.y,
+     0, 0, 1, -obj.geometry.boundingSphere.center.z,
+     0, 0, 0, 1
+     );
+     obj.geometry.applyMatrix(matrix);
 
-                project.scene.remove(project.scene.children[i]);
+     Project.uuid = obj.uuid;
+     obj.name = ModelType;
 
-            }
-        }
+     Project.objects.push(obj);
+     Project.dataArray.push(new objData(obj));
+     INDEXDB.putData(myDB.db, myDB.ojstore.name, Project.dataArray);
 
-        project.objects = [];
-        dataArray = [];
-        project.signals.grid.dispatch();
+    $("#objDiv").data("kendoGrid").dataSource.read();
 
-        INDEXDB.clearData(myDB.db,myDB.ojstore.name);
-
-    })
-
+    console.log(Project.scene.getObjectByName("Object" + Project.objects.length.toString()));
 };

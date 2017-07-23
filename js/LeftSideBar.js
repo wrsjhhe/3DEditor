@@ -1,77 +1,84 @@
-/**
- * Created by Administrator on 2017/6/21 0021.
- */
-var LeftSideBar = function (project) {
 
-
-    var signals = project.signals;
-    var clickAddGraph = new ClickAddGraph(project);
-
-    var container = document.createElement( 'div' );
-    container.id = "leftSideBar";
-    document.body.appendChild( container );
-
-    var panelBar = document.createElement('ul');
-    panelBar.id = "panelBar";
-
-    //基本图形列表
-    var basicGraph = document.createElement("li");
-    basicGraph.innerHTML = "基本几何体";
-    panelBar.appendChild(basicGraph);
-
-    var first = document.createElement("ul");
-    basicGraph.appendChild(first);
-
-    var cuboid = document.createElement('li');
-    cuboid.innerHTML = "长方体";
-    first.appendChild(cuboid);
-    cuboid.addEventListener("click",createCuboid ,false);
-    function createCuboid() {
-        clickAddGraph.threeClick("cuboid");
-        signals.openWindow.dispatch("cuboid");
+class LeftSideBar{
+    constructor(){
+        this.$container = $("<div id='leftSideBar'></div>");
+        $('body').append(this.$container);
     }
+    init (){
+        this.$container.append(`
+            <ul id="panelBar">
+                <li>基本形状
+                    <ul id="basicShape">
+                        <li class="basicShape" id="line">线段</li>
+                        <li class="basicShape" id="plane">长方形</li>
+                        <li class="basicShape" id="circle">圆形</li>
+                        <li class="basicShape" id="triangle">三角形</li>
+                    </ul>
+                </li>
+                <li>基本几何体
+                    <ul id="basicGraph">
+                        <li class="basicGraph" id="cuboid">长方体</li>
+                        <li class="basicGraph" id="cylinder">圆柱体</li>
+                        <li class="basicGraph" id="sphere">球体</li>
+                        <li class="basicGraph" id="cone">圆锥体</li>
+                    </ul>
+                </li>
+                <li>扩展几何体
+                    <ul id="extendedGraph">
+                        <li class="extendedGraph" id="roadWay">巷道</li>
+                    </ul>
+            
+                </li>
+            </ul>
+            
+        `);
 
-    var cylinder = document.createElement('li');
-    cylinder.innerHTML = "圆柱体";
-    first.appendChild(cylinder);
-    cylinder.addEventListener("click",createCylinder,false);
-    function createCylinder() {
-        clickAddGraph.threeClick("cylinder");
-        signals.openWindow.dispatch("cylinder");
-    }
+        let clickAddGraph = new ClickAddGraph();
 
-    var sphere = document.createElement('li');
-    sphere.innerHTML = "球体";
-    first.appendChild(sphere);
-    sphere .addEventListener("click",createSphere,false);
-    function createSphere() {
-        clickAddGraph.twoClick("sphere");
-        signals.openWindow.dispatch("sphere");
-    }
-
-    var cone = document.createElement('li');
-    cone.innerHTML = "圆锥体";
-    first.appendChild(cone);
-    cone.addEventListener("click",createCone,false);
-    function createCone() {
-        clickAddGraph.threeClick("cone");
-        signals.openWindow.dispatch("cone");
-    }
-
-
-    //
-    var expandGraph = document.createElement("li");
-    expandGraph.innerHTML = "扩展几何体";
-    panelBar.appendChild(expandGraph);
-
-    $(document).ready(function() {
-        $("#panelBar").kendoPanelBar({
-
+        $('#line').click(()=>{
+            clickAddGraph.twoClick("line");
         });
-    });
 
-    container.appendChild(panelBar);
+        $('#plane').click(()=>{
+           // clickAddGraph.twoClick("plane");
+        });
 
-    return container;
+        $('#circle').click(()=>{
+            clickAddGraph.twoClick("circle");
+        });
 
-};
+        $('#cuboid').click(()=>{
+            clickAddGraph.threeClick("cuboid");
+            cWindow.openWindow("cuboid");
+        });
+
+        $('#cylinder').click(()=>{
+            clickAddGraph.threeClick("cylinder");
+            cWindow.openWindow("cylinder");
+        });
+
+        $('#sphere').click(()=>{
+            clickAddGraph.twoClick("sphere");
+            cWindow.openWindow("sphere");
+        });
+
+        $('#cone').click(()=>{
+            clickAddGraph.threeClick("cone");
+            cWindow.openWindow("cone");
+        });
+
+        $('#roadWay').click(()=>{
+            clickAddGraph.twoClick("roadWay");
+        });
+
+
+
+
+        $(document).ready(function() {
+            $("#panelBar").kendoPanelBar({
+
+            });
+        });
+
+    }
+}

@@ -99,6 +99,8 @@ THREE.EditorControls = function ( object, domElement ) {
 
 	function onMouseDown( event ) {
 
+
+        event.preventDefault();
 		if ( scope.enabled === false ) return;
 
 		if ( event.button === 1 ) {

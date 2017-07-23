@@ -69,6 +69,27 @@
 
 }
 
+span.TextureInput{
+    height: 37px;
+    width: 80px;
+    background-color: #fafafa;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    overflow: hidden;
+    text-align:center;
+    cursor:pointer;
+}
+
+input.TextureInput{
+    width: 82px;
+    height: 37px;
+    background-color: #7f5050;
+    position: absolute;
+    left: 40px;
+    opacity: 0;
+}
+
+
 
 
 

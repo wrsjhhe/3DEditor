@@ -1,51 +1,51 @@
-/**
- * Created by Administrator on 2017/7/7 0007.
- */
-var CWindow = function (project) {
+class CWindow{
 
-    var signals = project.signals;
+    constructor (){
+        this.$cuboidWindow = $("<div id='cuboidWindow'>");
+        this.$cylinderWindow = $("<div id='cylinderWindow'>");
+        this.$sphereWindow = $("<div id='sphereWindow'>");
+        this.$coneWindow = $("<div id='coneWindow'>");
+    }
 
-    var $cuboidWindow = $("<div id='cuboidWindow'>" +
-            "<label for='inputLength_Cuboid'>长</label>" +
-            "<input id='inputLength_Cuboid' style='margin-left:20px'/>"+"<br/>"+
-            "<label for='inputWidth_Cuboid'>宽</label>" +
-            "<input id='inputWidth_Cuboid' style='margin-left:20px'/>"+"<br/>"+
-            "<label for='inputHeight_Cuboid'>高</label>" +
-            "<input id='inputHeight_Cuboid' style='margin-left:20px'/>"+
-        "</div>");
-    $('body').append($cuboidWindow);
+    init(){
+        this.$cuboidWindow.append(`
+            <label for='inputLength_Cuboid'>长</label>
+            <input id='inputLength_Cuboid' style='margin-left:20px'/><br/>
+            <label for='inputWidth_Cuboid'>宽</label>
+            <input id='inputWidth_Cuboid' style='margin-left:20px'/><br/>
+            <label for='inputHeight_Cuboid'>高</label>
+            <input id='inputHeight_Cuboid' style='margin-left:20px'/>
+        `);
+        $('body').append(this.$cuboidWindow);
 
-    var $cylinderWindow = $("<div id='cylinderWindow'>" +
-        "<label for='inputRadius_Cylinder'>底面半径</label>" +
-        "<input id='inputRadius_Cylinder' style='margin-left:20px'/>"+"<br/>"+
-        "<label for='inputHeight_Cylinder' style='margin-left:27px'>高</label>" +
-        "<input id='inputHeight_Cylinder' style='margin-left:41px'/>"+
-        "</div>");
-    $('body').append($cylinderWindow);
+        this.$cylinderWindow.append(`
+            <label for='inputRadius_Cylinder'>底面半径</label>
+            <input id='inputRadius_Cylinder' style='margin-left:20px'/><br/>
+            <label for='inputHeight_Cylinder' style='margin-left:27px'>高</label>
+            <input id='inputHeight_Cylinder' style='margin-left:41px'/>
+        `) ;
+        $('body').append(this.$cylinderWindow);
 
-    var $sphereWindow = $("<div id='sphereWindow'>" +
-        "<label for='inputRadius_Sphere'>半径</label>" +
-        "<input id='inputRadius_Sphere' style='margin-left:20px'/>"+
-        "</div>");
-    $('body').append($sphereWindow);
+        this.$sphereWindow.append(`
+            <label for='inputRadius_Sphere'>半径</label>
+            <input id='inputRadius_Sphere' style='margin-left:20px'/>
+        `);
+        $('body').append(this.$sphereWindow);
 
-    var $coneWindow = $("<div id='coneWindow'>" +
-        "<label for='inputRadius_Cone'>底面半径</label>" +
-        "<input id='inputRadius_Cone' style='margin-left:20px'/>"+"<br/>"+
-        "<label for='inputHeight_Cone' style='margin-left:27px'>高</label>" +
-        "<input id='inputHeight_Cone' style='margin-left:41px'/>"+
-        "</div>");
-    $('body').append($coneWindow);
-
-
-
-
-    signals.openWindow.add(function (ModelType) {
+        this.$coneWindow.append(`
+            <label for='inputRadius_Cone'>底面半径</label>
+            <input id='inputRadius_Cone' style='margin-left:20px'/><br/>
+            <label for='inputHeight_Cone' style='margin-left:27px'>高</label>
+            <input id='inputHeight_Cone' style='margin-left:41px'/>
+        `);
+        $('body').append(this.$coneWindow);
+    }
+     openWindow(ModelType){
 
         switch (ModelType){
 
             case "cuboid":
-                $cuboidWindow.kendoWindow({
+                this.$cuboidWindow.kendoWindow({
                     position: {
                         top: 100, // or "100px"
                         left: 300
@@ -62,7 +62,7 @@ var CWindow = function (project) {
                 break;
 
             case "cylinder":
-                $cylinderWindow.kendoWindow({
+                this.$cylinderWindow.kendoWindow({
                     position: {
                         top: 100, // or "100px"
                         left: 300
@@ -79,7 +79,7 @@ var CWindow = function (project) {
                 break;
 
             case "sphere":
-                $sphereWindow.kendoWindow({
+                this.$sphereWindow.kendoWindow({
                     position: {
                         top: 100, // or "100px"
                         left: 300
@@ -96,7 +96,7 @@ var CWindow = function (project) {
                 break;
 
             case "cone":
-                $coneWindow.kendoWindow({
+                this.$coneWindow.kendoWindow({
                     position: {
                         top: 100, // or "100px"
                         left: 300
@@ -111,18 +111,6 @@ var CWindow = function (project) {
                     ]
                 }).data("kendoWindow").open();
                 break;
-
         }
-
-
-
-    });
-
-
-
-
-
-
-
-
-};
+    }
+}

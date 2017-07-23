@@ -1,105 +1,67 @@
-/**
- * Created by Administrator on 2017/7/4 0004.
- */
-var TopBar = function (project) {
+class TopBar {
+    constructor(){
+        // Project.scope = this;
+        this.$container = $("<div id='topBar'></div>");
+        $('body').append(this.$container);
+    };
 
-    var signals = project.signals;
+    init (){
+        this.$container.append(`
+            <ul id='menu'> 
+                <li id='file'>文件 
+                    <ul> 
+                        <li> 导入文件 
+                            <input type='file' id='import' >
+                        </li> 
+                            <li id='exportOBJ'>导出OBJ</li> 
+                            <li id='exportSTL'>导出STL</li>
+                        </ul> 
+                    </li>
+                <li id = 'edtor'>编辑 
+                    <ul> 
+                        <li id='clear'>清空</li>
+                        <li id='segment'>分割</li>
+                    </ul>
+                </li>
+            </ul>`);
 
-    var $container = $("<div id='topBar'></div>");
-    $('body').append($container);
+        let loader = new Loader();
 
-      $container.append(
-        "<ul id='menu'>" +
-            "<li id='file'>文件" +
-                "<ul>" +
-                    "<li> 导入文件" +
-                        "<input type='file' id='import' >"+
-                    "</li>" +
-                    "<li id='exportOBJ'>导出OBJ</li>" +
-                    "<li id='exportSTL'>导出STL</li>"+
-                "</ul>" +
-            "</li>"+
-            "<li id = 'edtor'>编辑" +
-                "<ul>" +
-                    "<li id='clear'>清空</li>"+
-                "</ul>"+
-            "</li>"+
-        "</ul>");
+        $(document).ready(function () {
+            $("#import").on('change',function () {
+                loader.importObject(this.files[0]);
+            });
 
+            $("#exportOBJ").click(function () {
 
+                let exporter = new THREE.OBJExporter();
 
+                saveString( exporter.parse( getObjectByUuid(Project.objects,project.uuid) ),  getObjectByUuid(Project.objects,Project.uuid).name+'.obj' );
 
+            });
 
+            $("#exportSTL").click(function () {
+                let exporter = new THREE.STLExporter();
 
+                saveString( exporter.parse( Project.scene ), getObjectByUuid(Project.objects,Project.uuid).name+'.stl' );
 
+            });
 
+            $("#clear").click(function () {
+                clearAll();
+            });
 
+            $("#segment").click(function () {
+                Project.segment();
+            });
 
-
-
-
-
-
-
-
-
-
-
-
-    $(document).ready(function () {
-        $("#import").on('change',function () {
-            signals.importObject.dispatch(this.files[0]);
-        });
-
-        $("#clear").click(function () {
-
-            signals.clear.dispatch();
-        });
-
-        $("#exportOBJ").click(function () {
-
-            var exporter = new THREE.OBJExporter();
-
-            saveString( exporter.parse( project.getObjectByUuid(project.objects,project.uuid) ),  project.getObjectByUuid(project.objects,project.uuid).name+'.obj' );
+            $("#menu").kendoMenu();
 
         });
-
-        $("#exportSTL").click(function () {
-            var exporter = new THREE.STLExporter();
-
-            saveString( exporter.parse( project.scene ),  project.getObjectByUuid(project.objects,project.uuid).name+'.stl' );
-
-        });
-
-    });
-
-
-
-    $(document).ready(function() {
-        $("#menu").kendoMenu();
-    });
-
-
-
-    var link = document.createElement( 'a' );
-    link.style.display = 'none';
-    document.body.appendChild( link ); // Firefox workaround, see #6594
-
-    function save( blob, filename ) {
-
-        link.href = URL.createObjectURL( blob );
-        link.download = filename || 'data.json';
-        link.click();
-
-        // URL.revokeObjectURL( url ); breaks Firefox...
 
     }
+}
 
-    function saveString( text, filename ) {
 
-        save( new Blob( [ text ], { type: 'text/plain' } ), filename );
 
-    }
 
-    return $container;
-};
