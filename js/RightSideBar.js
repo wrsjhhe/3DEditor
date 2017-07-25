@@ -70,9 +70,8 @@ class RightSideBar {
                 numeric: false
             },
             columns: [
-                "id",
-                { field: "name", title: "name", width: "120px" },
-                { field: "type", width: "100px" }
+                { field: "name", title: "name", width: "35%" },
+                { field: "type", width: "70%" }
             ],
             selectable: "row"
 
