@@ -577,7 +577,7 @@ function ClickAddGraph() {
             Geom4.faces[2*i].color.setHex(faceColor);
             Geom4.faces[2*i+1].color.setHex(faceColor);
         }
-        let material = new THREE.MeshPhongMaterial({
+        let material = new THREE.MeshBasicMaterial({
             color: 0xffffff,
             vertexColors: THREE.FaceColors,
             side:THREE.DoubleSide

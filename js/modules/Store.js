@@ -59,8 +59,6 @@ let objData = function (obj,textureSrc,objProperty) {
             }catch (e){ return undefined }
         })()
 
-
-
     };
 
 
@@ -292,7 +290,6 @@ setTimeout(function(){
                 }
 
                 let mesh = new THREE.Mesh(geometry, material);
-                console.log(mesh.material);
                 mesh.geometry.type = "ExtrudeGeometry";
 
                 let position = JSON.parse(result1.position[i]);
@@ -347,7 +344,7 @@ setTimeout(function(){
                 let rotation = JSON.parse(result2.rotation[i]);
 
                 mesh.position.x = position.x; mesh.position.y = position.y; mesh.position.z = position.z;
-                mesh.scale.x = scale.x;mesh.scale.y = scale.y;mesh.scale.z = scale.z;
+                mesh.scale.x = scale.x;       mesh.scale.y = scale.y;       mesh.scale.z = scale.z;
                 mesh.rotation.x = rotation._x;mesh.rotation.y = rotation._y;mesh.rotation.z = rotation._z;
 
                 mesh.name = result2.name[i];
@@ -366,9 +363,14 @@ setTimeout(function(){
                     material.needsUpdate = true;
                 }
 
-                let objectProperty = {
-                    lineCurve: JSON.parse(result2.geometries[i].lineCurve),
-                };
+                let objectProperty;
+                try {
+                    objectProperty = {
+                        lineCurve: JSON.parse(result2.geometries[i].lineCurve),
+                    };
+                }catch (e){
+                    objectProperty = undefined;
+                }
 
                 Project.objects.push(mesh);
                 Project.scene.add(mesh);

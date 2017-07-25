@@ -32,26 +32,8 @@ function selectObject() {
 
     if ( intersects.length > 0 ){
 
-        console.log(intersects[ 0 ].object);
-        $("#NameInput")[0].value = intersects[ 0 ].object.name;
-
         Project.uuid = intersects[0].object.uuid;
-
-        $("#NameInput").unbind(); //必须先解除之前的绑定，否则会绑定多个物体
-
-        $("#NameInput").bind("input",function () {
-            intersects[ 0 ].object.name = $("#NameInput")[0].value;
-            INDEXDB.putData(myDB.db,myDB.ojstore.name,Project.dataArray);
-            for(let i in Project.dataArray)
-            {
-                if( Project.dataArray[i].uuid !==undefined && Project.dataArray[i].uuid === intersects[ 0 ].object.uuid)
-                {
-                    Project.dataArray[i].name = $("#NameInput")[0].value;
-                    signals.grid.dispatch();
-                }
-            }
-        });
-        Project.transformControls.attach(intersects[ 0 ].object);
+        Project.ifSelected();
 
     }
     else {
@@ -63,4 +45,28 @@ function selectObject() {
     }
 }
 
+Project.ifSelected = function(){
+
+    let obj = Project.getObjectByUuid(Project.objects,Project.uuid);
+    console.log(Project.getObjectByUuid(Project.objects,Project.uuid));
+    $("#NameInput")[0].value = obj.name;
+
+    $("#NameInput").unbind(); //必须先解除之前的绑定，否则会绑定多个物体
+
+    $("#NameInput").bind("input",function () {
+        obj.name = $("#NameInput")[0].value;
+        INDEXDB.putData(myDB.db,myDB.ojstore.name,Project.dataArray);
+        for(let i in Project.dataArray)
+        {
+            if( Project.dataArray[i].uuid !==undefined && Project.dataArray[i].uuid === obj.uuid)
+            {
+                Project.dataArray[i].name = $("#NameInput")[0].value;
+
+                $("#objDiv").data("kendoGrid").dataSource.read();
+            }
+        }
+    });
+    Project.transformControls.attach(obj);
+
+};
 
