@@ -72,8 +72,6 @@ class LeftSideBar{
         });
 
 
-
-
         $(document).ready(function() {
             $("#panelBar").kendoPanelBar({
 

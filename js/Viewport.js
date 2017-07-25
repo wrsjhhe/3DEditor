@@ -43,49 +43,6 @@ class Viewport {
 
         Project.animate();
 
-         let lineCurve1 = new THREE.LineCurve3(new THREE.Vector3(100,0,0),new THREE.Vector3(200,0,0));
-         let lineCurve2 = new THREE.LineCurve3(new THREE.Vector3(100,0,100),new THREE.Vector3(200,0,100));
-
-         let li1 = JSON.stringify(lineCurve1);
-         let li2 = JSON.stringify(lineCurve2);
-
-         let li = [li1,li2];
-
-         let line1 = JSON.parse(li[0]);
-         let line2 = JSON.parse(li[1]);
-
-         let l1 = new THREE.LineCurve3(new THREE.Vector3(line1.v1.x,line1.v1.y,line1.v1.z),new THREE.Vector3(line1.v2.x,line1.v2.y,line1.v2.z));
-         let l2 = new THREE.LineCurve3(new THREE.Vector3(line2.v1.x,line2.v1.y,line2.v1.z),new THREE.Vector3(line2.v2.x,line2.v2.y,line2.v2.z) );
-
-         let Geom1 = Project.linestoFace(l1,l2,5);
-         for (let i = 0; i < 5; i++) {
-             let faceColor = Math.random() * 0xffffff;
-             Geom1.faces[2*i].color.setHex(faceColor);
-             Geom1.faces[2*i+1].color.setHex(faceColor);
-
-         }
-         let material = new THREE.MeshPhongMaterial({
-             color: 0xffffff,
-             vertexColors: THREE.FaceColors,
-             side:THREE.DoubleSide
-         });
-         let mesh1 = new THREE.Mesh(Geom1,material);
-         Project.scene.add(mesh1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
      }
 }
 

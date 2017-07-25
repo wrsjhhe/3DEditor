@@ -27,6 +27,7 @@ let result2 = {
     objects:[],
     materials:[],
     name:[],
+    geometries:[],
     position:[],
     keyId:[],
     scale:[],
@@ -35,7 +36,7 @@ let result2 = {
 };
 
 //objData定义一个结构储存模型的部分关键信息
-let objData = function (obj,textureSrc,lineCurve) {
+let objData = function (obj,textureSrc,objProperty) {
     this.keyId = Math.random()*100000000000000000;
     this.id = obj.id;
     this.name = obj.name;
@@ -43,7 +44,6 @@ let objData = function (obj,textureSrc,lineCurve) {
     this.uuid = obj.uuid;
 
     this.materials = {
-
         id:this.keyId,
         material:JSON.stringify(obj.material.toJSON()),
         textureSrc:textureSrc
@@ -53,8 +53,16 @@ let objData = function (obj,textureSrc,lineCurve) {
         type:obj.geometry.type,
         faces:JSON.stringify(obj.geometry.faces),
         vertices:JSON.stringify(obj.geometry.vertices),
-        lineCurve:JSON.stringify(lineCurve)
+        lineCurve:(function () {
+            try{
+                return JSON.stringify(objProperty.lineCurve)
+            }catch (e){ return undefined }
+        })()
+
+
+
     };
+
 
     this.position = JSON.stringify(obj.position);
     this.scale = JSON.stringify(obj.scale);
@@ -62,7 +70,7 @@ let objData = function (obj,textureSrc,lineCurve) {
 
 
     try {
-         _obj = JSON.stringify(obj.toJSON(), parseNumber, '\t');
+        _obj = JSON.stringify(obj.toJSON(), parseNumber, '\t');
         _obj = _obj.replace( /[\n\t]+([\d\e\-\[\]]+)/g, '$1' );
     }catch (e){
         try {
@@ -196,6 +204,8 @@ let INDEXDB = {
 
                     result2.objects.push(cursor.value.obj);
 
+                    result2.geometries.push(cursor.value.geometry);
+
                     result2.keyId.push(cursor.value.keyId);
                     result2.name.push(cursor.value.name);
 
@@ -299,7 +309,7 @@ setTimeout(function(){
 
                 Project.scene.add(mesh);
 
-                let newData = new objData(mesh,result1.materials[i].textureSrc);
+                let newData = new objData(mesh,result1.materials[i].textureSrc,);
                 newData.keyId = result1.keyId[i];
 
                 Project.dataArray.push(newData);
@@ -356,9 +366,13 @@ setTimeout(function(){
                     material.needsUpdate = true;
                 }
 
+                let objectProperty = {
+                    lineCurve: JSON.parse(result2.geometries[i].lineCurve),
+                };
+
                 Project.objects.push(mesh);
                 Project.scene.add(mesh);
-                let newData = new objData(mesh,result2.materials[i].textureSrc);
+                let newData = new objData(mesh,result2.materials[i].textureSrc,objectProperty);
                 newData.keyId = result2.keyId[i];
 
                 Project.dataArray.push(newData);

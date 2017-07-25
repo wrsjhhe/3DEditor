@@ -52,7 +52,8 @@ class TopBar {
             });
 
             $("#segment").click(function () {
-                Project.segment();
+                let segment = new Segment();
+                segment.init();
             });
 
             $("#menu").kendoMenu();

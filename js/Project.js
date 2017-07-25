@@ -11,7 +11,7 @@ let Project ={
     uuid : null,
     scene:null,
     sceneHelpers:null,
-    linesGroup:[]
+    objectProperty:{}
 
 };
 
@@ -112,10 +112,10 @@ Project.addObject = function (obj,ModelType) {
      obj.name = ModelType;
 
      Project.objects.push(obj);
-     Project.dataArray.push(new objData(obj));
+     Project.dataArray.push(new objData(obj,undefined,Project.objectProperty));
+
      INDEXDB.putData(myDB.db, myDB.ojstore.name, Project.dataArray);
 
     $("#objDiv").data("kendoGrid").dataSource.read();
 
-    console.log(Project.scene.getObjectByName("Object" + Project.objects.length.toString()));
 };

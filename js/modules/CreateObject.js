@@ -1,7 +1,7 @@
 /**
-* 点击生成的几何体的方法
-* twoClick为点击两次生成、threeClick为点击三次生成
-* */
+ * 点击生成的几何体的方法
+ * twoClick为点击两次生成、threeClick为点击三次生成
+ * */
 
 function ClickAddGraph() {
 
@@ -146,10 +146,9 @@ function ClickAddGraph() {
                     createModels3D(ModelType);   //生成新3D的物体
                     break;
                 case "roadWay":
-                    Project.linesGroup.push({
-                        lines: createModels3D(ModelType),
-                        uuid : Project.scene.getObjectByName("TempMesh").uuid
-                    });
+                    Project.objectProperty = {
+                        lineCurve: createModels3D(ModelType),
+                    };
                     break;
                 case "line":
                 case "circle":
@@ -217,28 +216,28 @@ function ClickAddGraph() {
 
             }
         }
-            function drawFloor() {
-                switch (ModelType) {
-                    case "cuboid":
-                        createModels2D("plane");         //生成底板
-                        break;
-                    case "cylinder":
-                        createModels2D("circle");
-                        break;
-                    case "cone":
-                        createModels2D("circle");
-                        break;
-                }
+        function drawFloor() {
+            switch (ModelType) {
+                case "cuboid":
+                    createModels2D("plane");         //生成底板
+                    break;
+                case "cylinder":
+                    createModels2D("circle");
+                    break;
+                case "cone":
+                    createModels2D("circle");
+                    break;
             }
-            function finishFloor() {
+        }
+        function finishFloor() {
 
-                $("#viewport")[0].removeEventListener("mousemove", moving1, false);
+            $("#viewport")[0].removeEventListener("mousemove", moving1, false);
 
-                drawFloor(ModelType);
+            drawFloor(ModelType);
 
-                $("#viewport")[0].addEventListener("mousemove", moving2, false);
+            $("#viewport")[0].addEventListener("mousemove", moving2, false);
 
-            }
+        }
 
 
         //第二次点击移动生成完整几何体
@@ -346,8 +345,8 @@ function ClickAddGraph() {
                 createCone();
                 break;
             case "roadWay":
-               return createRoadway();
-               break;
+                return createRoadway();
+                break;
         }
 
     }
