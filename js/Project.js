@@ -37,6 +37,16 @@ Project.getObjectByUuid  = function(objects,uuid){
     }
 };
 
+Project.getObjectDataByUuid = function (data,uuid) {
+    for(let i in data)
+    {
+        if( data[i].uuid !==undefined && data[i].uuid === uuid)
+        {
+            return data[i]
+        }
+    }
+};
+
 Project.save = function ( blob, filename ) {
 
     let link = document.createElement( 'a' );

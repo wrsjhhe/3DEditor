@@ -38,10 +38,7 @@ function selectObject() {
     }
     else {
 
-            $("#NameInput").unbind();
-            $("#NameInput")[0].value = null;
-            Project.transformControls.detach();
-
+           Project.cancelSelected();
     }
 }
 
@@ -53,20 +50,39 @@ Project.ifSelected = function(){
 
     $("#NameInput").unbind(); //必须先解除之前的绑定，否则会绑定多个物体
 
+
+
+    let data = Project.getObjectDataByUuid(Project.dataArray,obj.uuid);
+
     $("#NameInput").bind("input",function () {
         obj.name = $("#NameInput")[0].value;
         INDEXDB.putData(myDB.db,myDB.ojstore.name,Project.dataArray);
-        for(let i in Project.dataArray)
-        {
-            if( Project.dataArray[i].uuid !==undefined && Project.dataArray[i].uuid === obj.uuid)
-            {
-                Project.dataArray[i].name = $("#NameInput")[0].value;
 
-                $("#objDiv").data("kendoGrid").dataSource.read();
-            }
-        }
+        data.name = $("#NameInput")[0].value;
+
+        $("#objDiv").data("kendoGrid").dataSource.read();
+
     });
     Project.transformControls.attach(obj);
+
+    let SOI = new showObjectInformation();
+    SOI.init(data.text || "");
+    SOI.openWindow();
+
+};
+
+Project.cancelSelected = function () {
+
+    $("#NameInput").unbind();
+    $("#NameInput")[0].value = null;
+
+    Project.transformControls.detach();
+
+    if($("body").find("#objectInformationWindow").length !== 0)
+    {
+        $("#objectInformationWindow").data("kendoWindow").destroy();
+    }
+
 
 };
 

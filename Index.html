@@ -35,12 +35,6 @@
 
         <script src="js/kendoUI/js/kendo.all.min.js"></script>
 
-        <style>
-            body{
-                margin: 0;
-                overflow: hidden;
-            }
-        </style>
     </head>
     <body>
         <script>
@@ -64,7 +58,7 @@
             let topBar = new TopBar();
             topBar.init();
 
-            let cWindow = new CWindow();
+            let cWindow = new CreateObjectWindow();
             cWindow.init();
 
             window.addEventListener( 'resize',()=>{

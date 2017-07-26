@@ -206,8 +206,8 @@ function ClickAddGraph() {
                 endX = intersect.point.x;
                 endZ = intersect.point.z;
 
+                if (endX === startX && endZ === startZ)return;
                 showWindow(ModelType);
-
                 drawFloor(ModelType);
 
                 ( Project.scene.getObjectByName("TempMesh") !== undefined) && (Project.scene.getObjectByName("TempMesh").material.wireframe = true);

@@ -1,4 +1,5 @@
-class CWindow{
+
+class CreateObjectWindow{
 
     constructor (){
         this.$cuboidWindow = $("<div id='cuboidWindow'>");
@@ -24,13 +25,11 @@ class CWindow{
             <label for='inputHeight_Cylinder' style='margin-left:27px'>高</label>
             <input id='inputHeight_Cylinder' style='margin-left:41px'/>
         `) ;
-        $('body').append(this.$cylinderWindow);
 
         this.$sphereWindow.append(`
             <label for='inputRadius_Sphere'>半径</label>
             <input id='inputRadius_Sphere' style='margin-left:20px'/>
         `);
-        $('body').append(this.$sphereWindow);
 
         this.$coneWindow.append(`
             <label for='inputRadius_Cone'>底面半径</label>
@@ -38,7 +37,7 @@ class CWindow{
             <label for='inputHeight_Cone' style='margin-left:27px'>高</label>
             <input id='inputHeight_Cone' style='margin-left:41px'/>
         `);
-        $('body').append(this.$coneWindow);
+
     }
      openWindow(ModelType){
 
@@ -112,5 +111,59 @@ class CWindow{
                 }).data("kendoWindow").open();
                 break;
         }
+    }
+}
+
+/****************************objectInformationWindow***********************************************/
+
+class showObjectInformation
+{
+    constructor(){
+        this.$objectInformationWindow = $("<div id='objectInformationWindow'>");
+    }
+    init(information){
+
+        this.$objectInformationWindow.append(`
+        <input id="objectImformation" value="${information}"/>
+        <button id="objectInformationButton1">确定</button>
+        <button id="objectInformationButton2">取消</button>
+        `);
+
+    }
+
+    openWindow() {
+
+        if ($("body").find("#objectInformationWindow").length === 0) {
+
+            this.$objectInformationWindow.kendoWindow({
+                position: {
+                    top: 100, // or "100px"
+                    left: 300
+                },
+                width: "300px",
+                title: "模型备注",
+                visible: false,
+                actions: [
+                    "Minimize",
+                    "Maximize",
+                    "Close"
+                ]
+            }).data("kendoWindow").open();
+        }
+
+        $("#objectInformationButton1").click(()=>{
+           let data = Project.getObjectDataByUuid(Project.dataArray,Project.uuid);
+            data.text = $("#objectImformation")[0].value;
+            INDEXDB.putData(myDB.db,myDB.ojstore.name,Project.dataArray);
+            $("#objectInformationWindow").data("kendoWindow").destroy();
+        });
+        $("#objectInformationButton2").click(()=>{
+            if($("body").find("#objectInformationWindow").length !== 0)
+            {
+                $("#objectInformationWindow").data("kendoWindow").destroy();
+            }
+        })
+
+
     }
 }

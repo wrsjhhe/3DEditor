@@ -19,7 +19,8 @@ let result1 = {
     position:[],
     keyId:[],
     scale:[],
-    rotation:[]
+    rotation:[],
+    text:[]
 
 };
 //result2储存可以直接被加载器加载的模型
@@ -31,7 +32,8 @@ let result2 = {
     position:[],
     keyId:[],
     scale:[],
-    rotation:[]
+    rotation:[],
+    text:[]
 
 };
 
@@ -42,6 +44,11 @@ let objData = function (obj,textureSrc,objProperty) {
     this.name = obj.name;
     this.type = obj.type;
     this.uuid = obj.uuid;
+    this.text = (function () {
+        try{
+            return objProperty.text
+        }catch (e){ return undefined }
+    })();
 
     this.materials = {
         id:this.keyId,
@@ -58,7 +65,6 @@ let objData = function (obj,textureSrc,objProperty) {
                 return JSON.stringify(objProperty.lineCurve)
             }catch (e){ return undefined }
         })()
-
     };
 
 
@@ -186,6 +192,7 @@ let INDEXDB = {
 
                     result1.keyId.push(cursor.value.keyId);
                     result1.name.push(cursor.value.name);
+                    result1.text.push(cursor.value.text);
 
                     cursor.continue();
                 }else {
@@ -206,6 +213,8 @@ let INDEXDB = {
 
                     result2.keyId.push(cursor.value.keyId);
                     result2.name.push(cursor.value.name);
+                    result2.text.push(cursor.value.text);
+
 
                     cursor.continue();
                 }
@@ -308,6 +317,7 @@ setTimeout(function(){
 
                 let newData = new objData(mesh,result1.materials[i].textureSrc,);
                 newData.keyId = result1.keyId[i];
+                newData.text = result1.text[i];
 
                 Project.dataArray.push(newData);
 
@@ -376,6 +386,7 @@ setTimeout(function(){
                 Project.scene.add(mesh);
                 let newData = new objData(mesh,result2.materials[i].textureSrc,objectProperty);
                 newData.keyId = result2.keyId[i];
+                newData.text = result2.text[i];
 
                 Project.dataArray.push(newData);
                 INDEXDB.putData(myDB.db,myDB.ojstore.name,Project.dataArray);

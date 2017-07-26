@@ -1,8 +1,10 @@
 /**按下退格键删除单个物体**/
 document.addEventListener("keydown",deleteObject,false);
 function deleteObject(e,flag) {
-    if( flag ===true || e.keyCode === 8 )
+
+    if( flag ===true || (e.keyCode === 68&&e.ctrlKey ) )
     {
+        e.preventDefault();
         Project.scene.remove( Project.getObjectByUuid(Project.objects,Project.uuid));
 
         for(let i in Project.objects)
