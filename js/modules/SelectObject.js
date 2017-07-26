@@ -13,6 +13,7 @@ function selectObject() {
             Project.dataArray[i].scale = JSON.stringify(Project.objects[i].scale);
             Project.dataArray[i].rotation = JSON.stringify(Project.objects[i].rotation);
 
+            if(Project.dataArray[i].type!=="Group")
             Project.dataArray[i].materials.material = JSON.stringify(Project.objects[i].material.toJSON());
 
             INDEXDB.putData(myDB.db,myDB.ojstore.name,Project.dataArray);
@@ -32,24 +33,24 @@ function selectObject() {
 
     if ( intersects.length > 0 ){
 
-        Project.uuid = intersects[0].object.uuid;
-        Project.ifSelected();
+        let selected = intersects[ 0 ].object.parent instanceof THREE.Scene?intersects[ 0 ].object:intersects[ 0 ].object.parent;
+
+        console.log(selected);
+        Project.uuid = selected.uuid;
+        Project.ifSelected(selected );
 
     }
     else {
-
            Project.cancelSelected();
     }
 }
 
-Project.ifSelected = function(){
+Project.ifSelected = function(obj){
 
-    let obj = Project.getObjectByUuid(Project.objects,Project.uuid);
-    console.log(Project.getObjectByUuid(Project.objects,Project.uuid));
-    $("#NameInput")[0].value = obj.name;
+
+    $("#NameInput")[0].value = obj.hasOwnProperty("name")?obj.name:"object";
 
     $("#NameInput").unbind(); //必须先解除之前的绑定，否则会绑定多个物体
-
 
 
     let data = Project.getObjectDataByUuid(Project.dataArray,obj.uuid);
@@ -65,6 +66,10 @@ Project.ifSelected = function(){
     });
     Project.transformControls.attach(obj);
 
+    if($("body").find("#objectInformationWindow").length !== 0)
+    {
+        $("#objectInformationWindow").data("kendoWindow").destroy();
+    }
     let SOI = new showObjectInformation();
     SOI.init(data.text || "");
     SOI.openWindow();

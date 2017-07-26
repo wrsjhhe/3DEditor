@@ -5,15 +5,15 @@ body{
 #viewport {
     position: absolute;
     top: 0;
-    left: 300px;
-    right: 300px;
+    left: 15%;
+    right: 15%;
     bottom: 0;
 }
 
 #leftSideBar {
     position: absolute;
     left: 0;
-    width: 300px;
+    width: 15%;
     top:36px;
     bottom:0;
     background-color: #F0F0F0;
@@ -22,7 +22,7 @@ body{
 #rightSideBar {
     position: absolute;
     right: 0;
-    width: 300px;
+    width: 15%;
     top:36px;
     bottom:0;
     background-color: #F0F0F0;
@@ -46,7 +46,7 @@ body{
     position: absolute;
     height: 300px;
     bottom: 0;
-    width: 300px;
+    width: 100%;
 }
 
 #topBar {

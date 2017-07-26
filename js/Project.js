@@ -47,23 +47,15 @@ Project.getObjectDataByUuid = function (data,uuid) {
     }
 };
 
-Project.save = function ( blob, filename ) {
+Project.saveString = function( text, filename ) {
 
     let link = document.createElement( 'a' );
     link.style.display = 'none';
     document.body.appendChild( link ); // Firefox workaround, see #6594
 
-    link.href = URL.createObjectURL( blob );
+    link.href = URL.createObjectURL( new Blob( [ text ]));
     link.download = filename || 'data.json';
     link.click();
-
-    // URL.revokeObjectURL( url ); breaks Firefox...
-
-};
-
-Project.saveString = function( text, filename ) {
-
-    Project.save( new Blob( [ text ], { type: 'text/plain' } ), filename );
 
 };
 
@@ -103,26 +95,40 @@ Project.getSelected = function (mouse) {
 
 Project.addObject = function (obj,ModelType) {
 
-     obj.geometry.computeBoundingSphere();
-     obj.position.set(
-         obj.geometry.boundingSphere.center.x,
-         obj.geometry.boundingSphere.center.y,
-         obj.geometry.boundingSphere.center.z
-     );
-     let matrix = new THREE.Matrix4(); //定义一个偏移矩阵 ，将圆心偏移，从而使鼠标点击的点为圆心
-     matrix.set(
-     1, 0, 0, -obj.geometry.boundingSphere.center.x,
-     0, 1, 0, -obj.geometry.boundingSphere.center.y,
-     0, 0, 1, -obj.geometry.boundingSphere.center.z,
-     0, 0, 0, 1
-     );
-     obj.geometry.applyMatrix(matrix);
+    if( !(obj instanceof THREE.Group)) {
+        obj.geometry.computeBoundingSphere();
+        obj.position.set(
+            obj.geometry.boundingSphere.center.x,
+            obj.geometry.boundingSphere.center.y,
+            obj.geometry.boundingSphere.center.z
+        );
+        let matrix = new THREE.Matrix4(); //定义一个偏移矩阵 ，将圆心偏移，从而使鼠标点击的点为圆心
+        matrix.set(
+            1, 0, 0, -obj.geometry.boundingSphere.center.x,
+            0, 1, 0, -obj.geometry.boundingSphere.center.y,
+            0, 0, 1, -obj.geometry.boundingSphere.center.z,
+            0, 0, 0, 1
+        );
+        obj.geometry.applyMatrix(matrix);
+    }
+
 
      Project.uuid = obj.uuid;
      obj.name = ModelType;
 
      Project.objects.push(obj);
-     Project.dataArray.push(new objData(obj,undefined,Project.objectProperty));
+     switch (ModelType)
+     {
+         case "cuboid":
+             Project.dataArray.push(new objData(1,obj,undefined,Project.objectProperty));
+             break;
+         case "group":
+             Project.dataArray.push(new objData(2,obj,undefined,Project.objectProperty));
+             break;
+         default :
+             Project.dataArray.push(new objData(0,obj,undefined,Project.objectProperty));
+     }
+
 
      INDEXDB.putData(myDB.db, myDB.ojstore.name, Project.dataArray);
 

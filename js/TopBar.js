@@ -35,15 +35,16 @@ class TopBar {
             $("#exportOBJ").click(function () {
 
                 let exporter = new THREE.OBJExporter();
+                let obj = Project.getObjectByUuid(Project.objects,Project.uuid);
 
-                saveString( exporter.parse( getObjectByUuid(Project.objects,project.uuid) ),  getObjectByUuid(Project.objects,Project.uuid).name+'.obj' );
+                Project.saveString( exporter.parse(obj ),obj.name+'.obj' );
 
             });
 
             $("#exportSTL").click(function () {
                 let exporter = new THREE.STLExporter();
-
-                saveString( exporter.parse( Project.scene ), getObjectByUuid(Project.objects,Project.uuid).name+'.stl' );
+                let obj = Project.getObjectByUuid(Project.objects,Project.uuid);
+                Project.saveString( exporter.parse( Project.scene ),obj.name+'.stl' );
 
             });
 

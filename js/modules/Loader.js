@@ -68,15 +68,21 @@ let Loader = function () {
 
                     let contents = event.target.result;
 
-                    let object = new THREE.OBJLoader().parse( contents );
-                    object.name = filename;
+                    let objModel = new THREE.OBJLoader().parse( contents );
+                    objModel.name = filename;
 
-                    object.children.forEach(function (e) {
-                        Project.scene.add(e);
-                        Project.objects.push(e);
-                 //       Project.dataArray.push(new objData(e));
-                    });
-                    addGrid();
+                    console.log(objModel);
+                    let o = JSON.stringify(objModel.toJSON());
+                    let l = new THREE.ObjectLoader();
+                    let ll = l.parse(JSON.parse(o));
+                    console.log(ll)
+                    Project.scene.add(ll);
+
+
+                    Project.addObject(ll,"group");
+
+
+
 
                 }, false );
                 reader.readAsText( file );

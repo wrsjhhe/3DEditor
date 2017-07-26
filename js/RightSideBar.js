@@ -70,9 +70,9 @@ class RightSideBar {
                 numeric: false
             },
             columns: [
-                "id",
-                { field: "name", title: "name", width: "120px" },
-                { field: "type", width: "100px" },
+
+                { field: "name", title: "name", width: "33%" },
+                { field: "type", width: "67%" },
 
             ],
             selectable: "row",
@@ -84,9 +84,9 @@ class RightSideBar {
             value:"#171c21",
             buttons: false,
             select:(e)=>{ if(Project.getObjectByUuid(Project.objects,Project.uuid)!==undefined)
-            {
-                Project.getObjectByUuid(Project.objects,Project.uuid).material.color.set(e.value);
-            }
+                {
+                    Project.getObjectByUuid(Project.objects,Project.uuid).material.color.set(e.value);
+                }
             }
         });
 

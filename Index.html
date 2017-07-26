@@ -29,6 +29,8 @@
         <script src = "js/modules/Store.js"></script>
         <script src = "js/modules/LinesToFace.js"></script>
         <script src = "js/modules/Segment.js"></script>
+        <script src = "js/modules/InitScene.js"></script>
+        <script src = "js/modules/ObjectStruct.js"></script>
 
         <script src = "js/controls/EditorControls.js"></script>
         <script src = "js/controls/TransformControls.js"></script>
@@ -68,6 +70,7 @@
             
             window.onbeforeunload = function () {
                 for (let i in Project.dataArray) {
+
                     if (Project.dataArray[i].uuid === Project.uuid) {
 
                         Project.objects[i].position.x = Project.objects[i].matrixWorld.elements[12];

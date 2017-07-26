@@ -27,7 +27,6 @@ function ClickAddGraph() {
                 break;
             case "sphere":
             case "roadWay":
-                $("#inputRadius_Sphere")[0].value = Math.sqrt((endX - startX) * (endX - startX) + (endZ - startZ) * (endZ - startZ));
                 break;
             case "line":
             case "circle":

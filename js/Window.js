@@ -52,11 +52,6 @@ class CreateObjectWindow{
                     width: "300px",
                     title: "长方体",
                     visible: false,
-                    actions: [
-                        "Minimize",
-                        "Maximize",
-                        "Close"
-                    ]
                 }).data("kendoWindow").open();
                 break;
 
@@ -69,11 +64,6 @@ class CreateObjectWindow{
                     width: "300px",
                     title: "圆柱体",
                     visible: false,
-                    actions: [
-                        "Minimize",
-                        "Maximize",
-                        "Close"
-                    ]
                 }).data("kendoWindow").open();
                 break;
 
@@ -86,11 +76,6 @@ class CreateObjectWindow{
                     width: "300px",
                     title: "球体",
                     visible: false,
-                    actions: [
-                        "Minimize",
-                        "Maximize",
-                        "Close"
-                    ]
                 }).data("kendoWindow").open();
                 break;
 
@@ -103,11 +88,6 @@ class CreateObjectWindow{
                     width: "300px",
                     title: "圆锥体",
                     visible: false,
-                    actions: [
-                        "Minimize",
-                        "Maximize",
-                        "Close"
-                    ]
                 }).data("kendoWindow").open();
                 break;
         }
@@ -124,11 +104,10 @@ class showObjectInformation
     init(information){
 
         this.$objectInformationWindow.append(`
-        <input id="objectImformation" value="${information}"/>
+        <textarea  id="objectImformation" cols="35" rows="5">${information}</textarea>
         <button id="objectInformationButton1">确定</button>
         <button id="objectInformationButton2">取消</button>
         `);
-
     }
 
     openWindow() {
@@ -143,11 +122,6 @@ class showObjectInformation
                 width: "300px",
                 title: "模型备注",
                 visible: false,
-                actions: [
-                    "Minimize",
-                    "Maximize",
-                    "Close"
-                ]
             }).data("kendoWindow").open();
         }
 
