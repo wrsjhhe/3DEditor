@@ -78,7 +78,6 @@ Project.windowResized = function() {
     Project.renderer.setSize( document.getElementById("viewport").clientWidth,document.getElementById("viewport").clientHeight);
 
     Project.render();
-
 };
 
 Project.getSelected = function (mouse) {

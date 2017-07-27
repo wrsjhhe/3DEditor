@@ -70,15 +70,10 @@ class RightSideBar {
                 numeric: false
             },
             columns: [
-<<<<<<< HEAD
 
                 { field: "name", title: "name", width: "33%" },
                 { field: "type", width: "67%" },
 
-=======
-                { field: "name", title: "name", width: "35%" },
-                { field: "type", width: "70%" }
->>>>>>> 4000466451189e5f09e3fb4829028419b1370113
             ],
             selectable: "row",
 
