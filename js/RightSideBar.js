@@ -94,14 +94,14 @@ class RightSideBar {
             let loader = new Loader();
             loader.loadTexture($('input.TextureInput')[0].files[0],Project.getObjectByUuid(Project.objects,Project.uuid));
             $('input.TextureInput')[0].value = null;
-        })
+        });
 
         $("#objDiv").on("click","td",function (e) {
 
             let row = $("#objDiv").data("kendoGrid").select();
             let data = $("#objDiv").data("kendoGrid").dataItem(row);
             Project.uuid = data.uuid;
-            Project.ifSelected();
+            Project.ifSelected(Project.getObjectByUuid(Project.objects,Project.uuid));
 
         })
 

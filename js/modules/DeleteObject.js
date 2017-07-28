@@ -4,7 +4,8 @@ function deleteObject(e,flag) {
 
     if( flag ===true || (e.keyCode === 68&&e.ctrlKey ) )
     {
-        e.preventDefault();
+        flag!==true&&e.preventDefault();
+
         Project.scene.remove( Project.getObjectByUuid(Project.objects,Project.uuid));
 
         for(let i in Project.objects)

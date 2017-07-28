@@ -47,7 +47,6 @@ function selectObject() {
 
 Project.ifSelected = function(obj){
 
-
     $("#NameInput")[0].value = obj.hasOwnProperty("name")?obj.name:"object";
 
     $("#NameInput").unbind(); //必须先解除之前的绑定，否则会绑定多个物体

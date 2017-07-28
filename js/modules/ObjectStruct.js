@@ -22,6 +22,16 @@ function NormalStruct(obj,textureSrc,objProperty) {
         material:JSON.stringify(obj.material.toJSON()),
         textureSrc:textureSrc
     };
+    this.geometry = {
+        type:obj.geometry.type,
+        faces:JSON.stringify(obj.geometry.faces),
+        vertices:JSON.stringify(obj.geometry.vertices),
+        lineCurve:(function () {
+            try{
+                return JSON.stringify(objProperty.lineCurve)
+            }catch (e){ return undefined }
+        })()
+    };
 
     this.obj = JSON.stringify(obj.toJSON());
     return this;
