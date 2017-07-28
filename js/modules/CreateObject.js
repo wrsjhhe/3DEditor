@@ -565,21 +565,57 @@ function ClickAddGraph() {
         let Geom3 = Project.linestoFace(lineCurve2,lineCurve4,num);
         let Geom4 = Project.linestoFace(lineCurve3,lineCurve4,num);
 
-        for (let i = 0; i < num; i++) {
+        for (let i = 0; i < num+1; i++) {
             let faceColor = Math.random() * 0xffffff;
-            Geom1.faces[2*i].color.setHex(faceColor);
+            let colorx = new THREE.Color(faceColor);
+            if(i%2 === 0)
+            {
+
+                Geom1.faces[2*i].vertexColors[0] =
+                Geom1.faces[2*i].vertexColors[2] =
+                Geom1.faces[2*i+1].vertexColors[2] = colorx;
+                Geom2.faces[2*i].vertexColors[0] =
+                Geom2.faces[2*i].vertexColors[2] =
+                Geom2.faces[2*i+1].vertexColors[2] = colorx;
+                Geom3.faces[2*i].vertexColors[0] =
+                Geom3.faces[2*i].vertexColors[2] =
+                Geom3.faces[2*i+1].vertexColors[2] = colorx;
+                Geom4.faces[2*i].vertexColors[0] =
+                Geom4.faces[2*i].vertexColors[2] =
+                Geom4.faces[2*i+1].vertexColors[2] = colorx;
+
+            }else {
+                console.log(Geom1.faces[2*i].vertexColors)
+                Geom1.faces[2*i].vertexColors[1] =
+                Geom1.faces[2*i+1].vertexColors[0] =
+                Geom1.faces[2*i+1].vertexColors[1] = colorx;
+                Geom2.faces[2*i].vertexColors[1] =
+                Geom2.faces[2*i+1].vertexColors[0] =
+                Geom2.faces[2*i+1].vertexColors[1] = colorx;
+                Geom3.faces[2*i].vertexColors[1] =
+                Geom3.faces[2*i+1].vertexColors[0] =
+                Geom3.faces[2*i+1].vertexColors[1] = colorx;
+                Geom4.faces[2*i].vertexColors[1] =
+                Geom4.faces[2*i+1].vertexColors[0] =
+                Geom4.faces[2*i+1].vertexColors[1] = colorx;
+            }
+
+
+
+       /*     Geom1.faces[2*i].color.setHex(faceColor);
             Geom1.faces[2*i+1].color.setHex(faceColor);
             Geom2.faces[2*i].color.setHex(faceColor);
             Geom2.faces[2*i+1].color.setHex(faceColor);
             Geom3.faces[2*i].color.setHex(faceColor);
             Geom3.faces[2*i+1].color.setHex(faceColor);
             Geom4.faces[2*i].color.setHex(faceColor);
-            Geom4.faces[2*i+1].color.setHex(faceColor);
+            Geom4.faces[2*i+1].color.setHex(faceColor);*/
         }
         let material = new THREE.MeshBasicMaterial({
-            color: 0xffffff,
-            vertexColors: THREE.FaceColors,
-            side:THREE.DoubleSide
+            side:THREE.DoubleSide,
+            vertexColors: THREE.VertexColors
+           /* vertexColors: THREE.FaceColors,
+            side:THREE.DoubleSide*/
         });
 
         let mesh1 = new THREE.Mesh(Geom1,material);

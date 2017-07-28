@@ -46,8 +46,38 @@ class Viewport {
      }
 }
 
+let geometry = new THREE.Geometry();
+let material = new THREE.MeshPhongMaterial({
+    side:THREE.DoubleSide,
+    vertexColors: THREE.VertexColors
+});
+
+    let color1 = new THREE.Color( 0x444444 ),
+        color2 = new THREE.Color( 0xFF0000 );
 
 
+let vertices = [
+    new THREE.Vector3(0,0,0),
+    new THREE.Vector3(100,0,0),
+    new THREE.Vector3(100,0,100),
+    new THREE.Vector3(0,0,100)
+];
+
+let face1 = new THREE.Face3(0,1,3);
+let face2 = new THREE.Face3(2,3,1);
+geometry.vertices = vertices;
+face1.vertexColors[0] = color1;
+face1.vertexColors[1] = color2;
+face1.vertexColors[2] = color1;
+face2.vertexColors[0] = color2;
+face2.vertexColors[1] = color1;
+face2.vertexColors[2] = color2;
+geometry.faces = [face1,face2];
+
+let mesh = new THREE.Mesh(geometry,material);
+//将线条添加到场景中
+Project.scene.add(mesh);
+console.log(mesh);
 
 
 
