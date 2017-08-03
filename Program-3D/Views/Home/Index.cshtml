@@ -1,0 +1,94 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Index";
+}
+
+<body>
+    
+    <script src="~/Scripts/libs/jquery.min.js"></script>
+    <script src="~/Scripts/libs/three.js"></script>
+    <script src="~/Scripts/libs/kendo.all.min.js"></script>
+
+    <script src="~/Scripts/loaders/OBJLoader.js"></script>
+    <script src="~/Scripts/exporters/OBJExporter.js"></script>
+    <script src="~/Scripts/exporters/STLExporter.js"></script>
+
+    <script src="~/Scripts/Project.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/Viewport.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/RightSideBar.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/LeftSideBar.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/TopBar.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/Window.js?guid=@Guid.NewGuid()"></script>
+
+    <script src="~/Scripts/modules/CreateObject.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/modules/Segment.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/modules/SelectObject.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/modules/DeleteObject.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/modules/Loader.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/modules/Store.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/modules/LinesToFace.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/modules/InitScene.js?guid=@Guid.NewGuid()"></script>
+    <script src="~/Scripts/modules/ObjectStruct.js?guid=@Guid.NewGuid()"></script>
+
+    <script src="~/Scripts/controls/EditorControls.js"></script>
+    <script src="~/Scripts/controls/TransformControls.js"></script>
+
+    <script>
+        let viewport = new Viewport();
+        viewport.init();
+        Project.controls.addEventListener('change', () => {
+            Project.render();
+        });
+
+        let rightSideBar = new RightSideBar();
+        rightSideBar.init();
+        document.addEventListener("keydown", rightSideBar.changeTransformControlsMode, false);
+        $("#viewport").click(() => {
+            selectObject();
+        });
+
+        let leftSideBar = new LeftSideBar();
+        leftSideBar.init();
+
+        let topBar = new TopBar();
+        topBar.init();
+
+        let cWindow = new CreateObjectWindow();
+        cWindow.init();
+
+        window.addEventListener('resize', () => {
+            Project.windowResized();
+        }, false);
+        Project.windowResized();
+
+        window.onbeforeunload = function () {
+            for (let i in Project.dataArray) {
+
+                if (Project.dataArray[i].uuid === Project.uuid) {
+
+                    Project.objects[i].position.x = Project.objects[i].matrixWorld.elements[12];
+                    Project.objects[i].position.y = Project.objects[i].matrixWorld.elements[13];
+                    Project.objects[i].position.z = Project.objects[i].matrixWorld.elements[14];
+
+                    Project.dataArray[i].position = JSON.stringify(Project.objects[i].position);
+                    Project.dataArray[i].scale = JSON.stringify(Project.objects[i].scale);
+                    Project.dataArray[i].rotation = JSON.stringify(Project.objects[i].rotation);
+
+                    Project.dataArray[i].materials.material = JSON.stringify(Project.objects[i].material.toJSON());
+
+                    INDEXDB.putData(myDB.db, myDB.ojstore.name, Project.dataArray);
+
+                }
+            }
+
+        }
+
+
+    </script>
+   
+</body>
+
+ 

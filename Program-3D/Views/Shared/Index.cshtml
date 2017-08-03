@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Index</title>
+        <link href="css/main.css" rel="stylesheet">
+        <link href="js/kendoUI/styles/kendo.common.min.css" rel="stylesheet">
+        <link href="js/kendoUI/styles/kendo.default.min.css" rel="stylesheet">
+
+        <script src = "js/libs/three.js"></script>
+        <script src = "js/libs/signals.min.js"></script>
+        <script src = "js/libs/jquery.min.js"></script>
+
+        <script src="js/loaders/OBJLoader.js"></script>
+        <script src="js/exporters/OBJExporter.js"></script>
+        <script src="js/exporters/STLExporter.js"></script>
+
+        <script src = "js/Project.js"></script>
+        <script src = "js/Viewport.js"></script>
+        <script src = "js/RightSideBar.js"></script>
+        <script src = "js/LeftSideBar.js"></script>
+        <script src = "js/TopBar.js"></script>
+        <script src = "js/Window.js"></script>
+
+        <script src = "js/modules/SelectObject.js"></script>
+        <script src = "js/modules/CreateObject.js"></script>
+        <script src = "js/modules/DeleteObject.js"></script>
+        <script src = "js/modules/Loader.js"></script>
+        <script src = "js/modules/Store.js"></script>
+        <script src = "js/modules/LinesToFace.js"></script>
+        <script src = "js/modules/Segment.js"></script>
+        <script src = "js/modules/InitScene.js"></script>
+        <script src = "js/modules/ObjectStruct.js"></script>
+
+        <script src = "js/controls/EditorControls.js"></script>
+        <script src = "js/controls/TransformControls.js"></script>
+
+        <script src="js/kendoUI/js/kendo.all.min.js"></script>
+
+    </head>
+    <body>
+        <script>
+
+            let viewport = new Viewport();
+            viewport.init();
+            Project.controls.addEventListener( 'change', ()=>{
+                Project.render();
+            } );
+
+            let rightSideBar = new RightSideBar();
+            rightSideBar.init();
+            document.addEventListener("keydown",rightSideBar.changeTransformControlsMode,false);
+            $("#viewport").click(()=>{
+                selectObject();
+            });
+
+            let leftSideBar = new LeftSideBar();
+            leftSideBar.init();
+
+            let topBar = new TopBar();
+            topBar.init();
+
+            let cWindow = new CreateObjectWindow();
+            cWindow.init();
+
+            window.addEventListener( 'resize',()=>{
+                Project.windowResized();
+            }, false );
+            Project.windowResized();
+            
+            window.onbeforeunload = function () {
+                for (let i in Project.dataArray) {
+
+                    if (Project.dataArray[i].uuid === Project.uuid) {
+
+                        Project.objects[i].position.x = Project.objects[i].matrixWorld.elements[12];
+                        Project.objects[i].position.y = Project.objects[i].matrixWorld.elements[13];
+                        Project.objects[i].position.z = Project.objects[i].matrixWorld.elements[14];
+
+                        Project.dataArray[i].position = JSON.stringify(Project.objects[i].position);
+                        Project.dataArray[i].scale = JSON.stringify(Project.objects[i].scale);
+                        Project.dataArray[i].rotation = JSON.stringify(Project.objects[i].rotation);
+
+                        Project.dataArray[i].materials.material = JSON.stringify(Project.objects[i].material.toJSON());
+
+                        INDEXDB.putData(myDB.db, myDB.ojstore.name, Project.dataArray);
+
+                    }
+                }
+
+            }
+        </script>
+
+    </body>
+</html>
