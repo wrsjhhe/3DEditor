@@ -1,160 +1,189 @@
-//页面加载是打开数据库
-    INDEXDB.openDB(myDB.name,myDB.version);
+//页面加载时打开数据库
 
-    setTimeout(function(){
-        INDEXDB.getAllData(myDB.db,myDB.ojstore.name);
-        setTimeout(function () {
-            if (result_Customize.position.length !== 0) {
-                for (let i in result_Customize.position) {
-                    let faces = JSON.parse(result_Customize.geometries[i].faces);
-                    let vertices = JSON.parse(result_Customize.geometries[i].vertices);
-                    let geometry = new THREE.Geometry();
-                    geometry.faces = faces;
-                    geometry.vertices = vertices;
+INDEXDB.openDB(myDB.name, myDB.version);
 
-                    //设置每个面的纹理UV坐标
-                    let face1 = [new THREE.Vector2(0, .666), new THREE.Vector2(.5, .666), new THREE.Vector2(.5, 1), new THREE.Vector2(0, 1)];
-                    let face2 = [new THREE.Vector2(.5, .666), new THREE.Vector2(1, .666), new THREE.Vector2(1, 1), new THREE.Vector2(.5, 1)];
-                    let face3 = [new THREE.Vector2(0, .333), new THREE.Vector2(.5, .333), new THREE.Vector2(.5, .666), new THREE.Vector2(0, .666)];
-                    let face4 = [new THREE.Vector2(.5, .333), new THREE.Vector2(1, .333), new THREE.Vector2(1, .666), new THREE.Vector2(.5, .666)];
-                    let face5 = [new THREE.Vector2(0, 0), new THREE.Vector2(.5, 0), new THREE.Vector2(.5, .333), new THREE.Vector2(0, .333)];
-                    let face6 = [new THREE.Vector2(.5, 0), new THREE.Vector2(1, 0), new THREE.Vector2(1, .333), new THREE.Vector2(.5, .333)];
-
-                    //将纹理UV坐标映射到物体几何表面
-                    geometry.faceVertexUvs[0] = [];
-                    geometry.faceVertexUvs[0][0] = [face1[3], face1[0], face1[1]];
-                    geometry.faceVertexUvs[0][1] = [face1[1], face1[2], face1[3]];
-
-                    geometry.faceVertexUvs[0][2] = [face2[3], face2[0], face2[1]];
-                    geometry.faceVertexUvs[0][3] = [face2[1], face2[2], face2[3]];
-
-                    geometry.faceVertexUvs[0][4] = [face3[0], face3[1], face3[3]];
-                    geometry.faceVertexUvs[0][5] = [face3[1], face3[2], face3[3]];
-
-                    geometry.faceVertexUvs[0][6] = [face4[0], face4[1], face4[3]];
-                    geometry.faceVertexUvs[0][7] = [face4[1], face4[2], face4[3]];
-
-                    geometry.faceVertexUvs[0][8] = [face5[0], face5[1], face5[3]];
-                    geometry.faceVertexUvs[0][9] = [face5[1], face5[2], face5[3]];
-
-                    geometry.faceVertexUvs[0][10] = [face6[0], face6[1], face6[3]];
-                    geometry.faceVertexUvs[0][11] = [face6[1], face6[2], face6[3]];
+setTimeout(function () {
+    console.log(myDB.db);
+    INDEXDB.getAllData(myDB.db, myDB.ojstore.name);
+}, 300);
 
 
-                    let materialLoader = new THREE.MaterialLoader();
-                    let material =  materialLoader.parse(JSON.parse(result_Customize.materials[i].material));
-                    material.map = null;
+function initModels() {
+    if (result_Customize.position.length !== 0) {
+        for (let i in result_Customize.position) {
+            let faces = JSON.parse(result_Customize.geometries[i].faces);
+            let vertices = JSON.parse(result_Customize.geometries[i].vertices);
+            let geometry = new THREE.Geometry();
+            geometry.faces = faces;
+            geometry.vertices = vertices;
 
-                    if(result_Customize.materials[i].textureSrc !== undefined){
-                        let im = new Image();
-                        im.src = result_Customize.materials[i].textureSrc;
-                        let texture = new THREE.Texture(im);
-                        texture.minFilter = THREE.NearestFilter;
-                        texture.needsUpdate = true;
-                        material.map = texture;
-                        material.needsUpdate = true;
-                    }
+            //设置每个面的纹理UV坐标
+            let face1 = [new THREE.Vector2(0, .666), new THREE.Vector2(.5, .666), new THREE.Vector2(.5, 1), new THREE.Vector2(0, 1)];
+            let face2 = [new THREE.Vector2(.5, .666), new THREE.Vector2(1, .666), new THREE.Vector2(1, 1), new THREE.Vector2(.5, 1)];
+            let face3 = [new THREE.Vector2(0, .333), new THREE.Vector2(.5, .333), new THREE.Vector2(.5, .666), new THREE.Vector2(0, .666)];
+            let face4 = [new THREE.Vector2(.5, .333), new THREE.Vector2(1, .333), new THREE.Vector2(1, .666), new THREE.Vector2(.5, .666)];
+            let face5 = [new THREE.Vector2(0, 0), new THREE.Vector2(.5, 0), new THREE.Vector2(.5, .333), new THREE.Vector2(0, .333)];
+            let face6 = [new THREE.Vector2(.5, 0), new THREE.Vector2(1, 0), new THREE.Vector2(1, .333), new THREE.Vector2(.5, .333)];
 
-                    let mesh = new THREE.Mesh(geometry, material);
-                    mesh.geometry.type = "ExtrudeGeometry";
+            //将纹理UV坐标映射到物体几何表面
+            geometry.faceVertexUvs[0] = [];
+            geometry.faceVertexUvs[0][0] = [face1[3], face1[0], face1[1]];
+            geometry.faceVertexUvs[0][1] = [face1[1], face1[2], face1[3]];
 
-                    let position = JSON.parse(result_Customize.position[i]);
-                    let scale = JSON.parse(result_Customize.scale[i]);
-                    let rotation = JSON.parse(result_Customize.rotation[i]);
+            geometry.faceVertexUvs[0][2] = [face2[3], face2[0], face2[1]];
+            geometry.faceVertexUvs[0][3] = [face2[1], face2[2], face2[3]];
 
-                    mesh.position.x = position.x; mesh.position.y = position.y; mesh.position.z = position.z;
-                    mesh.scale.x = scale.x;       mesh.scale.y = scale.y;       mesh.scale.z = scale.z;
-                    mesh.rotation.x = rotation._x;mesh.rotation.y = rotation._y;mesh.rotation.z = rotation._z;
+            geometry.faceVertexUvs[0][4] = [face3[0], face3[1], face3[3]];
+            geometry.faceVertexUvs[0][5] = [face3[1], face3[2], face3[3]];
 
-                    mesh.name = result_Customize.name[i];
+            geometry.faceVertexUvs[0][6] = [face4[0], face4[1], face4[3]];
+            geometry.faceVertexUvs[0][7] = [face4[1], face4[2], face4[3]];
 
-                    Project.objects.push(mesh);
+            geometry.faceVertexUvs[0][8] = [face5[0], face5[1], face5[3]];
+            geometry.faceVertexUvs[0][9] = [face5[1], face5[2], face5[3]];
 
-                    Project.scene.add(mesh);
+            geometry.faceVertexUvs[0][10] = [face6[0], face6[1], face6[3]];
+            geometry.faceVertexUvs[0][11] = [face6[1], face6[2], face6[3]];
 
-                    let newData = new objData(1,mesh,result_Customize.materials[i].textureSrc);
-                    newData.keyId = result_Customize.keyId[i];
-                    newData.text = result_Customize.text[i];
 
-                    Project.dataArray.push(newData);
+            let materialLoader = new THREE.MaterialLoader();
+            let material = materialLoader.parse(JSON.parse(result_Customize.materials[i].material));
+            material.map = null;
 
-                    INDEXDB.putData(myDB.db,myDB.ojstore.name,Project.dataArray);
-
-                    $("#objDiv").data("kendoGrid").dataSource.read();
-
-                }
+            if (result_Customize.materials[i].textureSrc !== undefined) {
+                let im = new Image();
+                im.src = result_Customize.materials[i].textureSrc;
+                let texture = new THREE.Texture(im);
+                texture.minFilter = THREE.NearestFilter;
+                texture.needsUpdate = true;
+                material.map = texture;
+                material.needsUpdate = true;
             }
 
-            if(result_Normal.position.length !==0){
+            let mesh = new THREE.Mesh(geometry, material);
+            mesh.geometry.type = "ExtrudeGeometry";
 
-                for(let i in result_Normal.position)
-                {
-                    let data = JSON.parse(result_Normal.objects[i]);
+            let position = JSON.parse(result_Customize.position[i]);
+            let scale = JSON.parse(result_Customize.scale[i]);
+            let rotation = JSON.parse(result_Customize.rotation[i]);
 
-                    if (data.metadata === undefined) { // 2.0
+            mesh.position.x = position.x; mesh.position.y = position.y; mesh.position.z = position.z;
+            mesh.scale.x = scale.x; mesh.scale.y = scale.y; mesh.scale.z = scale.z;
+            mesh.rotation.x = rotation._x; mesh.rotation.y = rotation._y; mesh.rotation.z = rotation._z;
 
-                        data.metadata = {type: 'Geometry'};
+            mesh.name = result_Customize.name[i];
 
-                    }
-                    if (data.metadata.type === undefined) { // 3.0
+            Project.objects.push(mesh);
 
-                        data.metadata.type = 'Geometry';
+            Project.scene.add(mesh);
 
-                    }
-                    let loader = new THREE.ObjectLoader();
-                    loader.setTexturePath('');
+            let newData = new objData(1, mesh, result_Customize.materials[i].textureSrc);
+            newData.keyId = result_Customize.keyId[i];
+            newData.text = result_Customize.text[i];
 
-                    let mesh = loader.parse(data);
+            Project.dataArray.push(newData);
 
-                    let position = JSON.parse(result_Normal.position[i]);
-                    let scale = JSON.parse(result_Normal.scale[i]);
-                    let rotation = JSON.parse(result_Normal.rotation[i]);
+            INDEXDB.putData(myDB.db, myDB.ojstore.name, Project.dataArray);
 
-                    mesh.position.x = position.x; mesh.position.y = position.y; mesh.position.z = position.z;
-                    mesh.scale.x = scale.x;       mesh.scale.y = scale.y;       mesh.scale.z = scale.z;
-                    mesh.rotation.x = rotation._x;mesh.rotation.y = rotation._y;mesh.rotation.z = rotation._z;
+            $("#objDiv").data("kendoGrid").dataSource.read();
 
-                    mesh.name = result_Normal.name[i];
+        }
+    }
 
-                    let materialLoader = new THREE.MaterialLoader();
-                    let material =  materialLoader.parse(JSON.parse(result_Normal.materials[i].material));
-                    mesh.material = material;
+    if (result_Normal.position.length !== 0) {
 
-                    if(result_Normal.materials[i].textureSrc !== undefined){
-                        let im = new Image();
-                        im.src = result_Normal.materials[i].textureSrc;
-                        let texture = new THREE.Texture(im);
-                        texture.minFilter = THREE.NearestFilter;
-                        texture.needsUpdate = true;
-                        material.map = texture;
-                        material.needsUpdate = true;
-                    }
+        for (let i in result_Normal.position) {
+            let data = JSON.parse(result_Normal.objects[i]);
 
-                    let objectProperty;
-                    try {
-                        objectProperty = {
-                            lineCurve: JSON.parse(result_Normal.geometries[i].lineCurve),
-                        };
-                    }catch (e){
-                        objectProperty = undefined;
-                    }
+            if (data.metadata === undefined) { // 2.0
 
-                    Project.objects.push(mesh);
-                    Project.scene.add(mesh);
-                    let newData = new objData(0,mesh,result_Normal.materials[i].textureSrc,objectProperty);
-                    newData.keyId = result_Normal.keyId[i];
-                    newData.text = result_Normal.text[i];
-
-                    Project.dataArray.push(newData);
-                    INDEXDB.putData(myDB.db,myDB.ojstore.name,Project.dataArray);
-
-                    $("#objDiv").data("kendoGrid").dataSource.read();
-
-                }
+                data.metadata = { type: 'Geometry' };
 
             }
+            if (data.metadata.type === undefined) { // 3.0
 
-        },200);
+                data.metadata.type = 'Geometry';
 
-    },500);
+            }
+            let loader = new THREE.ObjectLoader();
+            loader.setTexturePath('');
+
+            let mesh = loader.parse(data);
+
+            let position = JSON.parse(result_Normal.position[i]);
+            let scale = JSON.parse(result_Normal.scale[i]);
+            let rotation = JSON.parse(result_Normal.rotation[i]);
+
+            mesh.position.x = position.x; mesh.position.y = position.y; mesh.position.z = position.z;
+            mesh.scale.x = scale.x; mesh.scale.y = scale.y; mesh.scale.z = scale.z;
+            mesh.rotation.x = rotation._x; mesh.rotation.y = rotation._y; mesh.rotation.z = rotation._z;
+
+            mesh.name = result_Normal.name[i];
+
+            let materialLoader = new THREE.MaterialLoader();
+            let material = materialLoader.parse(JSON.parse(result_Normal.materials[i].material));
+            mesh.material = material;
+
+            if (result_Normal.materials[i].textureSrc !== undefined) {
+                let im = new Image();
+                im.src = result_Normal.materials[i].textureSrc;
+                let texture = new THREE.Texture(im);
+                texture.minFilter = THREE.NearestFilter;
+                texture.needsUpdate = true;
+                material.map = texture;
+                material.needsUpdate = true;
+            }
+
+            let objectProperty;
+            try {
+                objectProperty = {
+                    lineCurve: JSON.parse(result_Normal.geometries[i].lineCurve),
+                };
+            } catch (e) {
+                objectProperty = undefined;
+            }
+
+            Project.objects.push(mesh);
+            Project.scene.add(mesh);
+            let newData = new objData(0, mesh, result_Normal.materials[i].textureSrc, objectProperty);
+            newData.keyId = result_Normal.keyId[i];
+            newData.text = result_Normal.text[i];
+
+            Project.dataArray.push(newData);
+            INDEXDB.putData(myDB.db, myDB.ojstore.name, Project.dataArray);
+
+            $("#objDiv").data("kendoGrid").dataSource.read();
+
+        }
+
+    }
+}
+
+
+
+(function (window,indexedDB,myDB) {
+    let db;
+    let request = indexedDB.open(myDB.name, myDB.version);
+    request.onsuccess = function( event ) {
+        db = event.target.result;
+    };
+    get=function(table,callback){
+        const list=[];
+        let store= db.transaction(table,'readwrite').objectStore(table);
+        const cur=store.openCursor();
+        cur.onsuccess = function (event) {
+                let cursor = event.target.result;
+                if (cursor) {
+                    list.push(cursor);
+                    cursor.continue();
+                }else{
+                    callback(list);
+                }
+        }
+    };
+    window.t={
+        get:get
+    };
+})(window,window.indexedDB||window.webkitindexedDB ,myDB);
+
 

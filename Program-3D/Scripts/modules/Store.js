@@ -35,10 +35,11 @@ let myDB={
         keypath:'keyId'//主键
     }
 };
+
 //初始化数据库
 let INDEXDB = {
     indexedDB: window.indexedDB || window.webkitindexedDB,
-    IDBKeyRange: window.IDBKeyRange || window.webkitIDBKeyRange,//键范围
+
     openDB: function (dbname, dbversion, callback) {
         //建立或打开数据库，建立对象存储空间(ObjectStore)
         let self = this;
@@ -49,9 +50,10 @@ let INDEXDB = {
         };
         request.onsuccess = function (e) {
             myDB.db = e.target.result;
-            console.log('成功建立并打开数据库:' + myDB.name + ' version' + dbversion);
+            console.log('成功建立并打开数据库:' + myDB.name + 'version' + dbversion);
         };
         request.onupgradeneeded = function (e) {
+
             let db = e.target.result, transaction = e.target.transaction, store;
             if (!db.objectStoreNames.contains(myDB.ojstore.name)) {
                 //没有该对象空间时创建该对象空间
@@ -107,23 +109,15 @@ let INDEXDB = {
     getAllData:function (db,storename) {
 
         let store = db.transaction(storename,'readwrite').objectStore(storename);
+
         store.openCursor().onsuccess = function (event) {
             let cursor = event.target.result;
             if (cursor) {
-
-                if(cursor.value.geometry &&cursor.value.geometry.type === "ExtrudeGeometry") {
-
-                    getCustomizeData(cursor,result_Customize);
-                    cursor.continue();
-
-                }else {
-
-                    getNormaldata(cursor,result_Normal);
-                    cursor.continue();
-
-                }
+                     cursor.continue();
+            }else{
             }
         }
+
     },
 
     deleteData:function(db,storename,key){
