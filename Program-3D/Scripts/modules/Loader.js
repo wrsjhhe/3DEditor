@@ -34,7 +34,7 @@ let Loader = function () {
 
                     for ( let v of Project.dataArray) {
 
-                        if(v.uuid = Project.uuid) {
+                        if(v.uuid === Project.uuid) {
                          v.materials.textureSrc = this.src;
 
                          INDEXDB.putData(myDB.db,myDB.ojstore.name,Project.dataArray);

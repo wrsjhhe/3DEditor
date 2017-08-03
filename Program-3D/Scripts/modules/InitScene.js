@@ -1,11 +1,11 @@
 //页面加载时打开数据库
 
-INDEXDB.openDB(myDB.name, myDB.version);
-
-setTimeout(function () {
-    console.log(myDB.db);
-    INDEXDB.getAllData(myDB.db, myDB.ojstore.name);
-}, 300);
+let getAllData =  setInterval(function () {
+    if (myDB.db!==null){
+        INDEXDB.getAllData(myDB.db, myDB.ojstore.name,initModels);
+        clearInterval(getAllData);
+    }
+});
 
 
 function initModels() {
@@ -160,30 +160,5 @@ function initModels() {
 }
 
 
-
-(function (window,indexedDB,myDB) {
-    let db;
-    let request = indexedDB.open(myDB.name, myDB.version);
-    request.onsuccess = function( event ) {
-        db = event.target.result;
-    };
-    get=function(table,callback){
-        const list=[];
-        let store= db.transaction(table,'readwrite').objectStore(table);
-        const cur=store.openCursor();
-        cur.onsuccess = function (event) {
-                let cursor = event.target.result;
-                if (cursor) {
-                    list.push(cursor);
-                    cursor.continue();
-                }else{
-                    callback(list);
-                }
-        }
-    };
-    window.t={
-        get:get
-    };
-})(window,window.indexedDB||window.webkitindexedDB ,myDB);
 
 
