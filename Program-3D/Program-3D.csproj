@@ -167,6 +167,7 @@
     <Content Include="Scripts\libs\kendo.all.min.js" />
     <Content Include="Scripts\libs\three.js" />
     <Content Include="Scripts\loaders\OBJLoader.js" />
+    <Content Include="Scripts\Main.js" />
     <Content Include="Scripts\modules\CreateObject.js" />
     <Content Include="Scripts\modules\DeleteObject.js" />
     <Content Include="Scripts\modules\InitScene.js" />
