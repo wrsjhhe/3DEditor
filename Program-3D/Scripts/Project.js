@@ -135,3 +135,4 @@ Project.addObject = function (obj,ModelType) {
      $("#objDiv").data("kendoGrid").dataSource.read();
 
 };
+
