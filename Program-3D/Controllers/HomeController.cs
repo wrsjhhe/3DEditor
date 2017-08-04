@@ -34,6 +34,7 @@ namespace Program_3D.Controllers
         // GET: MongoDB
         public ActionResult Index()
         {
+
             initDataBase();
             return View();
         }

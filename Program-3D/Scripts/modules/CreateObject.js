@@ -67,7 +67,6 @@ function ClickAddGraph() {
             let intersect = Project.getSelected(mouse);
 
             if (intersect !== undefined) {
-                Project.camera.enabled = false; //关闭视角移动
                 if (Project.scene.getObjectByName("TempMesh") !== undefined)
                     Project.scene.remove(Project.scene.getObjectByName("TempMesh"));
                 //根据交点位置确地绘图起始点
@@ -124,8 +123,7 @@ function ClickAddGraph() {
 
         //最后点击事件确定最后生成的物体
         function endComputeDistance(event) {
-
-            Project.controls.enabled = true;  //开启视角移动
+            if (event.button !== 0) return; //如果不是鼠标左键点击return
 
             $('#viewport')[0].removeEventListener('mousemove', moving, false);
 
@@ -170,11 +168,10 @@ function ClickAddGraph() {
         $("#viewport")[0].addEventListener('mousedown', startComputeDistance, false);
         //鼠标按下开始绘图
         function startComputeDistance(event) {
-
+            if (event.button !== 0) return; //如果不是鼠标左键点击return
             let intersect = Project.getSelected(mouse);
 
             if (intersect !== undefined) {
-                Project.controls.enabled = false; //关闭视角移动
                 if (Project.scene.getObjectByName("TempMesh") !== undefined)
                     Project.scene.remove(Project.scene.getObjectByName("TempMesh"));
                 //根据交点位置确地绘图起始点
@@ -188,6 +185,7 @@ function ClickAddGraph() {
 
         //鼠标移动生成底面
         function moving1() {
+            if (event.button !== 0) return; //如果不是鼠标左键点击return
             document.addEventListener("keydown", quit, false);
             function quit(e) {
                 if (e.which === 27) {
@@ -218,7 +216,7 @@ function ClickAddGraph() {
         function drawFloor() {
             switch (ModelType) {
                 case "cuboid":
-                    createModels2D("plane");         //生成底板
+                    createModels2D("shape");         //生成底板
                     break;
                 case "cylinder":
                     createModels2D("circle");
@@ -241,9 +239,8 @@ function ClickAddGraph() {
 
         //第二次点击移动生成完整几何体
         function moving2(event) {
-
+            if (event.button !== 0) return; //如果不是鼠标左键点击return
             document.addEventListener("keydown", quit, false);
-
             function quit(e) {
                 if (e.which === 27) {
                     $("#viewport")[0].removeEventListener("mousemove", moving2, false);
@@ -279,10 +276,8 @@ function ClickAddGraph() {
 
         //最后点击事件确定最后生成的物体
         function endComputeDistance(event) {
-
+            if (event.button !== 0) return; //如果不是鼠标左键点击return
             Project.scene.remove(Project.scene.getObjectByName("TempMesh")); //删除上一个鼠标位置的物体
-
-            Project.controls.enabled = true;  //开启视角移动
 
             document.getElementById("viewport").removeEventListener("mousemove", moving2, false); //取消mousemove事件
 
@@ -324,8 +319,10 @@ function ClickAddGraph() {
             case "circle":
                 createCircle();
                 break;
+            case "shape":
+                createShape();
+                break;
         }
-
     }
 
     function createModels3D(modelType) {
@@ -377,8 +374,8 @@ function ClickAddGraph() {
         let matrix = new THREE.Matrix4(); //定义一个偏移矩阵 ，将圆心偏移，从而使鼠标点击的点为圆心
         matrix.set(
             1, 0, 0, startX,
-            0, 2.220446049250313e-16, 1, 0,
-            0, -1, 2.220446049250313e-16, startZ,
+            0, 1, 0, 0,
+            0, 0, 1, startZ,
             0, 0, 0, 1
         );
         geometry.applyMatrix(matrix);
@@ -390,8 +387,33 @@ function ClickAddGraph() {
 
     }
 
-    //生成平面
     function createPlane() {
+        let length,width;
+        length = endX - startX;width = endZ - startZ;
+
+        let geometry = new THREE.PlaneGeometry(length,width);
+        let matrix = new THREE.Matrix4();
+        matrix.set(
+            1, 0, 0, startX+length/2,
+            0, 1, 0, 0,
+            0, 0, 1,startZ+width/2,
+            0, 0, 0, 1
+        );
+        geometry.applyMatrix(matrix);
+        let material = new THREE.MeshPhongMaterial({
+            color: document.getElementById("ColorInput").value || 0x171c21,
+            side:THREE.DoubleSide
+        });
+
+        let mesh = new THREE.Mesh(geometry, material);
+
+        mesh.name = 'TempMesh';
+        Project.scene.add(mesh);
+
+
+    }
+    //生成平面
+    function createShape() {
 
         let shape = new THREE.Shape();
         shape.moveTo(startX, startZ); //起始点
@@ -409,7 +431,11 @@ function ClickAddGraph() {
             0, 0, 0, 1
         );
         geometry.applyMatrix(matrix);
-        let material = new THREE.MeshPhongMaterial({color: document.getElementById("ColorInput").value || 0x171c21});
+        let material = new THREE.MeshPhongMaterial(
+            {color: document.getElementById("ColorInput").value || 0x171c21,
+            side:THREE.DoubleSide
+            }
+        );
         let mesh = new THREE.Mesh(geometry, material);
         mesh.name = 'TempMesh';
         Project.scene.add(mesh);

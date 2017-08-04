@@ -40,7 +40,7 @@ class LeftSideBar{
         });
 
         $('#plane').click(()=>{
-           // clickAddGraph.twoClick("plane");
+            clickAddGraph.twoClick("plane");
         });
 
         $('#circle').click(()=>{
@@ -71,7 +71,6 @@ class LeftSideBar{
             clickAddGraph.twoClick("roadWay");
         });
 
-
         $(document).ready(function() {
             $("#panelBar").kendoPanelBar({
 
@@ -79,4 +78,6 @@ class LeftSideBar{
         });
 
     }
+
+
 }
