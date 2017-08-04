@@ -1,3 +1,37 @@
+window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+
+//定义数据库参数
+let myDB={
+    name:'3D-project',
+    version:1,
+    db:null,
+    ojstore:{
+        name:'objects',//存储空间表的名字
+        keypath:'keyId'//主键
+    }
+};
+let request;
+(function () {
+    request  = window.indexedDB.open(myDB.name, myDB.version);
+    request.onerror = function (e) {
+        console.log(e.currentTarget.error.message);
+    };
+    request.onsuccess = function (e) {
+        myDB.db = e.target.result;
+        console.log('成功建立并打开数据库:' + myDB.name + 'version' + myDB.version);
+    };
+    request.onupgradeneeded = function (e) {
+
+        let db = e.target.result, transaction = e.target.transaction, store;
+        if (!db.objectStoreNames.contains(myDB.ojstore.name)) {
+            //没有该对象空间时创建该对象空间
+            store = db.createObjectStore(myDB.ojstore.name, {keyPath: myDB.ojstore.keypath});
+            console.log('成功建立对象存储空间：' + myDB.ojstore.name);
+        }
+    };
+})();
+
+
 
 //result_Customize储存不能被内置加载器加载的模型
 let result_Customize = {
@@ -25,44 +59,12 @@ let result_Normal = {
     text:[]
 };
 
-//定义数据库参数
-let myDB={
-    name:'3D-project',
-    version:1,
-    db:null,
-    ojstore:{
-        name:'objects',//存储空间表的名字
-        keypath:'keyId'//主键
-    }
-};
+
 
 //初始化数据库
 let INDEXDB = {
-    indexedDB: window.indexedDB || window.webkitindexedDB,
+    request:window.indexedDB,
 
-    openDB: function (dbname, dbversion, callback) {
-        //建立或打开数据库，建立对象存储空间(ObjectStore)
-        let self = this;
-        let version = dbversion || 1;
-        let request = self.indexedDB.open(dbname, version);
-        request.onerror = function (e) {
-            console.log(e.currentTarget.error.message);
-        };
-        request.onsuccess = function (e) {
-            myDB.db = e.target.result;
-            console.log('成功建立并打开数据库:' + myDB.name + 'version' + dbversion);
-        };
-        request.onupgradeneeded = function (e) {
-
-            let db = e.target.result, transaction = e.target.transaction, store;
-            if (!db.objectStoreNames.contains(myDB.ojstore.name)) {
-                //没有该对象空间时创建该对象空间
-                store = db.createObjectStore(myDB.ojstore.name, {keyPath: myDB.ojstore.keypath});
-                console.log('成功建立对象存储空间：' + myDB.ojstore.name);
-            }
-        }
-
-    },
     addData:function(db,storename,data){
         //添加数据，重复添加会报错
         let store = db.transaction(storename,'readwrite').objectStore(storename),request;
@@ -106,15 +108,23 @@ let INDEXDB = {
         };
     },
 
-    getAllData:function (db,storename) {
+    getAllData:function (db,storename,callBack) {
 
         let store = db.transaction(storename,'readwrite').objectStore(storename);
 
         store.openCursor().onsuccess = function (event) {
             let cursor = event.target.result;
             if (cursor) {
-                     cursor.continue();
-            }else{
+
+                if(cursor.value.geometry &&cursor.value.geometry.type === "ExtrudeGeometry") {
+                    getCustomizeData(cursor,result_Customize);
+                    cursor.continue();
+                }else {
+                    getNormaldata(cursor,result_Normal);
+                    cursor.continue();
+                }
+            }else {
+                callBack();
             }
         }
 
@@ -162,5 +172,4 @@ function getCustomizeData(cursor,result) {
     result.geometries.push(cursor.value.geometry);
 
 }
-
 
