@@ -199,6 +199,7 @@ E:\3D-Program\Program-3D\bin\zh-Hans\EntityFramework.resources.dll
 E:\3D-Program\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
 E:\3D-Program\Program-3D\obj\Debug\Program-3D.dll
 E:\3D-Program\Program-3D\obj\Debug\Program-3D.pdb
+<<<<<<< HEAD
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\bin\roslyn\csc.exe
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -266,3 +267,5 @@ D:\下载\3D-Program-master\3D-Program-master\Program-3D\bin\zh-Hans\EntityFrame
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.dll
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.pdb
+=======
+>>>>>>> 31060ea438c2127fe5d8ab26b8e83afc8345f3a3
