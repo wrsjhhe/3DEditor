@@ -28,26 +28,12 @@ class RightSideBar {
 
     };
 
-    changeTransformControlsMode (e) {
-        switch(e.keyCode)
-        {
-            case 87:
-                Project.transformControls.setMode('translate');
-                break;
-            case 69:
-                Project.transformControls.setMode('scale');
-                break;
-            case 82:
-                Project.transformControls.setMode('rotate');
-                break;
-        }
-    };
 }
 
     $(document).ready(()=>{
        $("#objDiv").kendoGrid({
             dataSource: {
-                data: Project.dataArray,
+                data: dataArray,
                 schema: {
                     model: {
                         fields: {
@@ -59,7 +45,7 @@ class RightSideBar {
                 pageSize: 100000
             },
             transport:{
-                read:Project.dataArray
+                read:dataArray
             },
             height: 350,
             scrollable: true,
@@ -83,16 +69,16 @@ class RightSideBar {
         $("#ColorInput").kendoColorPicker({
             value:"#171c21",
             buttons: false,
-            select:(e)=>{ if(Project.getObjectByUuid(Project.objects,Project.uuid)!==undefined)
+            select:(e)=>{ if(new PROJECT.GetObjectByUuid(objects,uuid)!==undefined)
                 {
-                    Project.getObjectByUuid(Project.objects,Project.uuid).material.color.set(e.value);
+                   new PROJECT.GetObjectByUuid(objects,uuid).material.color.set(e.value);
                 }
             }
         });
 
         $("input.TextureInput ").change(()=>{
             let loader = new Loader();
-            loader.loadTexture($('input.TextureInput')[0].files[0],Project.getObjectByUuid(Project.objects,Project.uuid));
+            loader.loadTexture($('input.TextureInput')[0].files[0],new PROJECT.GetObjectByUuid(objects,uuid));
             $('input.TextureInput')[0].value = null;
         });
 
@@ -100,8 +86,30 @@ class RightSideBar {
 
             let row = $("#objDiv").data("kendoGrid").select();
             let data = $("#objDiv").data("kendoGrid").dataItem(row);
-            Project.uuid = data.uuid;
-            Project.ifSelected(Project.getObjectByUuid(Project.objects,Project.uuid));
+            uuid = data.uuid;
+
+            (function (obj) {
+
+                $("#NameInput")[0].value = obj.hasOwnProperty("name")?obj.name:"object";
+
+                $("#NameInput").unbind(); //必须先解除之前的绑定，否则会绑定多个物体
+
+                let data = new PROJECT.GetObjectDataByUuid(dataArray,obj.uuid);
+
+                $("#NameInput").bind("input",function () {
+
+                    obj.name = $("#NameInput")[0].value;
+                    INDEXDB.putData(myDB.db,myDB.ojstore.name,dataArray);
+
+                    data.name = $("#NameInput")[0].value;
+
+                    $("#objDiv").data("kendoGrid").dataSource.read();
+
+                });
+                transformControls.attach(obj);
+            })(PROJECT.GetObjectByUuid(objects,uuid))
+
+
 
         })
 

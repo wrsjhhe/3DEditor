@@ -126,9 +126,9 @@ class showObjectInformation
         }
 
         $("#objectInformationButton1").click(()=>{
-           let data = Project.getObjectDataByUuid(Project.dataArray,Project.uuid);
+           let data = new PROJECT.GetObjectDataByUuid(dataArray,uuid);
             data.text = $("#objectImformation")[0].value;
-            INDEXDB.putData(myDB.db,myDB.ojstore.name,Project.dataArray);
+            INDEXDB.putData(myDB.db,myDB.ojstore.name,dataArray);
             $("#objectInformationWindow").data("kendoWindow").destroy();
         });
         $("#objectInformationButton2").click(()=>{

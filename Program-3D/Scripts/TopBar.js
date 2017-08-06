@@ -1,6 +1,6 @@
 class TopBar {
     constructor() {
-        // Project.scope = this;
+
         this.$container = $("<div id='topBar'></div>");
         $('body').append(this.$container);
     };
@@ -37,16 +37,16 @@ class TopBar {
             $("#exportOBJ").click(function () {
 
                 let exporter = new THREE.OBJExporter();
-                let obj = Project.getObjectByUuid(Project.objects, Project.uuid);
+                let obj = new PROJECT.GetObjectByUuid(objects, uuid);
 
-                Project.saveString(exporter.parse(obj), obj.name + '.obj');
+                new PROJECT.SaveString(exporter.parse(obj), obj.name + '.obj');
 
             });
 
             $("#exportSTL").click(function () {
                 let exporter = new THREE.STLExporter();
-                let obj = Project.getObjectByUuid(Project.objects, Project.uuid);
-                Project.saveString(exporter.parse(Project.scene), obj.name + '.stl');
+                let obj = new PROJECT.GetObjectByUuid(objects, uuid);
+                new PROJECT.SaveString(exporter.parse(scene), obj.name + '.stl');
 
             });
 
@@ -64,18 +64,15 @@ class TopBar {
                     $("#objectInformationWindow").data("kendoWindow").destroy();
                 }
                 let SOI = new showObjectInformation();
-                SOI.init(Project.getObjectDataByUuid(Project.dataArray, Project.uuid).text || "");
+                SOI.init(new PROJECT.GetObjectDataByUuid(dataArray, uuid).text || "");
                 SOI.openWindow();
             });
 
             $('#file').find("li")[0].addEventListener("click", function () {
 
 
-                //Project.dataArray[0]
-
-                Project.dataArray.forEach(function (e) {
-                    var param = {
-                
+                dataArray.forEach(function (e) {
+                    let param = {
                         Attr: JSON.stringify(e)
                     };
 

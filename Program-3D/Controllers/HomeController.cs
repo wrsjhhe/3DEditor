@@ -50,11 +50,7 @@ namespace Program_3D.Controllers
         private void initDataBase()
         {
             _cliet = new MongoClient(conn);
-            _database = _cliet.GetDatabase(dbName);
-
-            ObjectParas objP = new ObjectParas();
-            objP.Name = "test";
-            _database.GetCollection<ObjectParas>(tbName).InsertOne(objP);
+            _database = _cliet.GetDatabase(dbName);      
 
         }
 

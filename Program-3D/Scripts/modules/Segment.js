@@ -64,7 +64,7 @@ class Segment
                 colors.push(document.getElementById(id[i]).value);
             }
 
-            if (colors.length > 0 && Project.uuid !== null) {
+            if (colors.length > 0 && uuid !== null) {
                 this.beginSegment(colors.length-1,colors);
             }
 
@@ -81,7 +81,7 @@ class Segment
 
     beginSegment(num,colors) {
 
-        let selected = Project.dataArray.find(n=>n.uuid === Project.uuid);
+        let selected = dataArray.find(n=>n.uuid === uuid);
 
         let lineVertices = JSON.parse(selected.geometry.lineCurve);
 
@@ -94,10 +94,10 @@ class Segment
             );
         }
 
-        let Geom1 = Project.linestoFace(lines[0],lines[1],num);
-        let Geom2 = Project.linestoFace(lines[0],lines[2],num);
-        let Geom3 = Project.linestoFace(lines[1],lines[3],num);
-        let Geom4 = Project.linestoFace(lines[2],lines[3],num);
+        let Geom1 = new PROJECT.LinesToFace(lines[0],lines[1],num);
+        let Geom2 = new PROJECT.LinesToFace(lines[0],lines[2],num);
+        let Geom3 = new PROJECT.LinesToFace(lines[1],lines[3],num);
+        let Geom4 = new PROJECT.LinesToFace(lines[2],lines[3],num);
 
         for (let i = 0; i < num+1;i++)
         {
@@ -149,11 +149,11 @@ class Segment
         mesh1.geometry.mergeMesh(mesh3);
         mesh1.geometry.mergeMesh(mesh4);
 
-        Project.objectProperty = {lineCurve:lines};
+        objectProperty = {lineCurve:lines};
 
         deleteObject(null,true);
-        Project.addObject(mesh1,"roadWay");
-        Project.scene.add(mesh1);
+        new PROJECT.AddObject(mesh1,"roadWay",objects,dataArray,objectProperty);
+        scene.add(mesh1);
 
     }
 }

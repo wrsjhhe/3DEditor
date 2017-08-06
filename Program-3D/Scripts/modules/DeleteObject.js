@@ -6,18 +6,18 @@ function deleteObject(e,flag) {
     {
         flag!==true&&e.preventDefault();
 
-        Project.scene.remove( Project.getObjectByUuid(Project.objects,Project.uuid));
+        scene.remove( new PROJECT.GetObjectByUuid(objects,uuid));
 
-        for(let i in Project.objects)
+        for(let i in objects)
         {
-            if( Project.objects[i].uuid === Project.uuid)
+            if( objects[i].uuid === uuid)
             {
-                Project.objects.splice(i,1);
-                if (Project.dataArray[i].uuid === Project.uuid){
+                objects.splice(i,1);
+                if (dataArray[i].uuid === uuid){
 
-                    INDEXDB.deleteData(myDB.db,myDB.ojstore.name,Project.dataArray[i].keyId);
+                    INDEXDB.deleteData(myDB.db,myDB.ojstore.name,dataArray[i].keyId);
                 }
-                Project.dataArray.splice(i,1);
+                dataArray.splice(i,1);
             }
         }
 
@@ -27,17 +27,17 @@ function deleteObject(e,flag) {
 /**点击编辑-清空，删除所有**/
 function clearAll() {
 
-    let length = Project.scene.children.length;
+    let length = scene.children.length;
     for(let i = length-1;i >= 0;i--) {
-        if (Project.scene.children[i].type === "Mesh" ||Project.scene.children[i].type === "Line") {
+        if (scene.children[i].type === "Mesh" ||scene.children[i].type === "Line") {
 
-            Project.scene.remove(Project.scene.children[i]);
+            scene.remove(scene.children[i]);
 
         }
     }
 
-    Project.objects = [];
-    Project.dataArray = [];
+    objects = [];
+    dataArray = [];
     $("#objDiv").data("kendoGrid").dataSource.read();
 
     INDEXDB.clearData(myDB.db,myDB.ojstore.name);

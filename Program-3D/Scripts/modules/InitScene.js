@@ -7,7 +7,6 @@ let getAllData =  setInterval(function () {
     }
 });
 
-
 function initModels() {
     if (result_Customize.position.length !== 0) {
         for (let i in result_Customize.position) {
@@ -73,17 +72,17 @@ function initModels() {
 
             mesh.name = result_Customize.name[i];
 
-            Project.objects.push(mesh);
+            objects.push(mesh);
 
-            Project.scene.add(mesh);
+            scene.add(mesh);
 
             let newData = new objData(1, mesh, result_Customize.materials[i].textureSrc);
             newData.keyId = result_Customize.keyId[i];
             newData.text = result_Customize.text[i];
 
-            Project.dataArray.push(newData);
+            dataArray.push(newData);
 
-            INDEXDB.putData(myDB.db, myDB.ojstore.name, Project.dataArray);
+            INDEXDB.putData(myDB.db, myDB.ojstore.name, dataArray);
 
             $("#objDiv").data("kendoGrid").dataSource.read();
 
@@ -143,14 +142,14 @@ function initModels() {
                 objectProperty = undefined;
             }
 
-            Project.objects.push(mesh);
-            Project.scene.add(mesh);
+            objects.push(mesh);
+            scene.add(mesh);
             let newData = new objData(0, mesh, result_Normal.materials[i].textureSrc, objectProperty);
             newData.keyId = result_Normal.keyId[i];
             newData.text = result_Normal.text[i];
 
-            Project.dataArray.push(newData);
-            INDEXDB.putData(myDB.db, myDB.ojstore.name, Project.dataArray);
+            dataArray.push(newData);
+            INDEXDB.putData(myDB.db, myDB.ojstore.name,dataArray);
 
             $("#objDiv").data("kendoGrid").dataSource.read();
 
