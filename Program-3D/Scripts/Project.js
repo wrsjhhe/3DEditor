@@ -831,7 +831,7 @@
         if( flag ===true || (e.keyCode === 68&&e.ctrlKey ) )
         {
             flag!==true&&e.preventDefault();
-            
+
             RemoveFromScene(new PROJECT.GetObjectByUuid(objects,uuid));
 
             for(let i in objects)

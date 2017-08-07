@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68a4e424-57f7-4aa3-9657-dbe29e0bec5d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Debug/Program-3D.csprojResolveAssemblyReference.cache" afterPath="$PROJECT_DIR$/../obj/Debug/Program-3D.csprojResolveAssemblyReference.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../.vs/config/applicationhost.config" afterPath="$PROJECT_DIR$/../../.vs/config/applicationhost.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Scripts.iml" afterPath="$PROJECT_DIR$/.idea/Scripts.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeftSideBar.js" afterPath="$PROJECT_DIR$/LeftSideBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Project.js" afterPath="$PROJECT_DIR$/Project.js" />
-    </list>
+    <list default="true" id="68a4e424-57f7-4aa3-9657-dbe29e0bec5d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -41,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/Project.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="520">
-              <caret line="833" column="12" lean-forward="false" selection-start-line="833" selection-start-column="12" selection-end-line="833" selection-end-column="12" />
+              <caret line="833" column="0" lean-forward="false" selection-start-line="833" selection-start-column="0" selection-end-line="833" selection-end-column="0" />
               <folding>
                 <element signature="e#779#1025#0" expanded="false" />
                 <element signature="e#1075#1670#0" expanded="false" />
@@ -65,7 +52,7 @@
                 <element signature="e#24722#27847#0" expanded="false" />
                 <element signature="e#27900#28694#0" expanded="false" />
                 <element signature="e#28760#30560#0" expanded="false" />
-                <element signature="e#31299#31720#0" expanded="false" />
+                <element signature="e#31287#31708#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -202,12 +189,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1502107088774</updated>
-      <workItem from="1502107090017" duration="10402000" />
+      <workItem from="1502107090017" duration="10976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10402000" />
+    <option name="totallyTimeSpent" value="10976000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -327,7 +314,7 @@
     <entry file="file://$PROJECT_DIR$/Project.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
-          <caret line="833" column="12" lean-forward="false" selection-start-line="833" selection-start-column="12" selection-end-line="833" selection-end-column="12" />
+          <caret line="833" column="0" lean-forward="false" selection-start-line="833" selection-start-column="0" selection-end-line="833" selection-end-column="0" />
           <folding>
             <element signature="e#779#1025#0" expanded="false" />
             <element signature="e#1075#1670#0" expanded="false" />
@@ -351,7 +338,7 @@
             <element signature="e#24722#27847#0" expanded="false" />
             <element signature="e#27900#28694#0" expanded="false" />
             <element signature="e#28760#30560#0" expanded="false" />
-            <element signature="e#31299#31720#0" expanded="false" />
+            <element signature="e#31287#31708#0" expanded="false" />
           </folding>
         </state>
       </provider>
