@@ -32,12 +32,12 @@ let Loader = function () {
                     object.material.map = texture;
                     object.material.needsUpdate = true;
 
-                    for ( let v of Project.dataArray) {
+                    for ( let v of dataArray) {
 
-                        if(v.uuid === Project.uuid) {
+                        if(v.uuid === uuid) {
                          v.materials.textureSrc = this.src;
 
-                         INDEXDB.putData(myDB.db,myDB.ojstore.name,Project.dataArray);
+                         INDEXDB.putData(myDB.db,myDB.ojstore.name,dataArray);
                         }
                     }
 
@@ -71,15 +71,13 @@ let Loader = function () {
                     let objModel = new THREE.OBJLoader().parse( contents );
                     objModel.name = filename;
 
-                    console.log(objModel);
                     let o = JSON.stringify(objModel.toJSON());
                     let l = new THREE.ObjectLoader();
                     let ll = l.parse(JSON.parse(o));
-                    console.log(ll)
-                    Project.scene.add(ll);
+                    scene.add(ll);
 
 
-                    Project.addObject(ll,"group");
+                    new PROJECT.AddObject(ll,"group",objects,dataArray,objectProperty);
 
 
 

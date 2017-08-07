@@ -1,18 +1,34 @@
+let objects = PROJECT.objects;
+let dataArray = PROJECT.dataArray;
+let cameraControls = PROJECT.cameraControls;
+let transformControls = PROJECT.transformControls;
+let uuid = PROJECT.uuid;
+let scene = PROJECT.scene;
+let sceneHelpers = PROJECT.sceneHelpers;
+let objectProperty = PROJECT.objectProperty;
+let renderer = PROJECT.renderer;
+let camera = PROJECT.camera;
+
+
+{
+    camera.position.set( 0, 500, 500);
+    camera.lookAt(new THREE.Vector3(0,0,0));
+    renderer.autoClear = false;
+    renderer.autoUpdateScene = false;
+    renderer.setPixelRatio( window.devicePixelRatio );
+    scene.background = new THREE.Color( 0xaaaaaa );
+}
+
+
 let viewport = new Viewport();
 viewport.init();
-Project.controls.addEventListener('change', () => {
-    Project.render();
-});
 
-let rightSideBar = new RightSideBar();
-rightSideBar.init();
-document.addEventListener("keydown", rightSideBar.changeTransformControlsMode, false);
-$("#viewport").click(() => {
-    selectObject();
-});
 
 let leftSideBar = new LeftSideBar();
 leftSideBar.init();
+
+let rightSideBar = new RightSideBar();
+rightSideBar.init();
 
 let topBar = new TopBar();
 topBar.init();
@@ -20,11 +36,10 @@ topBar.init();
 let cWindow = new CreateObjectWindow();
 cWindow.init();
 
-window.addEventListener('resize', () => {
-    Project.windowResized();
-}, false);
-Project.windowResized();
 
+
+
+/*
 window.onbeforeunload = function () {
     for (let i in Project.dataArray) {
 
@@ -45,4 +60,4 @@ window.onbeforeunload = function () {
         }
     }
 
-}
+};*/
