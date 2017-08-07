@@ -1,4 +1,4 @@
-/**Project定义主要公共与全局参数**/
+
 (function (global,factory) {
     factory((global.PROJECT = global.PROJECT || {}));
 })(this,(function (exports) {
@@ -40,7 +40,7 @@
         render;
     }
 
-    function getSelected(mouse,container) {
+    function GetSelected(event,mouse,container) {
         event.preventDefault();
         if (event.button !== 0) return; //如果不是鼠标左键点击return
         //确定鼠标按下时的屏幕坐标
@@ -99,7 +99,7 @@
 
         let startX, startZ, endX, endY, endZ; //声明起始点与结束点X,Y坐标
         let mouse = new THREE.Vector2(); //定义一个Vector2D对象存储鼠标屏幕坐标
-        function showWindow(ModelType) {
+      /*  function showWindow(ModelType) {
             switch (ModelType) {
 
                 case "cuboid":
@@ -147,7 +147,7 @@
                     break;
 
             }
-        }
+        }*/
 
         //点击两次生成，包含二维图形与球体
         this.twoClick = function (ModelType,objects,dataArray,objectProperty) {
@@ -158,7 +158,7 @@
             function startComputeDistance(event) {
 
                 event.preventDefault();
-                let intersect = getSelected(mouse,container);
+                let intersect = GetSelected(event,mouse,container);
 
                 if (intersect !== undefined) {
                     if (scene.getObjectByName("TempMesh") !== undefined)
@@ -187,7 +187,7 @@
                     }
                 }
 
-                let intersect = getSelected(mouse,container);
+                let intersect = GetSelected(event,mouse,container);
                 if (intersect !== undefined) {
                     if (scene.getObjectByName("TempMesh") !== undefined)
                         scene.remove(scene.getObjectByName("TempMesh")); //删除上一个鼠标位置的物体
@@ -221,7 +221,7 @@
 
                 container.removeEventListener('mousemove', moving, false);
 
-                let intersect = getSelected(mouse,container);
+                let intersect = GetSelected(event,mouse,container);
                 if (intersect!==undefined) {
 
                     if (scene.getObjectByName("TempMesh") !== undefined)
@@ -253,6 +253,14 @@
             //    closeWindow(ModelType);
 
                 container.removeEventListener('mousedown', endComputeDistance, false);   //移除鼠标事件
+
+                removeAllEvent();
+            }
+
+            function removeAllEvent() {
+                container.removeEventListener('mousedown', endComputeDistance, false);
+                container.removeEventListener('mousemove', moving, false);
+                container.removeEventListener('mousedown', startComputeDistance, false);
             }
         };
 
@@ -263,7 +271,7 @@
             //鼠标按下开始绘图
             function startComputeDistance(event) {
                 if (event.button !== 0) return; //如果不是鼠标左键点击return
-                let intersect = getSelected(mouse,container);
+                let intersect = GetSelected(event,mouse,container);
 
                 if (intersect !== undefined) {
                     if (scene.getObjectByName("TempMesh") !== undefined)
@@ -289,7 +297,7 @@
                     }
                 }
 
-                let intersect = getSelected(mouse,container);
+                let intersect = GetSelected(event,mouse,container);
                 if (intersect !== undefined) {
                     if (scene.getObjectByName("TempMesh") !== undefined)
                         scene.remove(scene.getObjectByName("TempMesh")); //删除上一个鼠标位置的物体
@@ -298,7 +306,7 @@
                     endZ = intersect.point.z;
 
                     if (endX === startX && endZ === startZ)return;
-                    showWindow(ModelType);
+                   // showWindow(ModelType);
                     drawFloor(ModelType);
 
                     ( scene.getObjectByName("TempMesh") !== undefined) && (scene.getObjectByName("TempMesh").material.wireframe = true);
@@ -345,7 +353,7 @@
 
                 container.removeEventListener('mousedown',finishFloor,false);
 
-                let intersect = getSelected(mouse,container);
+                let intersect = GetSelected(event,mouse,container);
                 if (intersect !== undefined) {
 
                     if (scene.getObjectByName("TempMesh") !== undefined)
@@ -361,7 +369,7 @@
 
                     ( scene.getObjectByName("TempMesh") !== undefined) && (scene.getObjectByName("TempMesh").material.wireframe = true);
 
-                    showWindow(ModelType);
+                  //  showWindow(ModelType);
 
                     container.addEventListener('mousedown', endComputeDistance, false);
 
@@ -375,7 +383,7 @@
 
                 document.getElementById("viewport").removeEventListener("mousemove", moving2, false); //取消mousemove事件
 
-                let intersect = getSelected(mouse,container);
+                let intersect = GetSelected(event,mouse,container);
                 if (intersect!==undefined) {
 
                     if (scene.getObjectByName("TempMesh") !== undefined)
@@ -390,7 +398,7 @@
 
                 AddObject(scene.getObjectByName("TempMesh"),ModelType,objects,dataArray,objectProperty);
 
-                closeWindow(ModelType);
+              //  closeWindow(ModelType);
 
                 container.removeEventListener("mousedown", endComputeDistance, false);
 
@@ -772,7 +780,8 @@
         return geometry;
     }
 
-    function SelectObject(uuid,ifSelected,cancelSelected) {
+    function SelectObject(event,uuid,ifSelected,cancelSelected) {
+
         for(let i in dataArray)
         {
             if( dataArray[i].uuid === uuid)
@@ -818,19 +827,58 @@
         }
     }
 
+    function DeleteObject(e,flag) {
+        if( flag ===true || (e.keyCode === 68&&e.ctrlKey ) )
+        {
+            flag!==true&&e.preventDefault();
 
+            scene.remove( new PROJECT.GetObjectByUuid(objects,uuid));
 
+            for(let i in objects)
+            {
+                if( objects[i].uuid === uuid)
+                {
+                    objects.splice(i,1);
+                    if (dataArray[i].uuid === uuid){
+
+                        INDEXDB.deleteData(myDB.db,myDB.ojstore.name,dataArray[i].keyId);
+                    }
+                    dataArray.splice(i,1);
+                }
+            }
+
+            $("#objDiv").data("kendoGrid").dataSource.read();
+        }
+    }
+
+    function ClearAll() {
+
+        let length = scene.children.length;
+        for(let i = length-1;i >= 0;i--) {
+            if (scene.children[i].type === "Mesh" ||scene.children[i].type === "Line") {
+
+                scene.remove(scene.children[i]);
+            }
+        }
+        objects = [];
+        dataArray = [];
+
+        INDEXDB.clearData(myDB.db,myDB.ojstore.name);
+        $("#objDiv").data("kendoGrid").dataSource.read();
+
+    }
+
+    exports.ClearAll = ClearAll;
+    exports.DeleteObject = DeleteObject;
     exports.GetObjectByUuid = GetObjectByUuid;
     exports.GetObjectDataByUuid = GetObjectDataByUuid;
     exports.Render = Render;
     exports.WindowResized = WindowResized;
-    exports.getSelected = getSelected;
+    exports.GetSelected = GetSelected;
     exports.AddObject = AddObject;
     exports.ClickAddGraph = ClickAddGraph;
     exports.LinesToFace = LinesToFace;
     exports.SelectObject = SelectObject;
-
-
 
     exports.camera = new THREE.PerspectiveCamera( 50, 1, 0.1, 1000000 );
     exports.renderer = new THREE.WebGLRenderer({antialias:true});

@@ -37,7 +37,7 @@ class Viewport {
          scene.add( spotLight2 );
 
          cameraControls =new THREE.EditorControls(camera,this.$container[0]);
-         transformControls = new THREE.TransformControls( camera,$("#viewport")[0] );
+         transformControls = new THREE.TransformControls( camera,this.$container[0] );
          cameraControls.addEventListener('change', () => {
              render(renderer,camera,scene,sceneHelpers)
          });
@@ -73,9 +73,14 @@ class Viewport {
          }, false);
          new PROJECT.WindowResized(renderer,render(renderer,camera,scene,sceneHelpers),camera,document.getElementById("viewport"));
 
-         $("#viewport").click(() => {
-             new PROJECT.SelectObject(uuid,ifSelected,cancelSelected);
+         $("#viewport").click((event) => {
+             new PROJECT.SelectObject(event,uuid,ifSelected,cancelSelected);
          });
+
+         document.addEventListener("keydown",deleteObject,false);
+         function deleteObject(e) {
+             new PROJECT.DeleteObject(e)
+         }
 
          function ifSelected (obj){
              uuid = obj.uuid;
@@ -107,13 +112,9 @@ class Viewport {
 
              transformControls.detach();
 
-         };
-
-
-
+         }
 
      };
 
 }
-
 
