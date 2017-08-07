@@ -50,8 +50,20 @@ class TopBar {
 
             });
 
-            $("#clear").click(function () {
-                clearAll();
+            $("#clear").click((e) => {
+                let length = scene.children.length;
+                for(let i = length-1;i >= 0;i--) {
+                    if (scene.children[i].type === "Mesh" ||scene.children[i].type === "Line") {
+
+                        scene.remove(scene.children[i]);
+                    }
+                }
+                objects = [];
+                dataArray = [];
+                console.log(dataArray)
+
+                INDEXDB.clearData(myDB.db,myDB.ojstore.name);
+                $("#objDiv").data("kendoGrid").dataSource.read();
             });
 
             $("#segment").click(function () {
@@ -68,12 +80,26 @@ class TopBar {
                 SOI.openWindow();
             });
 
+
             $('#file').find("li")[0].addEventListener("click", function () {
 
+                let ToJs = function () {
+                    let attr = [];
+                      for (let item in dataArray)
+                       {
+                           attr[item] = JSON.stringify(dataArray[item]);
+                        }
+                       console.log(attr)
+                     return attr;
 
-                dataArray.forEach(function (e) {
+                  }
+                console.log(ToJs());
+
                     let param = {
-                        Attr: JSON.stringify(e)
+                        Key:"123",
+                        Attr: ToJs()
+                        
+                     //   Attr: [JSON.stringify({ a: 10, b: 20 }), JSON.stringify({ a: 100, b: 200 })]
                     };
 
                     $.ajax({
@@ -88,14 +114,13 @@ class TopBar {
                         }
 
                     });
-                });
+
 
             }, false);
 
             $("#menu").kendoMenu();
 
         });
-
     }
 }
 

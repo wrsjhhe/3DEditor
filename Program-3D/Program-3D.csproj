@@ -167,14 +167,10 @@
     <Content Include="Scripts\libs\three.js" />
     <Content Include="Scripts\loaders\OBJLoader.js" />
     <Content Include="Scripts\Main.js" />
-    <Content Include="Scripts\modules\CreateObject.js" />
-    <Content Include="Scripts\modules\DeleteObject.js" />
     <Content Include="Scripts\modules\InitScene.js" />
-    <Content Include="Scripts\modules\LinesToFace.js" />
     <Content Include="Scripts\modules\Loader.js" />
     <Content Include="Scripts\modules\ObjectStruct.js" />
     <Content Include="Scripts\modules\Segment.js" />
-    <Content Include="Scripts\modules\SelectObject.js" />
     <Content Include="Scripts\modules\Store.js" />
     <Content Include="Scripts\Project.js" />
     <Content Include="Scripts\RightSideBar.js" />

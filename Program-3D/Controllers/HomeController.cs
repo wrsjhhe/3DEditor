@@ -40,14 +40,14 @@ namespace Program_3D.Controllers
         }
 
 
-        public string ReceiveJson(ObjectA model)
+        public string ReceiveJson(ObjectPara model)
         {
-           _database.GetCollection<ObjectA>("ObjectA").InsertOne(model);
+           _database.GetCollection<ObjectPara>("ObjectPara").InsertOne(model);
             return "";
 
         }
 
-        private void initDataBase()
+        static private void initDataBase()
         {
             _cliet = new MongoClient(conn);
             _database = _cliet.GetDatabase(dbName);      

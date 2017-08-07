@@ -151,7 +151,7 @@ class Segment
 
         objectProperty = {lineCurve:lines};
 
-        deleteObject(null,true);
+        new PROJECT.DeleteObject(null,true);
         new PROJECT.AddObject(mesh1,"roadWay",objects,dataArray,objectProperty);
         scene.add(mesh1);
 
