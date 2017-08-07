@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="34fd33f7-1fce-4efe-a7fb-8c6957de5889" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/CreateObject.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/LinesToFace.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/SelectObject.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../.vs/Program-3D/v14/.suo" afterPath="$PROJECT_DIR$/../../.vs/Program-3D/v14/.suo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bin/Program-3D.dll" afterPath="$PROJECT_DIR$/../bin/Program-3D.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bin/Program-3D.pdb" afterPath="$PROJECT_DIR$/../bin/Program-3D.pdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Debug/Program-3D.csprojResolveAssemblyReference.cache" afterPath="$PROJECT_DIR$/../obj/Debug/Program-3D.csprojResolveAssemblyReference.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Debug/Program-3D.dll" afterPath="$PROJECT_DIR$/../obj/Debug/Program-3D.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Debug/Program-3D.pdb" afterPath="$PROJECT_DIR$/../obj/Debug/Program-3D.pdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../.vs/config/applicationhost.config" afterPath="$PROJECT_DIR$/../../.vs/config/applicationhost.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Controllers/HomeController.cs" afterPath="$PROJECT_DIR$/../Controllers/HomeController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeftSideBar.js" afterPath="$PROJECT_DIR$/LeftSideBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.js" afterPath="$PROJECT_DIR$/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Project.js" afterPath="$PROJECT_DIR$/Project.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RightSideBar.js" afterPath="$PROJECT_DIR$/RightSideBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopBar.js" afterPath="$PROJECT_DIR$/TopBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Viewport.js" afterPath="$PROJECT_DIR$/Viewport.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Window.js" afterPath="$PROJECT_DIR$/Window.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/DeleteObject.js" afterPath="$PROJECT_DIR$/modules/DeleteObject.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/InitScene.js" afterPath="$PROJECT_DIR$/modules/InitScene.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Loader.js" afterPath="$PROJECT_DIR$/modules/Loader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Segment.js" afterPath="$PROJECT_DIR$/modules/Segment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Views/Home/Index.cshtml" afterPath="$PROJECT_DIR$/../Views/Home/Index.cshtml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -172,7 +148,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -263,15 +239,15 @@
       <workItem from="1501758689182" duration="7292000" />
       <workItem from="1501937220164" duration="9223000" />
       <workItem from="1501961598691" duration="5850000" />
-      <workItem from="1501993626527" duration="30048000" />
+      <workItem from="1501993626527" duration="30644000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75264000" />
+    <option name="totallyTimeSpent" value="75860000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
