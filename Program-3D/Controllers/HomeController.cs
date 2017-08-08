@@ -4,25 +4,10 @@ using MongoDB.Driver;
 
 namespace Program_3D.Controllers
 {
-    using MongoDB.Bson;
-    using Newtonsoft.Json;
-    using System;
-    using System.Web.Script.Serialization;
-
-    using MongoDB.Bson.Serialization.Attributes;
-    using Newtonsoft.Json.Converters;
-    using Newtonsoft.Json.Linq;
-    using System.Collections.Generic;
-    using System.Dynamic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.ComponentModel.DataAnnotations;
-
     public class HomeController : Controller
     {
         // GET: Home
-        protected static IMongoClient _cliet;
+        protected static IMongoClient _client;
 
         protected static IMongoDatabase _database;
 
@@ -49,8 +34,8 @@ namespace Program_3D.Controllers
 
         static private void initDataBase()
         {
-            _cliet = new MongoClient(conn);
-            _database = _cliet.GetDatabase(dbName);      
+            _client = new MongoClient(conn);
+            _database = _client.GetDatabase(dbName);      
 
         }
 
