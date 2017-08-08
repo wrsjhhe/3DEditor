@@ -10,7 +10,8 @@ class TopBar {
             <ul id='menu'>
                 <li id='file'>文件
                     <ul>
-                        <li id="save"> 保存 </li>
+                        <li> 打开 </li>
+                        <li> 保存 </li>
                         <li> 导入文件
                             <input type='file' id='import' >
                         </li>
@@ -51,19 +52,7 @@ class TopBar {
             });
 
             $("#clear").click((e) => {
-                let length = scene.children.length;
-                for(let i = length-1;i >= 0;i--) {
-                    if (scene.children[i].type === "Mesh" ||scene.children[i].type === "Line") {
-
-                        scene.remove(scene.children[i]);
-                    }
-                }
-                objects = [];
-                dataArray = [];
-                console.log(dataArray)
-
-                INDEXDB.clearData(myDB.db,myDB.ojstore.name);
-                $("#objDiv").data("kendoGrid").dataSource.read();
+               new PROJECT.ClearAll();
             });
 
             $("#segment").click(function () {
@@ -80,31 +69,42 @@ class TopBar {
                 SOI.openWindow();
             });
 
+            $('#file').find("li")[0].addEventListener("click",function () {            //打开
 
-            $('#file').find("li")[0].addEventListener("click", function () {
+                $.ajax({
+                    type: 'post',
+                    url: '../Home/SearchData',
+                    dataType:'json',
+                    success: function (result) {
+                        new PROJECT.DownLoadObject(result,initModels);
+                    },
+                    error: function (message) {
+                        alert('error!');
+                    }
 
-                let ToJs = function () {
+                });
+
+            },false);
+
+
+            $('#file').find("li")[1].addEventListener("click", function () {    //保存
+
+                let ToJson = function () {
                     let attr = [];
                       for (let item in dataArray)
                        {
                            attr[item] = JSON.stringify(dataArray[item]);
                         }
-                       console.log(attr)
                      return attr;
-
-                  }
-                console.log(ToJs());
-
+                  };
                     let param = {
-                        Key:"123",
-                        Attr: ToJs()
+                        UserId:"123",
+                        Attr: ToJson()
                         
-                     //   Attr: [JSON.stringify({ a: 10, b: 20 }), JSON.stringify({ a: 100, b: 200 })]
                     };
-
                     $.ajax({
                         type: 'post',
-                        url: '../Home/ReceiveJson',
+                        url: '../Home/UpdateData',
                         data: param,
                         success: function (resule) {
                             alert('success');
@@ -112,11 +112,8 @@ class TopBar {
                         error: function (message) {
                             alert('error!');
                         }
-
                     });
-
-
-            }, false);
+            },false);
 
             $("#menu").kendoMenu();
 

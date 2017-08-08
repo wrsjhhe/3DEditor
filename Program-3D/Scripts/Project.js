@@ -192,7 +192,11 @@
                 let intersect = GetSelected(event,mouse,container);
                 if (intersect !== undefined) {
                     if (scene.getObjectByName("TempMesh") !== undefined)
+
+                    {
                         RemoveFromScene(scene.getObjectByName("TempMesh"));
+
+                    }
 
                     //根据鼠标与基准面位置确定绘图最终坐标
                     endX = intersect.point.x;
@@ -630,6 +634,7 @@
             mesh.name = 'TempMesh';
             scene.add(mesh);
 
+
         }
 
         //生成圆柱
@@ -860,11 +865,12 @@
                 RemoveFromScene(scene.children[i]);
             }
         }
-        objects = [];
-        dataArray = [];
+        objects.splice(0,length-1);
+        dataArray.splice(0,length-1);
+
+        $("#objDiv").data("kendoGrid").dataSource.read();
 
         INDEXDB.clearData(myDB.db,myDB.ojstore.name);
-        $("#objDiv").data("kendoGrid").dataSource.read();
 
     }
 
@@ -877,6 +883,18 @@
 
     }
 
+    function DownLoadObject(result,callback) {
+         result.Attr._v.forEach(function (e) {
+             if(e.geometry &&e.geometry.type === "ExtrudeGeometry") {
+                 getCustomizeData(e,result_Customize);
+             }else {
+                 getNormaldata(e,result_Normal);
+             }
+         })
+        callback();
+    }
+
+    exports.DownLoadObject = DownLoadObject;
     exports.RemoveFromScene = RemoveFromScene;
     exports.ClearAll = ClearAll;
     exports.DeleteObject = DeleteObject;

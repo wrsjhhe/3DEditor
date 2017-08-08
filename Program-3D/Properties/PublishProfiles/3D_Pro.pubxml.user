@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\website</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>08/04/2017 12:06:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>08/04/2017 12:06:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>08/04/2017 12:06:19</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Bson.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.Core.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/MongoDB.Driver.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>08/04/2017 12:06:21</publishTime>
+    </File>
+    <File Include="bin/Program-3D.dll">
+      <publishTime>08/07/2017 16:36:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.InteropServices.RuntimeInformation.dll">
+      <publishTime>08/04/2017 12:06:21</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>08/04/2017 12:06:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>08/04/2017 12:06:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>08/04/2017 12:06:21</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/EntityFramework.resources.dll">
+      <publishTime>08/04/2017 12:06:19</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.AspNet.Identity.Core.resources.dll">
+      <publishTime>08/04/2017 12:06:19</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.AspNet.Identity.EntityFramework.resources.dll">
+      <publishTime>08/04/2017 12:06:19</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/Microsoft.AspNet.Identity.Owin.resources.dll">
+      <publishTime>08/04/2017 12:06:19</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>08/04/2017 12:06:19</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Optimization.resources.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>08/04/2017 12:06:20</publishTime>
+    </File>
+    <File Include="Content/kendo.common.min.css">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Content/kendo.default.min.css">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Content/main.css">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/04/2017 16:14:51</publishTime>
+    </File>
+    <File Include="Scripts/controls/EditorControls.js">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Scripts/controls/TransformControls.js">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Scripts/exporters/OBJExporter.js">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Scripts/exporters/STLExporter.js">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Scripts/LeftSideBar.js">
+      <publishTime>08/07/2017 10:27:17</publishTime>
+    </File>
+    <File Include="Scripts/libs/jquery.min.js">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Scripts/libs/kendo.all.min.js">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Scripts/libs/three.js">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Scripts/loaders/OBJLoader.js">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Scripts/Main.js">
+      <publishTime>08/07/2017 09:55:24</publishTime>
+    </File>
+    <File Include="Scripts/modules/InitScene.js">
+      <publishTime>08/07/2017 08:49:25</publishTime>
+    </File>
+    <File Include="Scripts/modules/Loader.js">
+      <publishTime>08/07/2017 08:49:25</publishTime>
+    </File>
+    <File Include="Scripts/modules/ObjectStruct.js">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Scripts/modules/Segment.js">
+      <publishTime>08/07/2017 09:13:41</publishTime>
+    </File>
+    <File Include="Scripts/modules/Store.js">
+      <publishTime>08/04/2017 15:32:36</publishTime>
+    </File>
+    <File Include="Scripts/Project.js">
+      <publishTime>08/07/2017 11:57:35</publishTime>
+    </File>
+    <File Include="Scripts/RightSideBar.js">
+      <publishTime>08/07/2017 09:50:24</publishTime>
+    </File>
+    <File Include="Scripts/TopBar.js">
+      <publishTime>08/07/2017 16:28:38</publishTime>
+    </File>
+    <File Include="Scripts/Viewport.js">
+      <publishTime>08/07/2017 11:56:07</publishTime>
+    </File>
+    <File Include="Scripts/Window.js">
+      <publishTime>08/07/2017 08:49:25</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>08/07/2017 09:23:52</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>08/04/2017 14:41:08</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>08/04/2017 12:06:18</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/07/2017 16:36:55</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
