@@ -4,21 +4,6 @@ using MongoDB.Driver;
 
 namespace Program_3D.Controllers
 {
-    using MongoDB.Bson;
-    using Newtonsoft.Json;
-    using System;
-    using System.Web.Script.Serialization;
-
-    using MongoDB.Bson.Serialization.Attributes;
-    using Newtonsoft.Json.Converters;
-    using Newtonsoft.Json.Linq;
-    using System.Collections.Generic;
-    using System.Dynamic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.ComponentModel.DataAnnotations;
-
     public class HomeController : Controller
     {
         // GET: Home

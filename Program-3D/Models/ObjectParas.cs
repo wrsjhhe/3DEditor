@@ -1,16 +1,13 @@
 ﻿using System.Collections.Generic;
 using MongoDB.Bson;
 using System;
-using Newtonsoft.Json;
-using System.Web.Script.Serialization;
 using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Bson.Serialization;
 using System.Linq;
 
 namespace Program_3D.Models
 {
 
-   
+
     public class ObjectPara
     {
 
@@ -19,7 +16,6 @@ namespace Program_3D.Models
         [BsonIgnore]
         [NonSerialized]
         private List<string> attr = new List<string>();
-      //  private string attr = string.Empty;
         public object Attr
         {
             get

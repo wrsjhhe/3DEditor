@@ -190,7 +190,13 @@
                 let intersect = GetSelected(event,mouse,container);
                 if (intersect !== undefined) {
                     if (scene.getObjectByName("TempMesh") !== undefined)
+                    {
+                        scene.getObjectByName("TempMesh").geometry.dispose();
+                        scene.getObjectByName("TempMesh").material.dispose();
                         scene.remove(scene.getObjectByName("TempMesh")); //删除上一个鼠标位置的物体
+
+                    }
+
                     //根据鼠标与基准面位置确定绘图最终坐标
                     endX = intersect.point.x;
                     endZ = intersect.point.z;
@@ -630,6 +636,7 @@
             let mesh = new THREE.Mesh(geometry, material);
             mesh.name = 'TempMesh';
             scene.add(mesh);
+
 
         }
 
