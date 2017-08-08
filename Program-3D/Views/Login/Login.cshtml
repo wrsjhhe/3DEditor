@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Login";
+}
+
+<form method="post" action="SearchData">
+    <table>
+        <tr><td>账号</td><td><input type="text" name="accountNumber"></td></tr>
+        <tr><td>密码</td><td><input type="password" name="passWord"></td></tr>
+        <tr><td><input type="submit" value="登录"/></td><td><a href="../Registered/Registered">注册账号</a></td></tr>
+    </table>
+</form>
+
+

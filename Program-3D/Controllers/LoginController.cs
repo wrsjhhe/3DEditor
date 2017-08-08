@@ -16,7 +16,7 @@ namespace Program_3D.Controllers
 
         private const string tbName = "UserImformation";
         // GET: Login
-        public ActionResult Index()
+        public ActionResult Login()
         {
             InitDataBase();
             return View();
@@ -36,12 +36,12 @@ namespace Program_3D.Controllers
             var collection = _database.GetCollection<UserInformation>("UserImformation");
             var filter = Builders<UserInformation>.Filter.Eq("_id", model.accountNumber);
             var result = collection.Find(filter).ToList();
-            if ((result.Count == 0)&&(result[0].passWord != model.passWord))
+            if ((result.Count == 0)||(result[0].passWord != model.passWord))
             {
                 return "用户名或密码错误";
             }else
             {
-                return RedirectToRoute("Default", new { controller = "Home", action = "Index", accountNumber = model.accountNumber });
+                return RedirectToRoute("Default", new { controller = "Work", action = "Work", accountNumber = model.accountNumber });
             }
 
         }

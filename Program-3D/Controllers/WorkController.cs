@@ -6,7 +6,7 @@ using MongoDB.Bson.IO;
 
 namespace Program_3D.Controllers
 {
-    public class HomeController : Controller
+    public class WorkController : Controller
     {
         // GET: Home
         protected static IMongoClient _client;
@@ -22,7 +22,7 @@ namespace Program_3D.Controllers
      //   private const string tbName = "ObjectsPara";
 
         // GET: MongoDB
-        public ActionResult Index(string accountNumber)
+        public ActionResult Work(string accountNumber)
         {
             tbName = accountNumber;
             InitDataBase();
@@ -65,14 +65,9 @@ namespace Program_3D.Controllers
 
         static private void InitDataBase()
         {
-<<<<<<< HEAD
+
             _client = new MongoClient(conn);
             _database = _client.GetDatabase(dbName);      
-=======
-            _cliet = new MongoClient(conn);
-            _database = _cliet.GetDatabase("Program-3D");
->>>>>>> d642a788e2f7704617584b505793480c23b68102
-
         }
 
         
