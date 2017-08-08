@@ -1,6 +1,8 @@
 ﻿using System.Web.Mvc;
 using Program_3D.Models;
 using MongoDB.Driver;
+using MongoDB.Bson;
+using MongoDB.Bson.IO;
 
 namespace Program_3D.Controllers
 {
@@ -15,29 +17,60 @@ namespace Program_3D.Controllers
 
         private const string dbName = "Program-3D";
 
-        private const string tbName = "ObjectsPara";
-        // GET: MongoDB
-        public ActionResult Index()
-        {
+        protected static string tbName;
 
-            initDataBase();
+     //   private const string tbName = "ObjectsPara";
+
+        // GET: MongoDB
+        public ActionResult Index(string accountNumber)
+        {
+            tbName = accountNumber;
+            InitDataBase();
+            _database.CreateCollection(tbName);
             return View();
         }
 
 
-        public string ReceiveJson(ObjectPara model)
+        public void ReceiveData(ObjectPara model)
         {
-           _database.GetCollection<ObjectPara>("ObjectPara").InsertOne(model);
-            return "";
+            var collection = _database.GetCollection<ObjectPara>(tbName);
+            collection.InsertOne(model);
 
         }
 
-        static private void initDataBase()
+        public void UpdateData(ObjectPara model)
+        {
+            var collection = _database.GetCollection<BsonDocument>(tbName);
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", "123");
+            var update = Builders<BsonDocument>.Update.Set("Attr", model.Attr).CurrentDate("lastModified");
+            var result = collection.UpdateOne(filter, update);
+        }
+
+        public string SearchData()
+        {
+            var collection = _database.GetCollection<BsonDocument>(tbName);
+            var filter = Builders<BsonDocument>.Filter.Eq("_id","123");
+            var result = collection.Find(filter).ToList();
+            if (result.Count != 0)
+            {
+                var jsonWriterSettings = new JsonWriterSettings { OutputMode = JsonOutputMode.Strict };
+                return result[0].ToJson(jsonWriterSettings);               
+            }
+            else
+            {
+                return "error";
+            }
+            
+        }
+
+        static private void InitDataBase()
         {
             _cliet = new MongoClient(conn);
-            _database = _cliet.GetDatabase(dbName);      
+            _database = _cliet.GetDatabase("Program-3D");
 
         }
+
+        
 
     }
 

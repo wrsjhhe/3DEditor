@@ -7,10 +7,10 @@ using System.Linq;
 namespace Program_3D.Models
 {
 
-
+    [BsonIgnoreExtraElements]
     public class ObjectPara
     {
-
+        [BsonId]
         public string UserId { get; set; }
 
         [BsonIgnore]
@@ -18,6 +18,7 @@ namespace Program_3D.Models
         private List<string> attr = new List<string>();
         public object Attr
         {
+
             get
             { 
                 if (attr.Count() != 0)

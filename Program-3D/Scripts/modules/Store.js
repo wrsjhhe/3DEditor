@@ -117,14 +117,18 @@ let INDEXDB = {
             if (cursor) {
 
                 if(cursor.value.geometry &&cursor.value.geometry.type === "ExtrudeGeometry") {
-                    getCustomizeData(cursor,result_Customize);
+                    getCustomizeData(cursor.value,result_Customize);
                     cursor.continue();
                 }else {
-                    getNormaldata(cursor,result_Normal);
+                    getNormaldata(cursor.value,result_Normal);
                     cursor.continue();
                 }
             }else {
                 callBack();
+                for(let i in result_Normal){
+                    result_Normal[i] = [];
+                    result_Customize[i] = [];
+                }
             }
         }
 
@@ -143,33 +147,33 @@ let INDEXDB = {
     }
 };
 
-function getNormaldata(cursor,result) {
+function getNormaldata(cursorValue,result) {
 
-    result.position.push(cursor.value.position);
-    result.scale.push(cursor.value.scale);
-    result.rotation.push(cursor.value.rotation);
+    result.position.push(cursorValue.position);
+    result.scale.push(cursorValue.scale);
+    result.rotation.push(cursorValue.rotation);
 
     result.materials.push({
-        id:cursor.value.keyId,
-        material: cursor.value.materials.material,
-        textureSrc:cursor.value.materials.textureSrc
+        id:cursorValue.keyId,
+        material: cursorValue.materials.material,
+        textureSrc:cursorValue.materials.textureSrc
     });
 
-    result.objects.push(cursor.value.obj);
+    result.objects.push(cursorValue.obj);
 
-    result.geometries.push(cursor.value.geometry);
+    result.geometries.push(cursorValue.geometry);
 
-    result.keyId.push(cursor.value.keyId);
-    result.name.push(cursor.value.name);
-    result.text.push(cursor.value.text);
+    result.keyId.push(cursorValue.keyId);
+    result.name.push(cursorValue.name);
+    result.text.push(cursorValue.text);
 
 }
 
-function getCustomizeData(cursor,result) {
+function getCustomizeData(cursorValue,result) {
 
     getNormaldata.apply(this,arguments);
 
-    result.geometries.push(cursor.value.geometry);
+    result.geometries.push(cursorValue.geometry);
 
 }
 
