@@ -70,10 +70,10 @@ class TopBar {
             });
 
             $('#file').find("li")[0].addEventListener("click",function () {            //打开
-
+                new PROJECT.ClearAll();
                 $.ajax({
                     type: 'post',
-                    url: '../Home/SearchData',
+                    url: '../Work/SearchData',
                     dataType:'json',
                     success: function (result) {
                         new PROJECT.DownLoadObject(result,initModels);
@@ -99,12 +99,11 @@ class TopBar {
                   };
                     let param = {
                         UserId:"123",
-                        Attr: ToJson()
-                        
+                        Attr: ToJson()              
                     };
                     $.ajax({
                         type: 'post',
-                        url: '../Home/UpdateData',
+                        url: '../Work/ReceiveData',
                         data: param,
                         success: function (resule) {
                             alert('success');

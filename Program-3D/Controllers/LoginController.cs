@@ -14,39 +14,32 @@ namespace Program_3D.Controllers
 
         private const string dbName = "Program-3D";
 
-        private const string tbName = "UserImformation";
+        private const string tbName = "UserInformation";
         // GET: Login
         public ActionResult Login()
         {
             InitDataBase();
             return View();
         }
-
-        public string ReceiveData(UserInformation model)
-        {
-             
-            var collection = _database.GetCollection<UserInformation>("UserImformation");
-            collection.InsertOne(model);
-            return "";
-
-        }
          
-        public dynamic SearchData(UserInformation model)
+        public ActionResult SearchData(UserInformation model)
         {
-            var collection = _database.GetCollection<UserInformation>("UserImformation");
+            var collection = _database.GetCollection<UserInformation>(tbName);
             var filter = Builders<UserInformation>.Filter.Eq("_id", model.accountNumber);
             var result = collection.Find(filter).ToList();
             if ((result.Count == 0)||(result[0].passWord != model.passWord))
             {
-                return "用户名或密码错误";
-            }else
+                return this.Content("<script>alert('用户名或密码错误')</script>");
+            }
+            else
             {
-                return RedirectToRoute("Default", new { controller = "Work", action = "Work", accountNumber = model.accountNumber });
+                // return RedirectToRoute("Work", new { controller = "Work", action = "Work", accountNumber = model.accountNumber });
+                return RedirectToAction("../Work/Work",new { accountNumber = model.accountNumber });
             }
 
         }
 
-        static private void InitDataBase()
+        private void InitDataBase()
         {
             _cliet = new MongoClient(conn);
             _database = _cliet.GetDatabase(dbName);

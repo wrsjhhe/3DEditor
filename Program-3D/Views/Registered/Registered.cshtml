@@ -4,6 +4,31 @@
 @{
     ViewBag.Title = "Registered";
 }
-
-
+<form id="createAccount">
+    <table>
+        <tr><td>账号</td><td><input class="createAccount" type="text" name="accountNumber"></td></tr>
+        <tr><td>密码</td><td><input class="createAccount" type="password" name="passWord"></td></tr>
+        <tr><td>确认密码</td><td><input class="createAccount" type="password" name="rePassWord"></td></tr>
+        <tr><td><button onclick="sumit()">确认</button></td></tr>
+    </table>
+</form>
+<script> 
+    function sumit() {
+        let account = $(".createAccount")[0].value;
+        let passWord = $(".createAccount")[1].value;
+        let rePassWord = $(".createAccount")[2].value;
+        if (account) {
+            if (passWord && rePassWord) {
+                if (passWord === rePassWord) {
+                    let form = document.getElementById("createAccount");
+                    form.method = "post";
+                    form.action = "ReceiveInformation";
+                    form.submit();
+                } else { alert("两次输入的密码不一致") }
+            } else if (!passWord || (!passWord && !rePassWord)) { alert("请输入密码") }
+            else { alert("请输入确认密码") }
+        } else { alert("请输入账号")}
+        
+    }
+</script>
 

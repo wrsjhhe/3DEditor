@@ -3,6 +3,7 @@ using Program_3D.Models;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using MongoDB.Bson.IO;
+using System;
 
 namespace Program_3D.Controllers
 {
@@ -17,39 +18,45 @@ namespace Program_3D.Controllers
 
         private const string dbName = "Program-3D";
 
-        protected static string tbName;
+        protected static string tbName = "ObjectPara";
 
-     //   private const string tbName = "ObjectsPara";
+        protected static string account;
 
         // GET: MongoDB
         public ActionResult Work(string accountNumber)
         {
-            tbName = accountNumber;
+            account = accountNumber;
             InitDataBase();
-            _database.CreateCollection(tbName);
             return View();
         }
 
 
         public void ReceiveData(ObjectPara model)
         {
-            var collection = _database.GetCollection<ObjectPara>(tbName);
-            collection.InsertOne(model);
+            model.UserId = account;           
+            try
+            {
+                var collection = _database.GetCollection<ObjectPara>(tbName);
+                collection.InsertOne(model);
+            }
+            catch (Exception e)
+            { 
+                var collection = _database.GetCollection<BsonDocument>(tbName);
+                var filter = Builders<BsonDocument>.Filter.Eq("_id", account);
+                var update = Builders<BsonDocument>.Update.Set("Attr", model.Attr).CurrentDate("lastModified");
+                var result = collection.UpdateOne(filter, update);
+
+            }
 
         }
-
-        public void UpdateData(ObjectPara model)
+        /// <summary>
+        /// 找到数据并返回
+        /// </summary>
+        /// <returns></returns>
+        public string SearchData()                         
         {
             var collection = _database.GetCollection<BsonDocument>(tbName);
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", "123");
-            var update = Builders<BsonDocument>.Update.Set("Attr", model.Attr).CurrentDate("lastModified");
-            var result = collection.UpdateOne(filter, update);
-        }
-
-        public string SearchData()
-        {
-            var collection = _database.GetCollection<BsonDocument>(tbName);
-            var filter = Builders<BsonDocument>.Filter.Eq("_id","123");
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", account);
             var result = collection.Find(filter).ToList();
             if (result.Count != 0)
             {
@@ -63,11 +70,10 @@ namespace Program_3D.Controllers
             
         }
 
-        static private void InitDataBase()
+         private void InitDataBase()
         {
-
             _client = new MongoClient(conn);
-            _database = _client.GetDatabase(dbName);      
+            _database = _client.GetDatabase(dbName);
         }
 
         

@@ -196,10 +196,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Work\Index.cshtml" />
+    <Content Include="Views\Work\Work.cshtml" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\3D_Pro.pubxml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Registered\Registered.cshtml" />
