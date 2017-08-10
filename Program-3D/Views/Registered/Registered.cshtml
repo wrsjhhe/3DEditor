@@ -4,14 +4,17 @@
 @{
     ViewBag.Title = "Registered";
 }
-<form id="createAccount">
-    <table>
-        <tr><td>账号</td><td><input class="createAccount" type="text" name="accountNumber"></td></tr>
-        <tr><td>密码</td><td><input class="createAccount" type="password" name="passWord"></td></tr>
-        <tr><td>确认密码</td><td><input class="createAccount" type="password" name="rePassWord"></td></tr>
-        <tr><td><button onclick="sumit()">确认</button></td></tr>
-    </table>
-</form>
+<div>
+    <form id="createAccount">
+        <table>
+            <tr><td>账号</td><td><input class="createAccount" type="text" name="accountNumber"></td></tr>
+            <tr><td>密码</td><td><input class="createAccount" type="password" name="passWord"></td></tr>
+            <tr><td>确认密码</td><td><input class="createAccount" type="password" name="rePassWord"></td></tr>
+            <tr><td><button onclick="sumit()">确认</button></td></tr>
+        </table>
+    </form>
+</div>
+
 <script> 
     function sumit() {
         let account = $(".createAccount")[0].value;
