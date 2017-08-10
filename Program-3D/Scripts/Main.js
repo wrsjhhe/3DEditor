@@ -1,13 +1,14 @@
-let objects = PROJECT.objects;
-let dataArray = PROJECT.dataArray;
-let cameraControls = PROJECT.cameraControls;
-let transformControls = PROJECT.transformControls;
-let uuid = PROJECT.uuid;
-let scene = PROJECT.scene;
-let sceneHelpers = PROJECT.sceneHelpers;
-let objectProperty = PROJECT.objectProperty;
-let renderer = PROJECT.renderer;
-let camera = PROJECT.camera;
+let objects =  PROJECT.Param.objects;
+let dataArray = PROJECT.Param.dataArray;
+let cameraControls = PROJECT.Param.cameraControls;
+let transformControls = PROJECT.Param.transformControls;
+let selectObjectControls = PROJECT.Param.selectObjectControls;
+let uuid = PROJECT.Param.uuid;
+let scene = PROJECT.Param.scene;
+let sceneHelpers = PROJECT.Param.sceneHelpers;
+let objectProperty = PROJECT.Param.objectProperty;
+let renderer = PROJECT.Param.renderer;
+let camera = PROJECT.Param.camera;
 
 
 {

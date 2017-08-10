@@ -95,7 +95,7 @@
 
     }
 
-    function ClickAddGraph(scene,container) {
+    function ClickAddGraph(scene,container,selectCotroller) {
 
         let startX, startZ, endX, endY, endZ; //声明起始点与结束点X,Y坐标
         let mouse = new THREE.Vector2(); //定义一个Vector2D对象存储鼠标屏幕坐标
@@ -152,6 +152,7 @@
         //点击两次生成，包含二维图形与球体
         this.twoClick = function (ModelType,objects,dataArray,objectProperty) {
 
+            selectCotroller.remove();
             $(container).bind("mousedown",startComputeDistance);
 
             //鼠标按下开始绘图
@@ -212,9 +213,12 @@
                             createModels3D(ModelType);  //生成新3D的物体
                             ( scene.getObjectByName("TempMesh") !== undefined) && (scene.getObjectByName("TempMesh").material.wireframe = true);
                             break;
-                        case "line":
                         case "circle":
                         case "plane":
+                            createModels2D(ModelType); //生成新2D的物体
+                            ( scene.getObjectByName("TempMesh") !== undefined) && (scene.getObjectByName("TempMesh").material.wireframe = true);
+                            break;
+                        case "line":
                             createModels2D(ModelType); //生成新2D的物体
                             break;
                     }
@@ -253,6 +257,7 @@
                     case "line":
                     case "circle":
                     case "plane":
+                    case "shape":
                         createModels2D(ModelType);   //生成新2D的物体
                         break;
 
@@ -262,6 +267,7 @@
             //    closeWindow(ModelType);
 
                 container.removeEventListener('mousedown', endComputeDistance, false);   //移除鼠标事件
+                selectCotroller.active();
             }
 
 
@@ -269,7 +275,7 @@
 
         //以三个点生成几何体，包含长方体、圆柱体、圆锥体等
         this.threeClick = function (ModelType,objects,dataArray,objectProperty) {
-
+            selectCotroller.remove();
             $(container).bind("mousedown",startComputeDistance);
             //鼠标按下开始绘图
             function startComputeDistance(event) {
@@ -290,7 +296,6 @@
             //鼠标移动生成底面
             function moving1() {
                 $(container).unbind("mousedown",startComputeDistance);
-                if (event.button !== 0) return; //如果不是鼠标左键点击return
                 document.addEventListener("keydown", quit, false);
                 function quit(e) {
                     if (e.which === 27) {
@@ -321,18 +326,18 @@
             function drawFloor() {
                 switch (ModelType) {
                     case "cuboid":
-                        createModels2D("shape");         //生成底板
+                        createModels3D("cuboid");         //生成底板
                         break;
                     case "cylinder":
-                        createModels2D("circle");
+                        createModels3D("cylinder");
                         break;
                     case "cone":
-                        createModels2D("circle");
+                        createModels3D("cone");
                         break;
                 }
             }
             function finishFloor() {
-
+                if (event.button !== 0) return; //如果不是鼠标左键点击return
                 container.removeEventListener("mousemove", moving1, false);
 
                 drawFloor(ModelType);
@@ -404,6 +409,7 @@
               //  closeWindow(ModelType);
 
                 container.removeEventListener("mousedown", endComputeDistance, false);
+                selectCotroller.active();
 
             }
 
@@ -513,7 +519,7 @@
             let mesh = new THREE.Mesh(geometry, material);
 
             mesh.name = 'TempMesh';
-            Project.scene.add(mesh);
+            scene.add(mesh);
 
 
         }
@@ -548,6 +554,7 @@
 
         //生成长方体
         function createCuboid() {
+            if(endY===undefined)endY=0.0000001;
             //定义Shape的路径
             let shape = new THREE.Shape();
             shape.moveTo(startX, startZ); //起始点
@@ -639,7 +646,7 @@
 
         //生成圆柱
         function createCylinder() {
-
+            if(endY===undefined)endY=0.0000001; 
             let r;
             r = Math.sqrt((endX - startX) * (endX - startX) + (endZ - startZ) * (endZ - startZ));  //确定圆的半径
 
@@ -663,7 +670,7 @@
 
         //圆锥
         function createCone() {
-
+            if(endY===undefined)endY=0.0000001;
             let r;
             r = Math.sqrt((endX - startX) * (endX - startX) + (endZ - startZ) * (endZ - startZ));
 
@@ -699,10 +706,10 @@
             let Geom4 = LinesToFace(lineCurve3,lineCurve4,num);
 
             let colors = [];
+            let faceColor = [0x0f0000,0x0ff000,0x0fff00,0x0ffff0,0x0fffff,0xffffff];
             for(let i = 0;i < num+1;i++)
             {
-                let faceColor = Math.random() * 0xffffff;
-                colors[i] = new THREE.Color(faceColor);
+                colors[i] = new THREE.Color(faceColor[i]);
             }
 
             for (let i = 0; i < num; i++) {
@@ -784,51 +791,60 @@
         return geometry;
     }
 
-    function SelectObject(event,uuid,ifSelected,cancelSelected) {
+    function SelectObject(DOM,ifSelected,cancelSelected) {
 
-        for(let i in dataArray)
-        {
-            if( dataArray[i].uuid === uuid)
-            {
+        this.active = function(){
+            DOM.bind('click',select)
+        }
 
-                objects[i].position.x = objects[i].matrixWorld.elements[12];
-                objects[i].position.y = objects[i].matrixWorld.elements[13];
-                objects[i].position.z = objects[i].matrixWorld.elements[14];
+        this.remove = function(){
+            DOM.unbind('click',select)
+        }
 
-                dataArray[i].position = JSON.stringify(objects[i].position);
-                dataArray[i].scale = JSON.stringify(objects[i].scale);
-                dataArray[i].rotation = JSON.stringify(objects[i].rotation);
+        function select(event) {
+            for (let i in dataArray) {
+                if (dataArray[i].uuid === uuid) {
 
-                if(dataArray[i].type!=="Group")
-                    dataArray[i].materials.material = JSON.stringify(objects[i].material.toJSON());
+                    objects[i].position.x = objects[i].matrixWorld.elements[12];
+                    objects[i].position.y = objects[i].matrixWorld.elements[13];
+                    objects[i].position.z = objects[i].matrixWorld.elements[14];
 
-                INDEXDB.putData(myDB.db,myDB.ojstore.name,dataArray);
+                    dataArray[i].position = JSON.stringify(objects[i].position);
+                    dataArray[i].scale = JSON.stringify(objects[i].scale);
+                    dataArray[i].rotation = JSON.stringify(objects[i].rotation);
+
+                    if (dataArray[i].type !== "Group")
+                        dataArray[i].materials.material = JSON.stringify(objects[i].material.toJSON());
+
+                    INDEXDB.putData(myDB.db, myDB.ojstore.name, dataArray);
+
+                }
+            }
+            uuid = null;
+            event.preventDefault();
+            if (event.button !== 0) return; //如果不是鼠标左键点击return
+            let mouse = new THREE.Vector2();
+            //确定鼠标按下时的屏幕坐标
+            mouse.x = ((event.clientX / window.innerWidth) * 2 - 1) / (document.getElementById("viewport").clientWidth / window.innerWidth);
+            mouse.y = (- (event.clientY / window.innerHeight) * 2 + 1) / (document.getElementById("viewport").clientHeight / window.innerHeight);
+
+            let raycaster = new THREE.Raycaster(); //定义一条射线
+            raycaster.setFromCamera(mouse, camera); //射线从相机到鼠标位置
+            let intersects = raycaster.intersectObjects(objects, true);//定义射线可以相交的物体，设定为true可以判断是否与objects的子对象相交
+
+            if (intersects.length > 0) {
+
+                let selected = intersects[0].object.parent instanceof THREE.Scene ? intersects[0].object : intersects[0].object.parent;
+
+                console.log(selected);
+                ifSelected(selected);
 
             }
+            else {
+                cancelSelected();
+            }
         }
-        uuid = null;
-        event.preventDefault();
-        if(event.button !== 0) return; //如果不是鼠标左键点击return
-        let mouse = new THREE.Vector2();
-        //确定鼠标按下时的屏幕坐标
-        mouse.x = (( event.clientX / window.innerWidth ) * 2 - 1)/(document.getElementById("viewport").clientWidth/window.innerWidth);
-        mouse.y = (- ( event.clientY / window.innerHeight ) * 2 + 1)/(document.getElementById("viewport").clientHeight/window.innerHeight);
-
-        let raycaster = new THREE.Raycaster(); //定义一条射线
-        raycaster.setFromCamera( mouse, camera ); //射线从相机到鼠标位置
-        let intersects = raycaster.intersectObjects(objects,true);//定义射线可以相交的物体，设定为true可以判断是否与objects的子对象相交
-
-        if ( intersects.length > 0 ){
-
-            let selected = intersects[ 0 ].object.parent instanceof THREE.Scene?intersects[ 0 ].object:intersects[ 0 ].object.parent;
-
-            console.log(selected);
-            ifSelected(selected );
-
-        }
-        else {
-            cancelSelected();
-        }
+       
     }
 
     function DeleteObject(e,flag) {
@@ -894,6 +910,20 @@
         callback();
     }
 
+    let Param = {
+        camera : new THREE.PerspectiveCamera( 50, 1, 0.1, 1000000 ),
+        renderer : new THREE.WebGLRenderer({antialias:true}),
+        objects :[],
+        dataArray:[],
+        cameraControls : null,
+        transformControls:null,
+        selectObjectControls:null,
+        uuid : null,
+        scene:new THREE.Scene(),
+        sceneHelpers:new THREE.Scene(),
+        objectProperty:{}
+    }
+
     exports.DownLoadObject = DownLoadObject;
     exports.RemoveFromScene = RemoveFromScene;
     exports.ClearAll = ClearAll;
@@ -908,16 +938,7 @@
     exports.LinesToFace = LinesToFace;
     exports.SelectObject = SelectObject;
 
-    exports.camera = new THREE.PerspectiveCamera( 50, 1, 0.1, 1000000 );
-    exports.renderer = new THREE.WebGLRenderer({antialias:true});
-    exports.objects =[];
-    exports.dataArray=[];
-    exports.cameraControls = null;
-    exports.transformControls=null;
-    exports.uuid = null;
-    exports.scene=new THREE.Scene();
-    exports.sceneHelpers=new THREE.Scene();
-    exports.objectProperty={};
+    exports.Param = Param;
 
 
 }));

@@ -4,11 +4,42 @@
 @{
     ViewBag.Title = "Login";
 }
+<div>
+    <form class="login">
+        <table>
+            <tr><td>账号</td><td><input class="login" type="text" name="accountNumber"></td></tr>
+            <tr><td>密码</td><td><input class="login" type="password" name="passWord"></td></tr>
+        </table>
+    </form> 
+       <button onclick="submit()" class="login">登录</button><a href="../Registered/Registered">注册账号</a> 
+</div>
+<script>
+function submit()
+{
+    let accountNumber = $('.login input')[0].value;
+    let passWord = $('.login input')[1].value;
+    $.ajax({
+        type: 'post',
+        url: 'Login/SearchData',
+        dataType: 'json',
+        data: { accountNumber: accountNumber, passWord: passWord },
+        success: function (result) {
+            if(result === 0)
+            {
+                alert("用户名或密码错误");
+            }
+            else {
+                $("form.login")[0].action = "Login/ToWorkSpace";
+                $("form.login")[0].method = "post";
+                $("form.login")[0].submit();
+            }
+        },
+        error: function (message) {
+            alert('error!');
+        }
 
-<form method="post" action="../Login/SearchData">
-    <table>
-        <tr><td>账号</td><td><input type="text" name="accountNumber"></td></tr>
-        <tr><td>密码</td><td><input type="password" name="passWord"></td></tr>
-        <tr><td><input id="login" type="submit" value="登录"/></td><td><a href="../Registered/Registered">注册账号</a></td></tr>
-    </table>
-</form>
+    })
+}
+
+
+</script>

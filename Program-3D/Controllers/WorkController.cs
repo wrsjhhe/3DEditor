@@ -23,7 +23,7 @@ namespace Program_3D.Controllers
         protected static string account;
 
         // GET: MongoDB
-        public ActionResult Work(string accountNumber)
+        public ActionResult WorkSpace(string accountNumber)
         {
             account = accountNumber;
             InitDataBase();

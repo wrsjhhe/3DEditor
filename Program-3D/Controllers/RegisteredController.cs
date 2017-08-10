@@ -26,7 +26,7 @@ namespace Program_3D.Controllers
         {
             var collection = _database.GetCollection<UserInformation>(tbName);
             collection.InsertOne(model);
-            return RedirectToAction("../Login/Login");
+            return RedirectToRoute(new { controller = "Login", action = "Login" });
 
         }
 

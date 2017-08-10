@@ -22,21 +22,26 @@ namespace Program_3D.Controllers
             return View();
         }
          
-        public ActionResult SearchData(UserInformation model)
+        public string SearchData(UserInformation model)
         {
             var collection = _database.GetCollection<UserInformation>(tbName);
             var filter = Builders<UserInformation>.Filter.Eq("_id", model.accountNumber);
             var result = collection.Find(filter).ToList();
             if ((result.Count == 0)||(result[0].passWord != model.passWord))
             {
-                return this.Content("<script>alert('用户名或密码错误')</script>");
+                return "0";
             }
             else
             {
-                // return RedirectToRoute("Work", new { controller = "Work", action = "Work", accountNumber = model.accountNumber });
-                return RedirectToAction("../Work/Work",new { accountNumber = model.accountNumber });
+                // return RedirectToRoute("Work", new { controller = "Work", action = "Work", accountNumber = model.accountNumber }); 
+                return "1";
             }
 
+        }
+        public ActionResult ToWorkSpace(UserInformation model)
+        {
+            //return RedirectToAction("/Work/WorkSpace", new { accountNumber = model.accountNumber });
+            return RedirectToRoute( new { controller = "Work", action = "WorkSpace", accountNumber = model.accountNumber });
         }
 
         private void InitDataBase()

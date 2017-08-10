@@ -61,7 +61,6 @@ class Viewport {
 
          sceneHelpers.add(transformControls);
 
-
          function animate() {
              requestAnimationFrame(animate);
              render(renderer,camera,scene,sceneHelpers);
@@ -72,10 +71,10 @@ class Viewport {
              new PROJECT.WindowResized(renderer,render(renderer,camera,scene,sceneHelpers),camera,document.getElementById("viewport"));
          }, false);
          new PROJECT.WindowResized(renderer,render(renderer,camera,scene,sceneHelpers),camera,document.getElementById("viewport"));
+ 
 
-         $("#viewport").click((event) => {
-             new PROJECT.SelectObject(event,uuid,ifSelected,cancelSelected);
-         });
+         selectObjectControls= new PROJECT.SelectObject($("#viewport"),ifSelected,cancelSelected);
+         selectObjectControls.active();
 
          document.addEventListener("keydown",deleteObject,false);
          function deleteObject(e) {

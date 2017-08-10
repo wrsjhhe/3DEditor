@@ -198,7 +198,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Work\Work.cshtml" />
+    <Content Include="Views\Work\WorkSpace.cshtml" />
     <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\3D_Pro.pubxml" />
     <Content Include="Views\Login\Login.cshtml" />

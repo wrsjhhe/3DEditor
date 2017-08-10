@@ -32,58 +32,49 @@ class LeftSideBar{
             </ul>
             
         `);
-
-
-
+        let clickAddGraph = new PROJECT.ClickAddGraph(scene,document.getElementById("viewport"),selectObjectControls);
+    
         $('#line').click(()=>{
             $("#viewport").unbind("mousedown");
-            let clickAddGraph = new PROJECT.ClickAddGraph(scene,document.getElementById("viewport"));
             clickAddGraph.twoClick("line",objects,dataArray,objectProperty);
         });
 
         $('#plane').click(()=>{
             $("#viewport").unbind("mousedown");
-          //  let clickAddGraph = new PROJECT.ClickAddGraph(scene,document.getElementById("viewport"));
-          //  clickAddGraph.twoClick("plane",objects,dataArray,objectProperty);
+            clickAddGraph.twoClick("plane",objects,dataArray,objectProperty);
         });
 
         $('#circle').click(()=>{
             $("#viewport").unbind("mousedown");
-            let clickAddGraph = new PROJECT.ClickAddGraph(scene,document.getElementById("viewport"));
             clickAddGraph.twoClick("circle",objects,dataArray,objectProperty);
         });
 
         $('#cuboid').click(()=>{
             $("#viewport").unbind("mousedown");
-            let clickAddGraph = new PROJECT.ClickAddGraph(scene,document.getElementById("viewport"));
             clickAddGraph.threeClick("cuboid",objects,dataArray,objectProperty);
            // cWindow.openWindow("cuboid");
         });
 
         $('#cylinder').click(()=>{
             $("#viewport").unbind("mousedown");
-            let clickAddGraph = new PROJECT.ClickAddGraph(scene,document.getElementById("viewport"));
             clickAddGraph.threeClick("cylinder",objects,dataArray,objectProperty);
           //  cWindow.openWindow("cylinder");
         });
 
         $('#sphere').click(()=>{
             $("#viewport").unbind("mousedown");
-            new PROJECT.ClickAddGraph(scene,document.getElementById("viewport"))
-                .twoClick("sphere",objects,dataArray,objectProperty);
+            clickAddGraph.twoClick("sphere",objects,dataArray,objectProperty);
           //  cWindow.openWindow("sphere");
         });
 
         $('#cone').click(()=>{
             $("#viewport").unbind("mousedown");
-            let clickAddGraph = new PROJECT.ClickAddGraph(scene,document.getElementById("viewport"));
             clickAddGraph.threeClick("cone",objects,dataArray,objectProperty);
           //  cWindow.openWindow("cone");
         });
 
         $('#roadWay').click(()=>{
             $("#viewport").unbind("mousedown");
-            let clickAddGraph = new PROJECT.ClickAddGraph(scene,document.getElementById("viewport"));
             clickAddGraph.twoClick("roadWay",objects,dataArray,objectProperty);
         });
 
