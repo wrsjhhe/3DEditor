@@ -1,17 +1,15 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@{
-    ViewBag.Title = "Registered";
-}
-<form id="createAccount">
+<title>Registered</title>
+<form id="createAccountForm">
     <table>
         <tr><td>账号</td><td><input class="createAccount" type="text" name="accountNumber"></td></tr>
         <tr><td>密码</td><td><input class="createAccount" type="password" name="passWord"></td></tr>
         <tr><td>确认密码</td><td><input class="createAccount" type="password" name="rePassWord"></td></tr>
-        <tr><td><button onclick="sumit()">确认</button></td></tr>
     </table>
 </form>
+<tr><td><button onclick="sumit()">确认</button></td></tr>
 <script> 
     function sumit() {
         let account = $(".createAccount")[0].value;
@@ -20,7 +18,7 @@
         if (account) {
             if (passWord && rePassWord) {
                 if (passWord === rePassWord) {
-                    let form = document.getElementById("createAccount");
+                    let form = document.getElementById("createAccountForm");
                     form.method = "post";
                     form.action = "ReceiveInformation";
                     form.submit();

@@ -29,12 +29,12 @@ namespace Program_3D.Controllers
             var result = collection.Find(filter).ToList();
             if ((result.Count == 0)||(result[0].passWord != model.passWord))
             {
-                return this.Content("<script>alert('用户名或密码错误')</script>");
+                return this.Content("用户名或密码错误");
             }
             else
             {
-                // return RedirectToRoute("Work", new { controller = "Work", action = "Work", accountNumber = model.accountNumber });
-                return RedirectToAction("../Work/Work",new { accountNumber = model.accountNumber });
+                // return RedirectToRoute("Work", new { controller = "Work", action = "Work", accountNumber = model.accountNumber });              
+                return RedirectToAction("../Work/Work", new { accountNumber = model.accountNumber });
             }
 
         }
