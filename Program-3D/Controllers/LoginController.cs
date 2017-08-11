@@ -25,23 +25,21 @@ namespace Program_3D.Controllers
         public string SearchData(UserInformation model)
         {
             var collection = _database.GetCollection<UserInformation>(tbName);
-            var filter = Builders<UserInformation>.Filter.Eq("_id", model.accountNumber);
+            var filter = Builders<UserInformation>.Filter.Eq("_id", model.UserName);
             var result = collection.Find(filter).ToList();
-            if ((result.Count == 0)||(result[0].passWord != model.passWord))
+            if ((result.Count == 0)||(result[0].Password != model.Password))
             {
                 return "0";
             }
             else
             {
-                // return RedirectToRoute("Work", new { controller = "Work", action = "Work", accountNumber = model.accountNumber }); 
                 return "1";
             }
 
         }
         public ActionResult ToWorkSpace(UserInformation model)
         {
-            //return RedirectToAction("/Work/WorkSpace", new { accountNumber = model.accountNumber });
-            return RedirectToRoute( new { controller = "Work", action = "WorkSpace", accountNumber = model.accountNumber });
+            return RedirectToRoute( new { controller = "Work", action = "WorkSpace", accountNumber = model.UserName });
         }
 
         private void InitDataBase()
@@ -50,5 +48,7 @@ namespace Program_3D.Controllers
             _database = _cliet.GetDatabase(dbName);
 
         }
+
+
     }
 }

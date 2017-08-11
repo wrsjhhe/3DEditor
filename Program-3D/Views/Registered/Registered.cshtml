@@ -1,37 +1,64 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@model Program_3D.Models.UserInformation
+
 @{
-    ViewBag.Title = "Registered";
+    Layout = null;
 }
-<div>
-    <form id="createAccount">
-        <table>
-            <tr><td>账号</td><td><input class="createAccount" type="text" name="accountNumber"></td></tr>
-            <tr><td>密码</td><td><input class="createAccount" type="password" name="passWord"></td></tr>
-            <tr><td>确认密码</td><td><input class="createAccount" type="password" name="rePassWord"></td></tr>
-            <tr><td><button onclick="sumit()">确认</button></td></tr>
-        </table>
-    </form>
-</div>
 
-<script> 
-    function sumit() {
-        let account = $(".createAccount")[0].value;
-        let passWord = $(".createAccount")[1].value;
-        let rePassWord = $(".createAccount")[2].value;
-        if (account) {
-            if (passWord && rePassWord) {
-                if (passWord === rePassWord) {
-                    let form = document.getElementById("createAccount");
-                    form.method = "post";
-                    form.action = "ReceiveInformation";
-                    form.submit();
-                } else { alert("两次输入的密码不一致") }
-            } else if (!passWord || (!passWord && !rePassWord)) { alert("请输入密码") }
-            else { alert("请输入确认密码") }
-        } else { alert("请输入账号")}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-theme.css" />
+    <script src="~/Scripts/libs/jquery.min.js"></script>
+    <script src="~/Scripts/libs/jquery.validate.js"></script>
+    <script src="~/Scripts/libs/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/libs/jquery.unobtrusive-ajax.js"></script>
+    <title>Registered</title>
+    <style>
+        body{
+            text-align:center;   
+        }
+        .validation-summary-errors {
+            
+            text-align:left;
+            background-color:#cadcdc;
+            color:red;
+        }
+        .validation-summary-errors ul {
+            padding-left:3px;
+        }
+        .validation-summary-errors li {
+            margin-left:3px;
+            list-style-type:none;
+        }
         
-    }
-</script>
-
+    </style>
+</head>
+<body>
+    <div class="panel panel-success" style="width:300px;margin:200px auto">
+        <div class="panel-body">
+            @using (Html.BeginForm("ReceiveInformation", "Registered"))
+            {
+                <div class="form-group">
+                    <label> 用户名 </label>
+                    @Html.TextBoxFor(x => x.UserName, new { @class="form-control"})
+                </div>
+                <div class="form-group">
+                    <label> 密码 </label>
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label> 确认密码 </label>
+                    @Html.TextBoxFor(x => x.rePassword, new { @class = "form-control" })
+                </div>
+                @Html.ValidationSummary()
+                <div class="text-center">
+                    <input class="btn-success" type="submit" value="注册" />
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

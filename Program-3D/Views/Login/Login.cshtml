@@ -1,45 +1,49 @@
-﻿@{
+﻿@model Program_3D.Models.LoginInformation
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{
     ViewBag.Title = "Login";
 }
-<div>
-    <form class="login">
-        <table>
-            <tr><td>账号</td><td><input class="login" type="text" name="accountNumber"></td></tr>
-            <tr><td>密码</td><td><input class="login" type="password" name="passWord"></td></tr>
-        </table>
-    </form> 
-       <button onclick="submit()" class="login">登录</button><a href="../Registered/Registered">注册账号</a> 
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-theme.css" />
+    <script src="~/Scripts/libs/jquery.min.js"></script>
+    <script src="~/Scripts/libs/jquery.validate.js"></script>
+    <script src="~/Scripts/libs/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/libs/jquery.unobtrusive-ajax.js"></script>
+    <style>
+        body{
+            text-align:center;
+        }
+    </style>
+</head>
+<div class="panel panel-success" style="width:300px;margin:200px auto">
+    <div class="panel-body">
+        @using (Html.BeginForm("ToWorkSpace", "Login"))
+        {
+            <div class="form-group">
+                <label> 用户名 </label>
+                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+            </div>
+                <div class="form-group">
+                    <label> 密码 </label>
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                </div>
+                @Html.ValidationSummary()
+                <div class="text-center">
+                    <button class="btn-success" onclick="submit">确认</button>
+                    @Html.ActionLink("还有没账号？", "../Registered/Registered");
+                </div>
+        }
+    </div>
 </div>
 <script>
-function submit()
-{
-    let accountNumber = $('.login input')[0].value;
-    let passWord = $('.login input')[1].value;
-    $.ajax({
-        type: 'post',
-        url: 'Login/SearchData',
-        dataType: 'json',
-        data: { accountNumber: accountNumber, passWord: passWord },
-        success: function (result) {
-            if(result === 0)
-            {
-                alert("用户名或密码错误");
-            }
-            else {
-                $("form.login")[0].action = "Login/ToWorkSpace";
-                $("form.login")[0].method = "post";
-                $("form.login")[0].submit();
-            }
-        },
-        error: function (message) {
-            alert('error!');
-        }
+    function submit()
+    {
+      
 
-    })
-}
-
-
+    }
 </script>
+
