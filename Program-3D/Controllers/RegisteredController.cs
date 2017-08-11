@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using Program_3D.Models;
 using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace Program_3D.Controllers
 {
@@ -24,9 +25,39 @@ namespace Program_3D.Controllers
 
         public ActionResult ReceiveInformation(UserInformation model)
         {
+            var BsonModel = new BsonDocument
+            {   
+                { "_id",model.UserName},
+                { "Password",model.Password}
+            };
+            if (ModelState.IsValid)
+            {
+                var collection = _database.GetCollection<BsonDocument>(tbName);
+                collection.InsertOne(BsonModel);
+                return RedirectToRoute(new { controller = "Login", action = "Login" });
+            }
+            else {
+                return View("Registered");
+            }     
+        }
+
+        [HttpGet]
+        public ActionResult CheckAccount([Bind(Prefix = "accountNumber")]string account)
+        {
             var collection = _database.GetCollection<UserInformation>(tbName);
-            collection.InsertOne(model);
-            return RedirectToAction("../Login/Login");
+            var filter = Builders<UserInformation>.Filter.Eq("_id", account);
+            var result = collection.Find(filter).ToList();
+            if ((result.Count == 0))
+            {
+                bool ok = true;
+                return Json(ok, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                bool no = false;
+                return Json(no, JsonRequestBehavior.AllowGet);
+            }
+
 
         }
 

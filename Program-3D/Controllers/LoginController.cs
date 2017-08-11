@@ -22,21 +22,33 @@ namespace Program_3D.Controllers
             return View();
         }
          
-        public ActionResult SearchData(UserInformation model)
+        public string SearchData(UserInformation model)
         {
             var collection = _database.GetCollection<UserInformation>(tbName);
-            var filter = Builders<UserInformation>.Filter.Eq("_id", model.accountNumber);
+            var filter = Builders<UserInformation>.Filter.Eq("_id", model.UserName);
             var result = collection.Find(filter).ToList();
-            if ((result.Count == 0)||(result[0].passWord != model.passWord))
+            if ((result.Count == 0)||(result[0].Password != model.Password))
             {
+<<<<<<< HEAD
                 return this.Content("用户名或密码错误");
             }
             else
             {
                 // return RedirectToRoute("Work", new { controller = "Work", action = "Work", accountNumber = model.accountNumber });              
                 return RedirectToAction("../Work/Work", new { accountNumber = model.accountNumber });
+=======
+                return "0";
+            }
+            else
+            {
+                return "1";
+>>>>>>> e023d63c4f4c0705af402dbe4d7db925f37252a1
             }
 
+        }
+        public ActionResult ToWorkSpace(UserInformation model)
+        {
+            return RedirectToRoute( new { controller = "Work", action = "WorkSpace", accountNumber = model.UserName });
         }
 
         private void InitDataBase()
@@ -45,5 +57,7 @@ namespace Program_3D.Controllers
             _database = _cliet.GetDatabase(dbName);
 
         }
+
+
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Program_3D
@@ -18,6 +14,13 @@ namespace Program_3D
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Login", action = "Login", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+             name: "WorkSpace",
+             url: "{action}",
+             defaults: new { controller = "Work", action = "WorkSpace", accountNumber = UrlParameter.Optional }
+         );
+
         }
     }
 }

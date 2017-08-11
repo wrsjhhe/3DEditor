@@ -9,7 +9,6 @@ namespace Program_3D
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            //ModelBinderConfig.RegisterModelBinder(ModelBinders.Binders);
         }
     }
 }

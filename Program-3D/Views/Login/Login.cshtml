@@ -1,10 +1,53 @@
-﻿@{
+﻿@model Program_3D.Models.LoginInformation
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @{
     ViewBag.Title = "Login";
 }
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-theme.css" />
+    <script src="~/Scripts/libs/jquery.min.js"></script>
+    <script src="~/Scripts/libs/jquery.validate.js"></script>
+    <script src="~/Scripts/libs/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/libs/jquery.unobtrusive-ajax.js"></script>
+    <style>
+        body{
+            text-align:center;
+        }
+    </style>
+</head>
+<div class="panel panel-success" style="width:300px;margin:200px auto">
+    <div class="panel-body">
+        @using (Html.BeginForm("ToWorkSpace", "Login"))
+        {
+            <div class="form-group">
+                <label> 用户名 </label>
+                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+            </div>
+                <div class="form-group">
+                    <label> 密码 </label>
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                </div>
+                @Html.ValidationSummary()
+                <div class="text-center">
+                    <button class="btn-success" onclick="submit">确认</button>
+                    @Html.ActionLink("还有没账号？", "../Registered/Registered");
+                </div>
+        }
+    </div>
+</div>
+<script>
+    function submit()
+    {
+      
 
+    }
+</script>
+
+<<<<<<< HEAD
 <form method="post" action="../Login/SearchData">
     <table>
         <tr><td>账号</td><td><input type="text" name="accountNumber"></td></tr>
@@ -12,3 +55,5 @@
         <tr><td><input type="submit" value="登录"/></td><td><a href="../Registered/Registered">注册账号</a></td></tr>
     </table>
 </form>
+=======
+>>>>>>> e023d63c4f4c0705af402dbe4d7db925f37252a1
