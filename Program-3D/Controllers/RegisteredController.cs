@@ -42,10 +42,10 @@ namespace Program_3D.Controllers
         }
 
         [HttpGet]
-        public ActionResult CheckAccount([Bind(Prefix = "accountNumber")]string account)
+        public ActionResult CheckAccount([Bind(Prefix = "UserName")]string UserName)
         {
             var collection = _database.GetCollection<UserInformation>(tbName);
-            var filter = Builders<UserInformation>.Filter.Eq("_id", account);
+            var filter = Builders<UserInformation>.Filter.Eq("_id", UserName);
             var result = collection.Find(filter).ToList();
             if ((result.Count == 0))
             {
@@ -57,8 +57,6 @@ namespace Program_3D.Controllers
                 bool no = false;
                 return Json(no, JsonRequestBehavior.AllowGet);
             }
-
-
         }
 
         private void InitDataBase()

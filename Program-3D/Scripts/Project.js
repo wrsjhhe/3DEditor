@@ -910,6 +910,18 @@
         callback();
     }
 
+    function SaveString( text, filename ) {
+
+        let link = document.createElement( 'a' );
+        link.style.display = 'none';
+        document.body.appendChild( link ); // Firefox workaround, see #6594
+
+        link.href = URL.createObjectURL( new Blob( [ text ]));
+        link.download = filename || 'data.json';
+        link.click();
+
+    };
+
     let Param = {
         camera : new THREE.PerspectiveCamera( 50, 1, 0.1, 1000000 ),
         renderer : new THREE.WebGLRenderer({antialias:true}),
@@ -937,6 +949,7 @@
     exports.ClickAddGraph = ClickAddGraph;
     exports.LinesToFace = LinesToFace;
     exports.SelectObject = SelectObject;
+    exports.SaveString = SaveString;
 
     exports.Param = Param;
 

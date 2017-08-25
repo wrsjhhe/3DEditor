@@ -8,22 +8,29 @@ class RightSideBar {
 
     init  () {
         this.$container.append(`
-                <ul id="fieldList">
-                   <li>
-                       <label class="label" for="NameInput">Name</label>
-                       <input id="NameInput">
-                   </li>
-                   <li>
-                       <label class="label" for="ColorInput">Color</label>
-                       <input id="ColorInput">
-                   </li>
-                   <li >
-                       <span class="TextureInput">导入纹理 
-                            <input class="TextureInput" type="file"> 
-                        </span>                                                      
-                   </li>
+            <div class="fieldList">
+                <ul class="fieldList">
+                <li>
+                    <div>
+                        <label class="label" for="NameInput">Name</label>
+                        <input id="NameInput">
+                    </div> 
+                </li>
+                <li>
+                    <div>
+                        <label class="label" for="ColorInput">Color</label>
+                        <input id="ColorInput">
+                    </div>          
+                </li>
+                <li >
+                    <div class="TextureInput">
+                        <p style="margin-top:6px;font-size: 15px;">导入纹理</p> 
+                        <input class="TextureInput" type="file">  
+                    </div>                                                  
+                </li>
                 </ul>
                 <div id="objDiv"></div>
+            </div>      
                 `)
 
     };
@@ -62,7 +69,6 @@ class RightSideBar {
 
             ],
             selectable: "row",
-
 
         });
 

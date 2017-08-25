@@ -16,11 +16,11 @@ namespace Program_3D.Models
         [BsonIgnore]
         [NonSerialized]
         private List<string> attr = new List<string>();
-        public object Attr
+        public object Parameter
         {
 
             get
-            { 
+            {
                 if (attr.Count() != 0)
                 {
                     BsonArray ar = new BsonArray();
@@ -28,7 +28,7 @@ namespace Program_3D.Models
                     {
                         ar.Add(BsonDocument.Parse(attr[i]));
                     }
-                    
+
                     return ar;
                 }
                 else
@@ -38,13 +38,13 @@ namespace Program_3D.Models
             }
             set
             {
-               
-                attr =Func.GetArrsTostring(value);
+
+                attr = Func.GetArrsTostring(value);
             }
         }
 
     }
 
-   
-    
+
+
 }

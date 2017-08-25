@@ -87,7 +87,7 @@ class TopBar {
             },false);
 
 
-            $('#file').find("li")[1].addEventListener("click", function () {    //保存
+            $('#file').find("li")[1].addEventListener("click", function () {           //保存
 
                 let ToJson = function () {
                     let attr = [];
@@ -99,14 +99,14 @@ class TopBar {
                   };
                     let param = {
                         UserId:"123",
-                        Attr: ToJson()              
+                        Parameter: ToJson()
                     };
                     $.ajax({
                         type: 'post',
                         url: '../Work/ReceiveData',
                         data: param,
                         success: function (resule) {
-                            alert('success');
+                            alert('保存成功');
                         },
                         error: function (message) {
                             alert('error!');

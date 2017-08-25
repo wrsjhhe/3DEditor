@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="624cddfb-66c6-4b95-99ac-df2bf02ebe9b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../App_Start/Startup.Auth.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Startup.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Views/Home/Index.cshtml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../.vs/Program-3D/v14/.suo" afterPath="$PROJECT_DIR$/../../.vs/Program-3D/v14/.suo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bin/Program-3D.dll" afterPath="$PROJECT_DIR$/../bin/Program-3D.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bin/Program-3D.pdb" afterPath="$PROJECT_DIR$/../bin/Program-3D.pdb" />
@@ -10,16 +12,46 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Debug/Program-3D.csprojResolveAssemblyReference.cache" afterPath="$PROJECT_DIR$/../obj/Debug/Program-3D.csprojResolveAssemblyReference.cache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Debug/Program-3D.dll" afterPath="$PROJECT_DIR$/../obj/Debug/Program-3D.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Debug/Program-3D.pdb" afterPath="$PROJECT_DIR$/../obj/Debug/Program-3D.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/../obj/Release/DesignTimeResolveAssemblyReferencesInput.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/bin/Program-3D.dll" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/bin/Program-3D.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Program-3D.dll" afterPath="$PROJECT_DIR$/../obj/Release/Program-3D.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Program-3D.pdb" afterPath="$PROJECT_DIR$/../obj/Release/Program-3D.pdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../.vs/config/applicationhost.config" afterPath="$PROJECT_DIR$/../../.vs/config/applicationhost.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../App_Start/Func.cs" afterPath="$PROJECT_DIR$/../App_Start/Func.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Controllers/HomeController.cs" afterPath="$PROJECT_DIR$/../Controllers/HomeController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Content/main.css" afterPath="$PROJECT_DIR$/../Content/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Controllers/LoginController.cs" afterPath="$PROJECT_DIR$/../Controllers/LoginController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Controllers/RegisteredController.cs" afterPath="$PROJECT_DIR$/../Controllers/RegisteredController.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Controllers/WorkController.cs" afterPath="$PROJECT_DIR$/../Controllers/WorkController.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Models/ObjectParas.cs" afterPath="$PROJECT_DIR$/../Models/ObjectParas.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Models/UserInformation.cs" afterPath="$PROJECT_DIR$/../Models/UserInformation.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Program-3D.csproj" afterPath="$PROJECT_DIR$/../Program-3D.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Properties/PublishProfiles/3D_Pro.pubxml.user" afterPath="$PROJECT_DIR$/../Properties/PublishProfiles/3D_Pro.pubxml.user" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LeftSideBar.js" afterPath="$PROJECT_DIR$/LeftSideBar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Project.js" afterPath="$PROJECT_DIR$/Project.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RightSideBar.js" afterPath="$PROJECT_DIR$/RightSideBar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopBar.js" afterPath="$PROJECT_DIR$/TopBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/Store.js" afterPath="$PROJECT_DIR$/modules/Store.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/jquery.unobtrusive-ajax.min.js" afterPath="$PROJECT_DIR$/libs/jquery.unobtrusive-ajax.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Views/Login/Login.cshtml" afterPath="$PROJECT_DIR$/../Views/Login/Login.cshtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Views/Registered/Registered.cshtml" afterPath="$PROJECT_DIR$/../Views/Registered/Registered.cshtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Views/Work/WorkSpace.cshtml" afterPath="$PROJECT_DIR$/../Views/Work/WorkSpace.cshtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Web.config" afterPath="$PROJECT_DIR$/../Web.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bin/Program-3D.dll.config" afterPath="$PROJECT_DIR$/../bin/Program-3D.dll.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Content/main.css" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Content/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/LeftSideBar.js" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/LeftSideBar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/Main.js" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/Main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/Project.js" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/Project.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/RightSideBar.js" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/RightSideBar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/TopBar.js" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/TopBar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/Viewport.js" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/Viewport.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/modules/Store.js" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Scripts/modules/Store.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Views/Shared/_Layout.cshtml" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Views/Shared/_Layout.cshtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Views/_ViewStart.cshtml" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Views/_ViewStart.cshtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Web.config" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/Web.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/packages.config" afterPath="$PROJECT_DIR$/../obj/Release/Package/PackageTmp/packages.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/Program-3D.csproj.FileListAbsolute.txt" afterPath="$PROJECT_DIR$/../obj/Release/Program-3D.csproj.FileListAbsolute.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/TransformWebConfig/original/Web.config" afterPath="$PROJECT_DIR$/../obj/Release/TransformWebConfig/original/Web.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../obj/Release/TransformWebConfig/transformed/Web.config" afterPath="$PROJECT_DIR$/../obj/Release/TransformWebConfig/transformed/Web.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../packages.config" afterPath="$PROJECT_DIR$/../packages.config" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,20 +64,47 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TopBar.js" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TopBar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TopBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1692">
-              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="36">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
-                <marker date="1502176242159" expanded="true" signature="214:917" ph="..." />
-                <marker date="1502176242159" expanded="true" signature="245:645" ph="..." />
-                <marker date="1502176242159" expanded="true" signature="272:619" ph="..." />
-                <marker date="1502176242159" expanded="true" signature="377:473" ph="..." />
-                <marker date="1502176242159" expanded="true" signature="679:899" ph="..." />
-                <marker date="1502176242159" expanded="true" signature="706:877" ph="..." />
+                <marker date="1502681633878" expanded="true" signature="13:3939" ph="{...}" />
+                <marker date="1502681633878" expanded="true" signature="154:3937" ph="{...}" />
+                <marker date="1502681633878" expanded="true" signature="214:917" ph="..." />
+                <marker date="1502681633878" expanded="true" signature="245:645" ph="..." />
+                <marker date="1502681633878" expanded="true" signature="272:619" ph="..." />
+                <marker date="1502681633878" expanded="true" signature="377:473" ph="..." />
+                <marker date="1502681633878" expanded="true" signature="679:899" ph="..." />
+                <marker date="1502681633878" expanded="true" signature="706:877" ph="..." />
+                <marker date="1502681633878" expanded="true" signature="997:3929" ph="{...}" />
+                <marker date="1502681633878" expanded="true" signature="2394:2412" ph="{...}" />
+                <marker date="1502681633878" expanded="true" signature="3682:3711" ph="{...}" />
+                <marker date="1502681633878" expanded="true" signature="3682:3857" ph="{&quot;type&quot;: 'post'...}" />
+                <marker date="1502681633878" expanded="true" signature="3763:3835" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Viewport.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Viewport.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="113" column="10" lean-forward="true" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Objects.js" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/Project-3D/js/Objects.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,8 +112,8 @@
       <file leaf-file-name="Store.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/Store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+            <state relative-caret-position="2844">
+              <caret line="146" column="5" lean-forward="false" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
               <folding>
                 <element signature="e#1063#1206#0" expanded="false" />
                 <element signature="e#1260#1403#0" expanded="false" />
@@ -72,8 +131,8 @@
       <file leaf-file-name="Project.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Project.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="895" column="0" lean-forward="true" selection-start-line="895" selection-start-column="0" selection-end-line="895" selection-end-column="0" />
+            <state relative-caret-position="29916">
+              <caret line="911" column="0" lean-forward="false" selection-start-line="911" selection-start-column="0" selection-end-line="911" selection-end-column="0" />
               <folding>
                 <element signature="e#157#291#0" expanded="false" />
                 <element signature="e#338#519#0" expanded="false" />
@@ -81,13 +140,6 @@
                 <element signature="e#779#1025#0" expanded="false" />
                 <element signature="e#1075#1670#0" expanded="false" />
                 <element signature="e#1743#3029#0" expanded="false" />
-                <element signature="e#3075#27900#0" expanded="false" />
-                <element signature="e#27947#28741#0" expanded="false" />
-                <element signature="e#28807#30607#0" expanded="false" />
-                <element signature="e#30643#31308#0" expanded="false" />
-                <element signature="e#31334#31784#0" expanded="false" />
-                <element signature="e#31820#31977#0" expanded="false" />
-                <element signature="e#32024#32320#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -104,6 +156,7 @@
         <option value="$PROJECT_DIR$/TopBar.js" />
         <option value="$PROJECT_DIR$/Project.js" />
         <option value="$PROJECT_DIR$/modules/Store.js" />
+        <option value="$PROJECT_DIR$/Viewport.js" />
       </list>
     </option>
   </component>
@@ -120,11 +173,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="343" />
+    <option name="y" value="47" />
+    <option name="width" value="1514" />
+    <option name="height" value="823" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -142,7 +195,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -159,7 +212,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,32 +249,34 @@
       <option name="presentableId" value="Default" />
       <updated>1502162313690</updated>
       <workItem from="1502162316078" duration="8622000" />
+      <workItem from="1502673024101" duration="7000" />
+      <workItem from="1503564837518" duration="791000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8622000" />
+    <option name="totallyTimeSpent" value="9420000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="343" y="47" width="1514" height="823" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.123667374" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16231087" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -236,10 +291,49 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/TopBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1502681633878" expanded="true" signature="13:3939" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="154:3937" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="214:917" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="245:645" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="272:619" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="377:473" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="679:899" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="706:877" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="997:3929" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="2394:2412" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="3682:3711" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="3682:3857" ph="{&quot;type&quot;: 'post'...}" />
+            <marker date="1502681633878" expanded="true" signature="3763:3835" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2844">
+          <caret line="146" column="5" lean-forward="false" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+          <folding>
+            <element signature="e#1063#1206#0" expanded="false" />
+            <element signature="e#1260#1403#0" expanded="false" />
+            <element signature="e#1503#1931#0" expanded="false" />
+            <element signature="e#1972#2403#0" expanded="false" />
+            <element signature="e#2448#2862#0" expanded="false" />
+            <element signature="e#3751#3940#0" expanded="false" />
+            <element signature="e#3981#4094#0" expanded="false" />
+            <element signature="n#!!block;n#getNormaldata#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Project.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="895" column="0" lean-forward="true" selection-start-line="895" selection-start-column="0" selection-end-line="895" selection-end-column="0" />
+        <state relative-caret-position="29916">
+          <caret line="911" column="0" lean-forward="false" selection-start-line="911" selection-start-column="0" selection-end-line="911" selection-end-column="0" />
           <folding>
             <element signature="e#157#291#0" expanded="false" />
             <element signature="e#338#519#0" expanded="false" />
@@ -247,28 +341,35 @@
             <element signature="e#779#1025#0" expanded="false" />
             <element signature="e#1075#1670#0" expanded="false" />
             <element signature="e#1743#3029#0" expanded="false" />
-            <element signature="e#3075#27900#0" expanded="false" />
-            <element signature="e#27947#28741#0" expanded="false" />
-            <element signature="e#28807#30607#0" expanded="false" />
-            <element signature="e#30643#31308#0" expanded="false" />
-            <element signature="e#31334#31784#0" expanded="false" />
-            <element signature="e#31820#31977#0" expanded="false" />
-            <element signature="e#32024#32320#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/InitScene.js">
+    <entry file="file://$PROJECT_DIR$/TopBar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1502681633878" expanded="true" signature="13:3939" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="154:3937" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="214:917" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="245:645" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="272:619" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="377:473" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="679:899" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="706:877" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="997:3929" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="2394:2412" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="3682:3711" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="3682:3857" ph="{&quot;type&quot;: 'post'...}" />
+            <marker date="1502681633878" expanded="true" signature="3763:3835" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/Store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
+        <state relative-caret-position="2844">
           <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
           <folding>
             <element signature="e#1063#1206#0" expanded="false" />
@@ -283,18 +384,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32220">
+          <caret line="895" column="0" lean-forward="true" selection-start-line="895" selection-start-column="0" selection-end-line="895" selection-end-column="0" />
+          <folding>
+            <element signature="e#157#291#0" expanded="false" />
+            <element signature="e#338#519#0" expanded="false" />
+            <element signature="e#543#716#0" expanded="false" />
+            <element signature="e#779#1025#0" expanded="false" />
+            <element signature="e#1075#1670#0" expanded="false" />
+            <element signature="e#1743#3029#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29916">
+          <caret line="911" column="0" lean-forward="false" selection-start-line="911" selection-start-column="0" selection-end-line="911" selection-end-column="0" />
+          <folding>
+            <element signature="e#157#291#0" expanded="false" />
+            <element signature="e#338#519#0" expanded="false" />
+            <element signature="e#543#716#0" expanded="false" />
+            <element signature="e#779#1025#0" expanded="false" />
+            <element signature="e#1075#1670#0" expanded="false" />
+            <element signature="e#1743#3029#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/InitScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/Store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2844">
+          <caret line="146" column="5" lean-forward="false" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+          <folding>
+            <element signature="e#1063#1206#0" expanded="false" />
+            <element signature="e#1260#1403#0" expanded="false" />
+            <element signature="e#1503#1931#0" expanded="false" />
+            <element signature="e#1972#2403#0" expanded="false" />
+            <element signature="e#2448#2862#0" expanded="false" />
+            <element signature="e#3751#3940#0" expanded="false" />
+            <element signature="e#3981#4094#0" expanded="false" />
+            <element signature="n#!!block;n#getNormaldata#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/jquery.validate.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/jquery.unobtrusive-ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TopBar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1692">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
-            <marker date="1502176242159" expanded="true" signature="214:917" ph="..." />
-            <marker date="1502176242159" expanded="true" signature="245:645" ph="..." />
-            <marker date="1502176242159" expanded="true" signature="272:619" ph="..." />
-            <marker date="1502176242159" expanded="true" signature="377:473" ph="..." />
-            <marker date="1502176242159" expanded="true" signature="679:899" ph="..." />
-            <marker date="1502176242159" expanded="true" signature="706:877" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="13:3939" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="154:3937" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="214:917" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="245:645" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="272:619" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="377:473" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="679:899" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="706:877" ph="..." />
+            <marker date="1502681633878" expanded="true" signature="997:3929" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="2394:2412" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="3682:3711" ph="{...}" />
+            <marker date="1502681633878" expanded="true" signature="3682:3857" ph="{&quot;type&quot;: 'post'...}" />
+            <marker date="1502681633878" expanded="true" signature="3763:3835" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Project-3D/js/Objects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Viewport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="113" column="10" lean-forward="true" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
