@@ -21,6 +21,7 @@
         }
     </style>
 </head>
+<<<<<<< HEAD
 <body>
     <div class="panel panel-success" style="width:300px;margin:200px auto">
         <div class="panel-body">
@@ -30,10 +31,21 @@
                     <label> 用户名 </label>
                     @Html.TextBoxFor(x => x.UserName, new { @class = "form-control",id="userName" })
                 </div>
+=======
+<div class="panel panel-success" style="width:300px;margin:200px auto">
+    <div class="panel-body">
+        @using (Html.BeginForm("ToWorkSpace", "Login",FormMethod.Post,new { id="form-login"}))
+        {
+            <div class="form-group">
+                <label> 用户名 </label>
+                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+            </div>
+>>>>>>> 0054246fd55b344d34ccd80ba27ff70cf699c14b
                 <div class="form-group">
                     <label> 密码 </label>
                     @Html.TextBoxFor(x => x.Password, new { @class = "form-control", id="password" })
                 </div>
+<<<<<<< HEAD
                 @Html.ValidationSummary()
             }
             <div class="text-center">
@@ -68,3 +80,39 @@
     </script>
 </body>
 </html>
+=======
+                @Html.ValidationSummary()               
+        }
+        <div class="text-center">
+            <button class="btn-success" onclick="submit()">确认</button>
+            @Html.ActionLink("还有没账号？", "../Registered/Registered")
+        </div>
+    </div>
+</div>
+<script>
+    function submit()
+    {
+        let username = $('.form-group input')[0].value;
+        let password = $('.form-group input')[1].value;
+          $.ajax({
+                    type: 'post',
+                    url: 'Login/SearchData',
+                    dataType: 'json',
+                    data: { UserName: username, Password: password },
+                    success: function (result) {
+                        if (result === 0) {
+                            alert("账号或用户名不正确")
+                        }
+                        else {
+                            $("#form-login")[0].submit();
+                        }
+                    },
+                    error: function (message) {
+                        alert('error!');
+                    }
+
+                });
+
+    }
+</script>
+>>>>>>> 0054246fd55b344d34ccd80ba27ff70cf699c14b

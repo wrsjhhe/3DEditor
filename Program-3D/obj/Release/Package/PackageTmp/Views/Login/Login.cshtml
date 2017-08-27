@@ -1,0 +1,67 @@
+﻿@model Program_3D.Models.LoginInformation
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Login";
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-theme.css" />
+    <script src="~/Scripts/libs/jquery.min.js"></script>
+    <script src="~/Scripts/libs/jquery.validate.js"></script>
+    <script src="~/Scripts/libs/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/libs/jquery.unobtrusive-ajax.js"></script>
+    <style>
+        body{
+            text-align:center;
+        }
+    </style>
+</head>
+<div class="panel panel-success" style="width:300px;margin:200px auto">
+    <div class="panel-body">
+        @using (Html.BeginForm("ToWorkSpace", "Login",FormMethod.Post,new { id="form-login"}))
+        {
+            <div class="form-group">
+                <label> 用户名 </label>
+                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+            </div>
+                <div class="form-group">
+                    <label> 密码 </label>
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                </div>
+                @Html.ValidationSummary()               
+        }
+        <div class="text-center">
+            <button class="btn-success" onclick="submit()">确认</button>
+            @Html.ActionLink("还有没账号？", "../Registered/Registered")
+        </div>
+    </div>
+</div>
+<script>
+    function submit()
+    {
+        let username = $('.form-group input')[0].value;
+        let password = $('.form-group input')[1].value;
+          $.ajax({
+                    type: 'post',
+                    url: 'Login/SearchData',
+                    dataType: 'json',
+                    data: { UserName: username, Password: password },
+                    success: function (result) {
+                        if (result === 0) {
+                            alert("账号或用户名不正确")
+                        }
+                        else {
+                            $("#form-login")[0].submit();
+                        }
+                    },
+                    error: function (message) {
+                        alert('error!');
+                    }
+
+                });
+
+    }
+</script>

@@ -10,7 +10,8 @@ class TopBar {
             <ul id='menu'>
                 <li id='file'>文件
                     <ul>
-                        <li id="save"> 保存 </li>
+                        <li> 打开 </li>
+                        <li> 保存 </li>
                         <li> 导入文件
                             <input type='file' id='import' >
                         </li>
@@ -51,19 +52,7 @@ class TopBar {
             });
 
             $("#clear").click((e) => {
-                let length = scene.children.length;
-                for(let i = length-1;i >= 0;i--) {
-                    if (scene.children[i].type === "Mesh" ||scene.children[i].type === "Line") {
-
-                        scene.remove(scene.children[i]);
-                    }
-                }
-                objects = [];
-                dataArray = [];
-                console.log(dataArray)
-
-                INDEXDB.clearData(myDB.db,myDB.ojstore.name);
-                $("#objDiv").data("kendoGrid").dataSource.read();
+               new PROJECT.ClearAll();
             });
 
             $("#segment").click(function () {
@@ -80,8 +69,25 @@ class TopBar {
                 SOI.openWindow();
             });
 
+            $('#file').find("li")[0].addEventListener("click",function () {            //打开
+                new PROJECT.ClearAll();
+                $.ajax({
+                    type: 'post',
+                    url: '../Work/SearchData',
+                    dataType:'json',
+                    success: function (result) {
+                        new PROJECT.DownLoadObject(result,initModels);
+                    },
+                    error: function (message) {
+                        alert('error!');
+                    }
 
-            $('#file').find("li")[0].addEventListener("click", function () {
+                });
+
+            },false);
+
+
+            $('#file').find("li")[1].addEventListener("click", function () {    //保存
 
                 let ToJson = function () {
                     let attr = [];
@@ -90,17 +96,14 @@ class TopBar {
                            attr[item] = JSON.stringify(dataArray[item]);
                         }
                      return attr;
-                  }
-
+                  };
                     let param = {
                         UserId:"123",
-                        Attr: ToJson()
-                        
+                        Attr: ToJson()              
                     };
-
                     $.ajax({
                         type: 'post',
-                        url: '../Home/ReceiveJson',
+                        url: '../Work/ReceiveData',
                         data: param,
                         success: function (resule) {
                             alert('success');
@@ -108,11 +111,8 @@ class TopBar {
                         error: function (message) {
                             alert('error!');
                         }
-
                     });
-
-
-            }, false);
+            },false);
 
             $("#menu").kendoMenu();
 

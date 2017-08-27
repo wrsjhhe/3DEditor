@@ -1,0 +1,64 @@
+﻿@model Program_3D.Models.UserInformation
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-theme.css" />
+    <script src="~/Scripts/libs/jquery.min.js"></script>
+    <script src="~/Scripts/libs/jquery.validate.js"></script>
+    <script src="~/Scripts/libs/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/libs/jquery.unobtrusive-ajax.js"></script>
+    <title>Registered</title>
+    <style>
+        body{
+            text-align:center;   
+        }
+        .validation-summary-errors {
+            
+            text-align:left;
+            background-color:#cadcdc;
+            color:red;
+        }
+        .validation-summary-errors ul {
+            padding-left:3px;
+        }
+        .validation-summary-errors li {
+            margin-left:3px;
+            list-style-type:none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="panel panel-success" style="width:300px;margin:200px auto">
+        <div class="panel-body">
+            @using (Html.BeginForm("ReceiveInformation", "Registered"))
+            {
+                <div class="form-group">
+                    <label> 用户名 </label>
+                    @Html.TextBoxFor(x => x.UserName, new { @class="form-control"})
+                </div>
+                <div class="form-group">
+                    <label> 密码 </label>
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label> 确认密码 </label>
+                    @Html.TextBoxFor(x => x.rePassword, new { @class = "form-control" })
+                </div>
+                @Html.ValidationSummary()
+                <div class="text-center">
+                    <input class="btn-success" type="submit" value="注册" />
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
