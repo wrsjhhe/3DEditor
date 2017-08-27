@@ -1,59 +1,70 @@
 ﻿@model Program_3D.Models.LoginInformation
+
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
-@{
-    ViewBag.Title = "Login";
-}
+
+<!DOCTYPE html>
+
+<html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-theme.css" />
-    <script src="~/Scripts/libs/jquery.min.js"></script>
+    <script src="~/Scripts/libs/jquery-2.1.4.min.js"></script>
     <script src="~/Scripts/libs/jquery.validate.js"></script>
     <script src="~/Scripts/libs/jquery.validate.unobtrusive.js"></script>
     <script src="~/Scripts/libs/jquery.unobtrusive-ajax.js"></script>
     <style>
-        body{
-            text-align:center;
+        body {
+            text-align: center;
         }
     </style>
 </head>
-<div class="panel panel-success" style="width:300px;margin:200px auto">
-    <div class="panel-body">
-        @using (Html.BeginForm("ToWorkSpace", "Login"))
-        {
-            <div class="form-group">
-                <label> 用户名 </label>
-                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
-            </div>
+<body>
+    <div class="panel panel-success" style="width:300px;margin:200px auto">
+        <div class="panel-body">
+            @using (Html.BeginForm("ToWorkSpace", "Login", FormMethod.Post,new { id="login"}))
+            {
+                <div class="form-group">
+                    <label> 用户名 </label>
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control",id="userName" })
+                </div>
                 <div class="form-group">
                     <label> 密码 </label>
-                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control", id="password" })
                 </div>
                 @Html.ValidationSummary()
-                <div class="text-center">
-                    <button class="btn-success" onclick="submit">确认</button>
-                    @Html.ActionLink("还有没账号？", "../Registered/Registered");
-                </div>
-        }
+            }
+            <div class="text-center">
+                <button class="btn-success" onclick="submit()">确认</button>
+                @Html.ActionLink("还有没账号？", "Registered","Registered")
+            </div>
+        </div>
     </div>
-</div>
-<script>
-    function submit()
-    {
-      
+    <script>
+        function submit() {
+            let userName = $('#userName')[0].value;
+            let password = $('#password')[0].value;
+            $.ajax({
+                type: 'post',
+                url: 'Login/SearchData',
+                dataType: 'json',
+                data: { UserName: userName, Password: password },
+                success: function (result) {
+                    if (result === 0) {
+                        alert("用户名或者密码错误")
+                    }
+                    else {
+                        $("#login")[0].submit();
+                    }
+                },
+                error: function (message) {
+                    alert('error!');
+                }
 
-    }
-</script>
-
-<<<<<<< HEAD
-<form method="post" action="../Login/SearchData">
-    <table>
-        <tr><td>账号</td><td><input type="text" name="accountNumber"></td></tr>
-        <tr><td>密码</td><td><input type="password" name="passWord"></td></tr>
-        <tr><td><input type="submit" value="登录"/></td><td><a href="../Registered/Registered">注册账号</a></td></tr>
-    </table>
-</form>
-=======
->>>>>>> e023d63c4f4c0705af402dbe4d7db925f37252a1
+            })
+        }
+    </script>
+</body>
+</html>

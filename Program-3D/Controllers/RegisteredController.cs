@@ -42,10 +42,10 @@ namespace Program_3D.Controllers
         }
 
         [HttpGet]
-        public ActionResult CheckAccount([Bind(Prefix = "accountNumber")]string account)
+        public ActionResult CheckAccount([Bind(Prefix = "UserName")]string userName)
         {
             var collection = _database.GetCollection<UserInformation>(tbName);
-            var filter = Builders<UserInformation>.Filter.Eq("_id", account);
+            var filter = Builders<UserInformation>.Filter.Eq("_id", userName);
             var result = collection.Find(filter).ToList();
             if ((result.Count == 0))
             {
