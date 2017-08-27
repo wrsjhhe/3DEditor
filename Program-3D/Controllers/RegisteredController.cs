@@ -42,17 +42,11 @@ namespace Program_3D.Controllers
         }
 
         [HttpGet]
-<<<<<<< HEAD
-        public ActionResult CheckAccount([Bind(Prefix = "UserName")]string userName)
-        {
-            var collection = _database.GetCollection<UserInformation>(tbName);
-            var filter = Builders<UserInformation>.Filter.Eq("_id", userName);
-=======
         public ActionResult CheckAccount([Bind(Prefix = "UserName")]string UserName)
         {
             var collection = _database.GetCollection<UserInformation>(tbName);
             var filter = Builders<UserInformation>.Filter.Eq("_id", UserName);
->>>>>>> 0054246fd55b344d34ccd80ba27ff70cf699c14b
+
             var result = collection.Find(filter).ToList();
             if ((result.Count == 0))
             {

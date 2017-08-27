@@ -254,3 +254,9 @@ D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.cs
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.dll
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.pdb
 E:\3D-Program\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
+E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
