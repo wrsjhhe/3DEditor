@@ -137,11 +137,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\Func.cs" />
+    <Compile Include="Function\StringHandle.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\RegisteredController.cs" />
     <Compile Include="Controllers\WorkController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Function\GetVandF.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -214,7 +215,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Work\WorkSpace.cshtml" />
-    <Content Include="ClassDiagram1.cd" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

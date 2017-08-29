@@ -4,6 +4,7 @@ using System;
 using MongoDB.Bson.Serialization.Attributes;
 using System.Linq;
 
+
 namespace Program_3D.Models
 {
 
@@ -38,8 +39,7 @@ namespace Program_3D.Models
             }
             set
             {
-
-                attr = Func.GetArrsTostring(value);
+                attr = StringHandle.GetArrsToString(value);
             }
         }
 

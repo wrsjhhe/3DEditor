@@ -5,8 +5,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.IO;
 using System;
 using Newtonsoft.Json.Linq;
-using System.Web.Script.Serialization;
-using System.Collections.Generic;
+using Program_3D.Function;
 
 namespace Program_3D.Controllers
 {
@@ -79,31 +78,13 @@ namespace Program_3D.Controllers
             var collection = _database.GetCollection<BsonDocument>(tbName);
             var filter = Builders<BsonDocument>.Filter.Eq("_id", "test");
             var result = collection.Find(filter).ToList();
-            JObject ja = JObject.Parse(result[0].ToJson(jsonWriterSettings));
-            //   JArray ja =JArray.Parse(result.ToJson(jsonWriterSettings));
-           
-               var vertices = ja["Parameter"]["_v"][0]["geometry"]["vertices"];
-            List<Product> products = new List<Product>();
-            products = JSONStringToList<Product>(vertices.ToString());
-
-            if (result.Count != 0)
-            {            
-                System.Diagnostics.Debug.WriteLine(result[0]); 
-            }
+            JObject JResult = JObject.Parse(result[0].ToJson(jsonWriterSettings));
+            var SVertices = JResult["Parameter"]["_v"][0]["geometry"]["vertices"];
+            var SFaces = JResult["Parameter"]["_v"][0]["geometry"]["faces"];
+            GetVandF getVandF = new GetVandF(SVertices.ToString(),SFaces.ToString());
+            getVandF.TransformVF();
         }
-        public List<T> JSONStringToList<T>(string JsonStr)
-        {
-            JavaScriptSerializer Serializer = new JavaScriptSerializer();
-            List<T> objs = Serializer.Deserialize<List<T>>(JsonStr);
-            return objs;
-        }
-         class Product
-        { 
-           public double x { get; set; }
-           public double y { get; set; }
-           public double z { get; set; }
-        }
-
+       
          private void InitDataBase()
         {
             _client = new MongoClient(conn);
