@@ -71,7 +71,6 @@
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
@@ -135,6 +134,7 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Function\StringHandle.cs" />
@@ -162,7 +162,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\libs\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\libs\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\libs\jquery.validate.unobtrusive.bootstrap.js" />
     <Content Include="Scripts\libs\jquery.validate.unobtrusive.bootstrap.min.js" />
     <Content Include="Scripts\libs\jquery.validate.unobtrusive.bootstrap.min.js.map" />
@@ -197,6 +196,7 @@
     <Content Include="Scripts\TopBar.js" />
     <Content Include="Scripts\Viewport.js" />
     <Content Include="Scripts\Window.js" />
+    <Content Include="Views\Registered\Registered.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -205,6 +205,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -224,8 +225,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\3D_Pro.pubxml" />
-    <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Registered\Registered.cshtml" />
     <Content Include="Scripts\libs\jquery-2.1.4.min.map" />
   </ItemGroup>
   <PropertyGroup>

@@ -27,8 +27,9 @@ namespace Program_3D.Controllers
             var collection = _database.GetCollection<LoginInformation>(tbName);
             var filter = Builders<LoginInformation>.Filter.Eq("_id", model.UserName);
             var result = collection.Find(filter).ToList();
-            if ((result.Count == 0)||(result[0].Password != model.Password))
+            if ((result.Count == 0)||(result[0].Password != model.Password))                   
             {
+
                 return "0";
             }
             else

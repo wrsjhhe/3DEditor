@@ -10,17 +10,10 @@ namespace Program_3D
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
+                name: "Login",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Login", action = "Login", id = UrlParameter.Optional }
             );
-
-            routes.MapRoute(
-             name: "WorkSpace",
-             url: "{action}",
-             defaults: new { controller = "Work", action = "WorkSpace", accountNumber = UrlParameter.Optional }
-         );
-
         }
     }
 }

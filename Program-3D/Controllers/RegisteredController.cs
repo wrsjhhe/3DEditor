@@ -46,6 +46,7 @@ namespace Program_3D.Controllers
         {
             var collection = _database.GetCollection<UserInformation>(tbName);
             var filter = Builders<UserInformation>.Filter.Eq("_id", UserName);
+
             var result = collection.Find(filter).ToList();
             if ((result.Count == 0))
             {
