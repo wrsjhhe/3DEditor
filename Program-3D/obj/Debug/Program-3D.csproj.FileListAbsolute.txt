@@ -81,15 +81,12 @@ E:\3D-Program\Program-3D\bin\Program-3D.dll.config
 E:\3D-Program\Program-3D\bin\Program-3D.dll
 E:\3D-Program\Program-3D\bin\Program-3D.pdb
 E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Core.dll
-E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.dll
 E:\3D-Program\Program-3D\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\3D-Program\Program-3D\bin\Microsoft.Web.Infrastructure.dll
 E:\3D-Program\Program-3D\bin\MongoDB.Bson.dll
 E:\3D-Program\Program-3D\bin\MongoDB.Driver.Core.dll
 E:\3D-Program\Program-3D\bin\MongoDB.Driver.dll
 E:\3D-Program\Program-3D\bin\Newtonsoft.Json.dll
-E:\3D-Program\Program-3D\bin\Owin.dll
 E:\3D-Program\Program-3D\bin\System.Runtime.InteropServices.RuntimeInformation.dll
 E:\3D-Program\Program-3D\bin\System.Web.Helpers.dll
 E:\3D-Program\Program-3D\bin\System.Web.Mvc.dll
@@ -99,8 +96,6 @@ E:\3D-Program\Program-3D\bin\System.Web.WebPages.Deployment.dll
 E:\3D-Program\Program-3D\bin\System.Web.WebPages.dll
 E:\3D-Program\Program-3D\bin\System.Web.WebPages.Razor.dll
 E:\3D-Program\Program-3D\bin\WebGrease.dll
-E:\3D-Program\Program-3D\bin\Antlr3.Runtime.dll
-E:\3D-Program\Program-3D\bin\EntityFramework.dll
 E:\3D-Program\Program-3D\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\3D-Program\Program-3D\bin\MongoDB.Bson.xml
 E:\3D-Program\Program-3D\bin\MongoDB.Driver.xml
@@ -114,10 +109,6 @@ E:\3D-Program\Program-3D\bin\System.Web.WebPages.Deployment.xml
 E:\3D-Program\Program-3D\bin\System.Web.WebPages.Razor.xml
 E:\3D-Program\Program-3D\bin\Newtonsoft.Json.xml
 E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Core.xml
-E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\3D-Program\Program-3D\bin\Antlr3.Runtime.pdb
-E:\3D-Program\Program-3D\bin\EntityFramework.xml
 E:\3D-Program\Program-3D\bin\zh-Hans\System.Web.Helpers.resources.dll
 E:\3D-Program\Program-3D\bin\zh-Hans\System.Web.Mvc.resources.dll
 E:\3D-Program\Program-3D\bin\zh-Hans\System.Web.Optimization.resources.dll
@@ -126,10 +117,6 @@ E:\3D-Program\Program-3D\bin\zh-Hans\System.Web.WebPages.resources.dll
 E:\3D-Program\Program-3D\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 E:\3D-Program\Program-3D\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.Core.resources.dll
-E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
-E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
-E:\3D-Program\Program-3D\bin\zh-Hans\EntityFramework.resources.dll
-E:\3D-Program\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
 E:\3D-Program\Program-3D\obj\Debug\Program-3D.dll
 E:\3D-Program\Program-3D\obj\Debug\Program-3D.pdb
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\bin\roslyn\csc.exe
@@ -199,6 +186,7 @@ D:\下载\3D-Program-master\3D-Program-master\Program-3D\bin\zh-Hans\EntityFrame
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.dll
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.pdb
+<<<<<<< HEAD
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\roslyn\csc.exe
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -259,4 +247,16 @@ C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\zh-Hans\Micros
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\obj\Debug\Program-3D.dll
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\obj\Debug\Program-3D.pdb
+<<<<<<< HEAD
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
+=======
+=======
+E:\3D-Program\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
+E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+>>>>>>> b22957afebc461318192fa493a24f14fe34431d1
+>>>>>>> 94335f67023c0eebd5a6a1e58d8043f54347da3d

@@ -14,24 +14,32 @@
     <script src="~/Scripts/libs/jquery.validate.unobtrusive.js"></script>
     <script src="~/Scripts/libs/jquery.unobtrusive-ajax.js"></script>
     <style>
-        body{
-            text-align:center;
+        body {
+            text-align: center;
         }
     </style>
 </head>
 <div class="panel panel-success" style="width:300px;margin:200px auto">
     <div class="panel-body">
-        @using (Html.BeginForm("ToWorkSpace", "Login",FormMethod.Post,new { id="form-login"}))
+        @using (Html.BeginForm("ToWorkSpace", "Login", FormMethod.Post, new { id = "form-login" }))
         {
             <div class="form-group">
                 <label> 用户名 </label>
                 @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
             </div>
+<<<<<<< HEAD
                 <div class="form-group">
                     <label> 密码 </label>
                     @Html.TextBoxFor(x => x.Password, new { @class = "form-control",Type="password" })
                 </div>
                 @Html.ValidationSummary()               
+=======
+            <div class="form-group">
+                <label> 密码 </label>
+                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+            </div>
+                @Html.ValidationSummary()
+>>>>>>> 94335f67023c0eebd5a6a1e58d8043f54347da3d
         }
         <div class="text-center">
             <button class="btn-success" onclick="submit()">确认</button>
