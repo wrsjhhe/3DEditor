@@ -9,9 +9,8 @@ typedef struct {
 
 	int *FList;
 	int FN;
-	//double *PList;
-
-
+	double *PList;
+	int PN;
 }*VFSTRUCT;
 
 #pragma pack(pop)
@@ -52,14 +51,25 @@ extern "C" _declspec(dllexport)  int _stdcall ReVF(double* plist, int* flist, in
 		//in.facetmarkerlist[i] = 0;
 
 	}
-	tetrahedralize("pq1.414a20", &in, &out);
+	tetrahedralize("pq1.414a200", &in, &out);
 //	tetrahedralize("p", &in, &out);
 	outstruct->FN = out.numberoftrifaces;
-	outstruct->FList = out.trifacelist;
+	outstruct->PN = out.numberofpoints;
 
-	return out.trifacelist[3];
+	
+	for (int i = 0; i < out.numberoftrifaces * 3; i++)
+	{
+		flist[i] = out.trifacelist[i];
+	}
+	outstruct->FList = flist;
 
-
+	for (int i = 0; i < out.numberofpoints * 3; i++)
+	{
+		plist[i] = out.pointlist[i];
+	}
+	outstruct->PList = plist;
+	
+	return out.numberoftrifaces;
 
 }
 

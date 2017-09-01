@@ -4,8 +4,8 @@ using MongoDB.Driver;
 using MongoDB.Bson;
 using MongoDB.Bson.IO;
 using System;
-using Newtonsoft.Json.Linq;
 using Program_3D.Function;
+using System.Threading.Tasks;
 
 namespace Program_3D.Controllers
 {
@@ -29,11 +29,10 @@ namespace Program_3D.Controllers
         {
             account = userName;
             InitDataBase();
-            Modify();
             return View();
         }
 
-
+        [HttpPost]
         public void ReceiveData(ObjectPara model)
         {
             model.UserId = account;           
@@ -72,20 +71,22 @@ namespace Program_3D.Controllers
             }
             
         }
-        public void Modify()
+        //public async Task<string> Modify(string vertices, string faces)
+        //{
+        //    var jsonWriterSettings = new JsonWriterSettings { OutputMode = JsonOutputMode.Strict };
+        //    GetVandF getVandF = new GetVandF(vertices, faces);
+        //    var result = await Task.Run(() => getVandF.TransformVF());
+        //    return result.ToJson(jsonWriterSettings);
+        //}
+        public string Modify(string vertices, string faces)
         {
             var jsonWriterSettings = new JsonWriterSettings { OutputMode = JsonOutputMode.Strict };
-            var collection = _database.GetCollection<BsonDocument>(tbName);
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", "test");
-            var result = collection.Find(filter).ToList();
-            JObject JResult = JObject.Parse(result[0].ToJson(jsonWriterSettings));
-            var SVertices = JResult["Parameter"]["_v"][0]["geometry"]["vertices"];
-            var SFaces = JResult["Parameter"]["_v"][0]["geometry"]["faces"];
-            GetVandF getVandF = new GetVandF(SVertices.ToString(),SFaces.ToString());
-            getVandF.TransformVF();
+            GetVandF getVandF = new GetVandF(vertices, faces);
+            var result =  getVandF.TransformVF();
+            return result.ToJson(jsonWriterSettings);
         }
-       
-         private void InitDataBase()
+
+        private void InitDataBase()
         {
             _client = new MongoClient(conn);
             _database = _client.GetDatabase(dbName);

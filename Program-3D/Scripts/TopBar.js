@@ -24,6 +24,7 @@ class TopBar {
                         <li id='clear'>清空</li>
                         <li id='segment'>分割</li>
                         <li id='remarks'>备注</li>
+                        <li id='meshing'>网格化</li>
                     </ul>
                 </li>
             </ul>`);
@@ -69,6 +70,28 @@ class TopBar {
                 SOI.openWindow();
             });
 
+            $("#meshing").click(function () {
+                let tmpuuid = uuid;
+                $.ajax({
+                    type: 'post',
+                    url: '../Work/Modify',
+                    dataType: 'json',
+                    data: {
+                        vertices: new PROJECT.GetObjectDataByUuid(dataArray, tmpuuid).geometry.vertices,
+                        faces: new PROJECT.GetObjectDataByUuid(dataArray, tmpuuid).geometry.faces
+                    },
+                    success: function (result) {
+                       let meshing = new Meshing(result.ResultV,result.ResultF,tmpuuid);
+                       meshing.begin();
+                    },
+                    error: function (message) {
+                        alert('error!'); 
+                    }
+
+                });
+            });
+
+
             $('#file').find("li")[0].addEventListener("click",function () {            //打开
                 new PROJECT.ClearAll();
                 $.ajax({
@@ -76,10 +99,11 @@ class TopBar {
                     url: '../Work/SearchData',
                     dataType:'json',
                     success: function (result) {
-                        new PROJECT.DownLoadObject(result,initModels);
+                        new PROJECT.DownloadObject(result,initModels);
                     },
                     error: function (message) {
                         alert('error!');
+                      
                     }
 
                 });

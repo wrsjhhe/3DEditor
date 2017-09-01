@@ -36,8 +36,8 @@ let Loader = function () {
 
                         if(v.uuid === uuid) {
                          v.materials.textureSrc = this.src;
-
                          INDEXDB.putData(myDB.db,myDB.ojstore.name,dataArray);
+                         break;
                         }
                     }
 

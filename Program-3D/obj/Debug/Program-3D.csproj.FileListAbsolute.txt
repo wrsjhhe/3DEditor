@@ -259,3 +259,4 @@ C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\zh-Hans\Micros
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\obj\Debug\Program-3D.dll
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\obj\Debug\Program-3D.pdb
+C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
