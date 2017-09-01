@@ -16,14 +16,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-<<<<<<< HEAD
           <StartPageUrl>
           </StartPageUrl>
           <StartAction>SpecificPage</StartAction>
-=======
           <StartPageUrl>Views/Login/Login.cshtml</StartPageUrl>
           <StartAction>CurrentPage</StartAction>
->>>>>>> 94335f67023c0eebd5a6a1e58d8043f54347da3d
           <AspNetDebugging>True</AspNetDebugging>
           <SilverlightDebugging>False</SilverlightDebugging>
           <NativeDebugging>False</NativeDebugging>
