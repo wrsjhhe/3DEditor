@@ -186,7 +186,6 @@ D:\下载\3D-Program-master\3D-Program-master\Program-3D\bin\zh-Hans\EntityFrame
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.dll
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.pdb
-<<<<<<< HEAD
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\roslyn\csc.exe
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -247,10 +246,7 @@ C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\zh-Hans\Micros
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\obj\Debug\Program-3D.dll
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\obj\Debug\Program-3D.pdb
-<<<<<<< HEAD
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
-=======
-=======
 E:\3D-Program\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
 E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.dll
@@ -258,5 +254,3 @@ E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.xml
 E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
 E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
->>>>>>> b22957afebc461318192fa493a24f14fe34431d1
->>>>>>> 94335f67023c0eebd5a6a1e58d8043f54347da3d
