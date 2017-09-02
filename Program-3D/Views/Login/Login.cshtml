@@ -27,11 +27,11 @@
                 <label> 用户名 </label>
                 @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
             </div>
-            <div class="form-group">
-                <label> 密码 </label>
-                @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
-            </div>
-                @Html.ValidationSummary()
+                <div class="form-group">
+                    <label> 密码 </label>
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control",Type="password" })
+                </div>
+                @Html.ValidationSummary()               
         }
         <div class="text-center">
             <button class="btn-success" onclick="submit()">确认</button>

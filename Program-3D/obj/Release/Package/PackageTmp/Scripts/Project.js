@@ -9,7 +9,7 @@
             if (objects[i].uuid === uuid)
                 return objects[i];
         }
-    };
+    }
 
     function GetObjectDataByUuid(data,uuid) {
         for(let i in data)
@@ -899,15 +899,28 @@
 
     }
 
-    function DownLoadObject(result,callback) {
-         result.Attr._v.forEach(function (e) {
+    function DownloadObject(result,callback) {
+        result.Parameter._v.forEach(function (e) {
+            
              if(e.geometry &&e.geometry.type === "ExtrudeGeometry") {
                  getCustomizeData(e,result_Customize);
              }else {
                  getNormaldata(e,result_Normal);
              }
-         })
+         });
         callback();
+    }
+
+    function SaveString( text, filename ) {
+
+        let link = document.createElement( 'a' );
+        link.style.display = 'none';
+        document.body.appendChild( link ); // Firefox workaround, see #6594
+
+        link.href = URL.createObjectURL( new Blob( [ text ]));
+        link.download = filename || 'data.json';
+        link.click();
+
     }
 
     let Param = {
@@ -922,9 +935,9 @@
         scene:new THREE.Scene(),
         sceneHelpers:new THREE.Scene(),
         objectProperty:{}
-    }
+    };
 
-    exports.DownLoadObject = DownLoadObject;
+    exports.DownloadObject = DownloadObject;
     exports.RemoveFromScene = RemoveFromScene;
     exports.ClearAll = ClearAll;
     exports.DeleteObject = DeleteObject;
@@ -937,6 +950,7 @@
     exports.ClickAddGraph = ClickAddGraph;
     exports.LinesToFace = LinesToFace;
     exports.SelectObject = SelectObject;
+    exports.SaveString = SaveString;
 
     exports.Param = Param;
 

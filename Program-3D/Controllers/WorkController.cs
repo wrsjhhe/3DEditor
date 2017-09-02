@@ -4,9 +4,8 @@ using MongoDB.Driver;
 using MongoDB.Bson;
 using MongoDB.Bson.IO;
 using System;
-using Newtonsoft.Json.Linq;
-using System.Web.Script.Serialization;
-using System.Collections.Generic;
+using Program_3D.Function;
+using System.Threading.Tasks;
 
 namespace Program_3D.Controllers
 {
@@ -30,11 +29,10 @@ namespace Program_3D.Controllers
         {
             account = userName;
             InitDataBase();
-            Modify();
             return View();
         }
 
-
+        [HttpPost]
         public void ReceiveData(ObjectPara model)
         {
             model.UserId = account;           
@@ -73,38 +71,22 @@ namespace Program_3D.Controllers
             }
             
         }
-        public void Modify()
+        //public async Task<string> Modify(string vertices, string faces)
+        //{
+        //    var jsonWriterSettings = new JsonWriterSettings { OutputMode = JsonOutputMode.Strict };
+        //    GetVandF getVandF = new GetVandF(vertices, faces);
+        //    var result = await Task.Run(() => getVandF.TransformVF());
+        //    return result.ToJson(jsonWriterSettings);
+        //}
+        public string Modify(string vertices, string faces)
         {
             var jsonWriterSettings = new JsonWriterSettings { OutputMode = JsonOutputMode.Strict };
-            var collection = _database.GetCollection<BsonDocument>(tbName);
-            var filter = Builders<BsonDocument>.Filter.Eq("_id", "test");
-            var result = collection.Find(filter).ToList();
-            JObject ja = JObject.Parse(result[0].ToJson(jsonWriterSettings));
-            //   JArray ja =JArray.Parse(result.ToJson(jsonWriterSettings));
-           
-               var vertices = ja["Parameter"]["_v"][0]["geometry"]["vertices"];
-            List<Product> products = new List<Product>();
-            products = JSONStringToList<Product>(vertices.ToString());
-
-            if (result.Count != 0)
-            {            
-                System.Diagnostics.Debug.WriteLine(result[0]); 
-            }
-        }
-        public List<T> JSONStringToList<T>(string JsonStr)
-        {
-            JavaScriptSerializer Serializer = new JavaScriptSerializer();
-            List<T> objs = Serializer.Deserialize<List<T>>(JsonStr);
-            return objs;
-        }
-         class Product
-        { 
-           public double x { get; set; }
-           public double y { get; set; }
-           public double z { get; set; }
+            GetVandF getVandF = new GetVandF(vertices, faces);
+            var result =  getVandF.TransformVF();
+            return result.ToJson(jsonWriterSettings);
         }
 
-         private void InitDataBase()
+        private void InitDataBase()
         {
             _client = new MongoClient(conn);
             _database = _client.GetDatabase(dbName);

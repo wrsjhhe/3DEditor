@@ -116,7 +116,7 @@ let INDEXDB = {
             let cursor = event.target.result;
             if (cursor) {
 
-                if(cursor.value.geometry &&cursor.value.geometry.type === "ExtrudeGeometry") {
+                if(cursor.value.geometry && cursor.value.geometry.type === "ExtrudeGeometry") {
                     getCustomizeData(cursor.value,result_Customize);
                     cursor.continue();
                 }else {

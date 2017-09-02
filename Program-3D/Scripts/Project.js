@@ -9,7 +9,7 @@
             if (objects[i].uuid === uuid)
                 return objects[i];
         }
-    };
+    }
 
     function GetObjectDataByUuid(data,uuid) {
         for(let i in data)
@@ -899,14 +899,15 @@
 
     }
 
-    function DownLoadObject(result,callback) {
-         result.Attr._v.forEach(function (e) {
+    function DownloadObject(result,callback) {
+        result.Parameter._v.forEach(function (e) {
+            
              if(e.geometry &&e.geometry.type === "ExtrudeGeometry") {
                  getCustomizeData(e,result_Customize);
              }else {
                  getNormaldata(e,result_Normal);
              }
-         })
+         });
         callback();
     }
 
@@ -920,7 +921,7 @@
         link.download = filename || 'data.json';
         link.click();
 
-    };
+    }
 
     let Param = {
         camera : new THREE.PerspectiveCamera( 50, 1, 0.1, 1000000 ),
@@ -934,9 +935,9 @@
         scene:new THREE.Scene(),
         sceneHelpers:new THREE.Scene(),
         objectProperty:{}
-    }
+    };
 
-    exports.DownLoadObject = DownLoadObject;
+    exports.DownloadObject = DownloadObject;
     exports.RemoveFromScene = RemoveFromScene;
     exports.ClearAll = ClearAll;
     exports.DeleteObject = DeleteObject;

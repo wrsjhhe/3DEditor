@@ -40,13 +40,13 @@
       <publishTime>08/04/2017 12:06:20</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>08/04/2017 12:06:20</publishTime>
+      <publishTime>06/18/2017 13:57:10</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>08/04/2017 12:06:21</publishTime>
     </File>
     <File Include="bin/Program-3D.dll">
-      <publishTime>08/14/2017 11:21:49</publishTime>
+      <publishTime>09/01/2017 14:42:46</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>08/04/2017 12:06:20</publishTime>
@@ -202,7 +202,7 @@
       <publishTime>08/04/2017 12:06:18</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>08/14/2017 09:00:11</publishTime>
+      <publishTime>09/01/2017 09:20:20</publishTime>
     </File>
     <File Include="Scripts/controls/EditorControls.js">
       <publishTime>08/04/2017 12:06:18</publishTime>
@@ -283,7 +283,10 @@
       <publishTime>08/07/2017 08:49:25</publishTime>
     </File>
     <File Include="Scripts/modules/Loader.js">
-      <publishTime>08/07/2017 08:49:25</publishTime>
+      <publishTime>08/31/2017 11:13:32</publishTime>
+    </File>
+    <File Include="Scripts/modules/Meshing.js">
+      <publishTime>09/01/2017 14:13:17</publishTime>
     </File>
     <File Include="Scripts/modules/ObjectStruct.js">
       <publishTime>08/04/2017 12:06:18</publishTime>
@@ -292,19 +295,19 @@
       <publishTime>08/07/2017 09:13:41</publishTime>
     </File>
     <File Include="Scripts/modules/Store.js">
-      <publishTime>08/08/2017 15:23:59</publishTime>
+      <publishTime>08/31/2017 14:03:08</publishTime>
     </File>
     <File Include="Scripts/Project.js">
-      <publishTime>08/14/2017 10:03:15</publishTime>
+      <publishTime>09/01/2017 14:06:02</publishTime>
     </File>
     <File Include="Scripts/RightSideBar.js">
       <publishTime>08/14/2017 10:58:42</publishTime>
     </File>
     <File Include="Scripts/TopBar.js">
-      <publishTime>08/09/2017 15:22:17</publishTime>
+      <publishTime>09/01/2017 14:17:36</publishTime>
     </File>
     <File Include="Scripts/Viewport.js">
-      <publishTime>08/10/2017 15:18:12</publishTime>
+      <publishTime>08/24/2017 17:07:01</publishTime>
     </File>
     <File Include="Scripts/Window.js">
       <publishTime>08/07/2017 08:49:25</publishTime>
@@ -313,7 +316,7 @@
       <publishTime>08/07/2017 09:23:52</publishTime>
     </File>
     <File Include="Views/Login/Login.cshtml">
-      <publishTime>08/14/2017 09:32:48</publishTime>
+      <publishTime>09/01/2017 14:30:10</publishTime>
     </File>
     <File Include="Views/Registered/Registered.cshtml">
       <publishTime>08/14/2017 08:50:21</publishTime>
@@ -325,13 +328,13 @@
       <publishTime>08/04/2017 12:06:18</publishTime>
     </File>
     <File Include="Views/Work/WorkSpace.cshtml">
-      <publishTime>08/14/2017 10:24:12</publishTime>
+      <publishTime>09/01/2017 13:56:47</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
       <publishTime>08/09/2017 09:09:54</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/14/2017 11:21:49</publishTime>
+      <publishTime>09/01/2017 11:27:25</publishTime>
     </File>
   </ItemGroup>
 </Project>
