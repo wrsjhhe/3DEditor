@@ -25,6 +25,7 @@ class TopBar {
                         <li id='segment'>分割</li>
                         <li id='remarks'>备注</li>
                         <li id='meshing'>网格化</li>
+                        <li id='cut'>切割</li>
                     </ul>
                 </li>
             </ul>`);
@@ -70,11 +71,11 @@ class TopBar {
                 SOI.openWindow();
             });
 
-            $("#meshing").click(function () {
+            $("#meshing").click(function () {                                              //四面体网格化
                 let tmpuuid = uuid;
                 $.ajax({
                     type: 'post',
-                    url: '../Work/Modify',
+                    url: '../Work/Meshing',
                     dataType: 'json',
                     data: {
                         vertices: new PROJECT.GetObjectDataByUuid(dataArray, tmpuuid).geometry.vertices,
@@ -90,6 +91,32 @@ class TopBar {
 
                 });
             });
+
+            $("#cut").click(function () {                                              //切割
+                let tmpuuid = uuid;
+                let object = new PROJECT.GetObjectByUuid(objects,tmpuuid);
+                let faces = new PROJECT.GetObjectDataByUuid(dataArray, tmpuuid).geometry.faces;
+                let vertices = JSON.stringify(new PROJECT.GetCurrentVertices(object));
+                $.ajax({
+                    type: 'post',
+                    url: '../Work/Cutting',
+                    dataType: 'json',
+                    data: {
+                        vertices: vertices,
+                        faces: faces
+                    },
+                    success: function (result) {
+                        let cutting = new Cutting(result.ResultV, result.ResultF1, result.ResultF2, tmpuuid);
+                        cutting.begin();
+                    },
+                    error: function (message) {
+                        alert('error!');
+                    }
+
+                });
+            });
+
+
 
 
             $('#file').find("li")[0].addEventListener("click",function () {            //打开

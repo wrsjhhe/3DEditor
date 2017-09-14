@@ -34,7 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -136,10 +136,11 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
-
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Function\ConfigurableJsonResult .cs" />
+    <Compile Include="Function\CutModel.cs" />
+    <Compile Include="Function\MeshingModel.cs" />
     <Compile Include="Function\StringHandle.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\RegisteredController.cs" />
@@ -189,6 +190,7 @@
     <Content Include="Scripts\libs\three.js" />
     <Content Include="Scripts\loaders\OBJLoader.js" />
     <Content Include="Scripts\Main.js" />
+    <Content Include="Scripts\modules\Cutting.js" />
     <Content Include="Scripts\modules\InitScene.js" />
     <Content Include="Scripts\modules\Loader.js" />
     <Content Include="Scripts\modules\Meshing.js" />

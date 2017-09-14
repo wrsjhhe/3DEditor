@@ -186,6 +186,13 @@ D:\下载\3D-Program-master\3D-Program-master\Program-3D\bin\zh-Hans\EntityFrame
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.dll
 D:\下载\3D-Program-master\3D-Program-master\Program-3D\obj\Debug\Program-3D.pdb
+E:\3D-Program\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
+E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\roslyn\csc.exe
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -223,6 +230,7 @@ C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\Microsoft.Code
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\MongoDB.Bson.xml
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\MongoDB.Driver.xml
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\MongoDB.Driver.Core.xml
+C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\Newtonsoft.Json.xml
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\System.Web.Helpers.xml
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\System.Web.Mvc.xml
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\System.Web.Optimization.xml
@@ -230,7 +238,6 @@ C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\System.Web.Raz
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\System.Web.WebPages.xml
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\System.Web.WebPages.Razor.xml
-C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\Newtonsoft.Json.xml
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.xml
@@ -247,10 +254,3 @@ C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\bin\zh-Hans\Micros
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\obj\Debug\Program-3D.dll
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\obj\Debug\Program-3D.pdb
 C:\Users\Administrator\Documents\GitHub\3D-Program\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
-E:\3D-Program\Program-3D\obj\Debug\Program-3D.csprojResolveAssemblyReference.cache
-E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\3D-Program\Program-3D\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.Owin.resources.dll
-E:\3D-Program\Program-3D\bin\zh-Hans\Microsoft.AspNet.Identity.EntityFramework.resources.dll

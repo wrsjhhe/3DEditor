@@ -2,31 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="368434a5-159d-400c-ac25-1d855b5ee9a7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/ClassDiagram1.cd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/bin/Antlr3.Runtime.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/bin/EntityFramework.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/bin/Owin.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/bin/zh-Hans/EntityFramework.resources.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/Newtonsoft.Json.6.0.4.nupkg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/net20/Newtonsoft.Json.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/net20/Newtonsoft.Json.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/net35/Newtonsoft.Json.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/net35/Newtonsoft.Json.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/net40/Newtonsoft.Json.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/net40/Newtonsoft.Json.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/net45/Newtonsoft.Json.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/net45/Newtonsoft.Json.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/netcore45/Newtonsoft.Json.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/netcore45/Newtonsoft.Json.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/portable-net40%2Bsl5%2Bwp80%2Bwin8%2Bwpa81/Newtonsoft.Json.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/portable-net40%2Bsl5%2Bwp80%2Bwin8%2Bwpa81/Newtonsoft.Json.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/portable-net45%2Bwp80%2Bwin8%2Bwpa81/Newtonsoft.Json.dll" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/lib/portable-net45%2Bwp80%2Bwin8%2Bwpa81/Newtonsoft.Json.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/Newtonsoft.Json.6.0.4/tools/install.ps1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TG/Debug/TG.obj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TG/Debug/dllmain.obj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TG/Debug/stdafx.obj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TG/TG.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TG/dllmain.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TG/stdafx.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TG/targetver.h" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vs/Program-3D/v14/.suo" afterPath="$PROJECT_DIR$/.vs/Program-3D/v14/.suo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Debug/TG.dll" afterPath="$PROJECT_DIR$/Debug/TG.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Debug/TG.exp" afterPath="$PROJECT_DIR$/Debug/TG.exp" />
@@ -34,63 +16,49 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Debug/TG.lib" afterPath="$PROJECT_DIR$/Debug/TG.lib" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Debug/TG.pdb" afterPath="$PROJECT_DIR$/Debug/TG.pdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D.VC.db" afterPath="$PROJECT_DIR$/Program-3D.VC.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/C++Modules/TG.dll" afterPath="$PROJECT_DIR$/Program-3D/C++Modules/TG.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/bin/Newtonsoft.Json.dll" afterPath="$PROJECT_DIR$/Program-3D/bin/Newtonsoft.Json.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/bin/Program-3D.dll" afterPath="$PROJECT_DIR$/Program-3D/bin/Program-3D.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/bin/Program-3D.pdb" afterPath="$PROJECT_DIR$/Program-3D/bin/Program-3D.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/bin/TG.dll" afterPath="$PROJECT_DIR$/Program-3D/bin/TG.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/Program-3D/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Debug/Program-3D.csprojResolveAssemblyReference.cache" afterPath="$PROJECT_DIR$/Program-3D/obj/Debug/Program-3D.csprojResolveAssemblyReference.cache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Debug/Program-3D.dll" afterPath="$PROJECT_DIR$/Program-3D/obj/Debug/Program-3D.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Debug/Program-3D.pdb" afterPath="$PROJECT_DIR$/Program-3D/obj/Debug/Program-3D.pdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/DesignTimeResolveAssemblyReferencesInput.cache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/bin/Newtonsoft.Json.dll" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/bin/Newtonsoft.Json.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/bin/Program-3D.dll" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/bin/Program-3D.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Program-3D.dll" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Program-3D.dll" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Program-3D.pdb" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Program-3D.pdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/TG.obj" afterPath="$PROJECT_DIR$/TG/Debug/TG.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/dllmain.obj" afterPath="$PROJECT_DIR$/TG/Debug/dllmain.obj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/predicates.obj" afterPath="$PROJECT_DIR$/TG/Debug/predicates.obj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/stdafx.obj" afterPath="$PROJECT_DIR$/TG/Debug/stdafx.obj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/tetgen.obj" afterPath="$PROJECT_DIR$/TG/Debug/tetgen.obj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/vc140.idb" afterPath="$PROJECT_DIR$/TG/Debug/vc140.idb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/vc140.pdb" afterPath="$PROJECT_DIR$/TG/Debug/vc140.pdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D.sln" afterPath="$PROJECT_DIR$/Program-3D.sln" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Controllers/WorkController.cs" afterPath="$PROJECT_DIR$/Program-3D/Controllers/WorkController.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Function/GetVandF.cs" afterPath="$PROJECT_DIR$/Program-3D/Function/GetVandF.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Function/StringHandle.cs" afterPath="$PROJECT_DIR$/Program-3D/Function/StringHandle.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Models/ObjectParas.cs" afterPath="$PROJECT_DIR$/Program-3D/Models/ObjectParas.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Program-3D.csproj" afterPath="$PROJECT_DIR$/Program-3D/Program-3D.csproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Program-3D.csproj.user" afterPath="$PROJECT_DIR$/Program-3D/Program-3D.csproj.user" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Properties/PublishProfiles/3D_Pro.pubxml.user" afterPath="$PROJECT_DIR$/Program-3D/Properties/PublishProfiles/3D_Pro.pubxml.user" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Scripts/Main.js" afterPath="$PROJECT_DIR$/Program-3D/Scripts/Main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Scripts/Project.js" afterPath="$PROJECT_DIR$/Program-3D/Scripts/Project.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Scripts/TopBar.js" afterPath="$PROJECT_DIR$/Program-3D/Scripts/TopBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Scripts/modules/Loader.js" afterPath="$PROJECT_DIR$/Program-3D/Scripts/modules/Loader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Scripts/Viewport.js" afterPath="$PROJECT_DIR$/Program-3D/Scripts/Viewport.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Scripts/controls/EditorControls.js" afterPath="$PROJECT_DIR$/Program-3D/Scripts/controls/EditorControls.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Scripts/controls/TransformControls.js" afterPath="$PROJECT_DIR$/Program-3D/Scripts/controls/TransformControls.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Scripts/modules/InitScene.js" afterPath="$PROJECT_DIR$/Program-3D/Scripts/modules/InitScene.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Scripts/modules/Meshing.js" afterPath="$PROJECT_DIR$/Program-3D/Scripts/modules/Meshing.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Scripts/modules/Store.js" afterPath="$PROJECT_DIR$/Program-3D/Scripts/modules/Store.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Views/Login/Login.cshtml" afterPath="$PROJECT_DIR$/Program-3D/Views/Login/Login.cshtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Views/Registered/Registered.cshtml" afterPath="$PROJECT_DIR$/Program-3D/Views/Registered/Registered.cshtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Views/Work/WorkSpace.cshtml" afterPath="$PROJECT_DIR$/Program-3D/Views/Work/WorkSpace.cshtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/Web.config" afterPath="$PROJECT_DIR$/Program-3D/Web.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/bin/Newtonsoft.Json.xml" afterPath="$PROJECT_DIR$/Program-3D/bin/Newtonsoft.Json.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/bin/Program-3D.dll.config" afterPath="$PROJECT_DIR$/Program-3D/bin/Program-3D.dll.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Debug/Program-3D.csproj.CoreCompileInputs.cache" afterPath="$PROJECT_DIR$/Program-3D/obj/Debug/Program-3D.csproj.CoreCompileInputs.cache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Debug/Program-3D.csproj.FileListAbsolute.txt" afterPath="$PROJECT_DIR$/Program-3D/obj/Debug/Program-3D.csproj.FileListAbsolute.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Scripts/Project.js" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Scripts/Project.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Scripts/TopBar.js" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Scripts/TopBar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Scripts/modules/Loader.js" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Scripts/modules/Loader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Scripts/modules/Store.js" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Scripts/modules/Store.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Views/Login/Login.cshtml" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Views/Login/Login.cshtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Views/Registered/Registered.cshtml" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Views/Registered/Registered.cshtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Views/Work/WorkSpace.cshtml" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Views/Work/WorkSpace.cshtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Web.config" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Web.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/packages.config" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/packages.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/Program-3D.csproj.FileListAbsolute.txt" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/Program-3D.csproj.FileListAbsolute.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/TransformWebConfig/original/Web.config" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/TransformWebConfig/original/Web.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/obj/Release/TransformWebConfig/transformed/Web.config" afterPath="$PROJECT_DIR$/Program-3D/obj/Release/TransformWebConfig/transformed/Web.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program-3D/packages.config" afterPath="$PROJECT_DIR$/Program-3D/packages.config" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/TG.Build.CppClean.log" afterPath="$PROJECT_DIR$/TG/Debug/TG.Build.CppClean.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/TG.log" afterPath="$PROJECT_DIR$/TG/Debug/TG.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/TG.tlog/CL.command.1.tlog" afterPath="$PROJECT_DIR$/TG/Debug/TG.tlog/CL.command.1.tlog" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/TG.tlog/CL.read.1.tlog" afterPath="$PROJECT_DIR$/TG/Debug/TG.tlog/CL.read.1.tlog" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/TG.tlog/CL.write.1.tlog" afterPath="$PROJECT_DIR$/TG/Debug/TG.tlog/CL.write.1.tlog" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/TG.tlog/TG.write.1u.tlog" afterPath="$PROJECT_DIR$/TG/Debug/TG.tlog/TG.write.1u.tlog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/TG.tlog/link.command.1.tlog" afterPath="$PROJECT_DIR$/TG/Debug/TG.tlog/link.command.1.tlog" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/TG.tlog/link.read.1.tlog" afterPath="$PROJECT_DIR$/TG/Debug/TG.tlog/link.read.1.tlog" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/TG.cpp" afterPath="$PROJECT_DIR$/TG/TG.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/Debug/TG.tlog/link.write.1.tlog" afterPath="$PROJECT_DIR$/TG/Debug/TG.tlog/link.write.1.tlog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/TG.vcxproj" afterPath="$PROJECT_DIR$/TG/TG.vcxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/TG.vcxproj.filters" afterPath="$PROJECT_DIR$/TG/TG.vcxproj.filters" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TG/stdafx.h" afterPath="$PROJECT_DIR$/TG/stdafx.h" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -104,33 +72,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Meshing.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Meshing.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Meshing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="18" column="75" lean-forward="false" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
+            <state relative-caret-position="257">
+              <caret line="24" column="43" lean-forward="false" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Segment.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Segment.js">
+      <file leaf-file-name="Cutting.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Cutting.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/Main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InitScene.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/InitScene.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="41" column="63" lean-forward="false" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ObjectStruct.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/ObjectStruct.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="27" column="31" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/Project.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="576">
+              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
-                <marker date="1502068421049" expanded="false" signature="313:329" ph="..." />
+                <element signature="e#10028#15735#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Loader.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Loader.js">
+      <file leaf-file-name="Viewport.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/Viewport.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1332">
-              <caret line="37" column="57" lean-forward="false" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+            <state relative-caret-position="288">
+              <caret line="38" column="77" lean-forward="false" selection-start-line="38" selection-start-column="77" selection-end-line="38" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -139,15 +147,16 @@
       <file leaf-file-name="TopBar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/TopBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2916">
-              <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+            <state relative-caret-position="540">
+              <caret line="108" column="45" lean-forward="false" selection-start-line="108" selection-start-column="45" selection-end-line="108" selection-end-column="45" />
               <folding>
-                <marker date="1504246656615" expanded="true" signature="214:967" ph="..." />
-                <marker date="1504246656615" expanded="true" signature="245:645" ph="..." />
-                <marker date="1504246656615" expanded="true" signature="272:619" ph="..." />
-                <marker date="1504246656615" expanded="true" signature="377:473" ph="..." />
-                <marker date="1504246656615" expanded="true" signature="679:949" ph="..." />
-                <marker date="1504246656615" expanded="true" signature="706:927" ph="..." />
+                <marker date="1505358094324" expanded="true" signature="214:923" ph="..." />
+                <marker date="1505358094324" expanded="true" signature="214:1012" ph="..." />
+                <marker date="1505358094324" expanded="true" signature="245:645" ph="..." />
+                <marker date="1505358094324" expanded="true" signature="272:619" ph="..." />
+                <marker date="1505358094324" expanded="true" signature="377:473" ph="..." />
+                <marker date="1505358094324" expanded="true" signature="679:923" ph="..." />
+                <marker date="1505358094324" expanded="true" signature="706:923" ph="..." />
               </folding>
             </state>
           </provider>
@@ -162,6 +171,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>object</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -169,10 +183,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Program-3D/Scripts/modules/Loader.js" />
+        <option value="$PROJECT_DIR$/Program-3D/Scripts/Main.js" />
         <option value="$PROJECT_DIR$/Program-3D/Scripts/modules/Store.js" />
-        <option value="$PROJECT_DIR$/Program-3D/Scripts/Project.js" />
         <option value="$PROJECT_DIR$/Program-3D/Scripts/modules/Meshing.js" />
+        <option value="$PROJECT_DIR$/Program-3D/Scripts/Viewport.js" />
+        <option value="$PROJECT_DIR$/Program-3D/Scripts/modules/InitScene.js" />
+        <option value="$PROJECT_DIR$/Program-3D/Scripts/controls/TransformControls.js" />
         <option value="$PROJECT_DIR$/Program-3D/Scripts/TopBar.js" />
+        <option value="$PROJECT_DIR$/Program-3D/Scripts/controls/EditorControls.js" />
+        <option value="$PROJECT_DIR$/Program-3D/Scripts/modules/Cutting.js" />
+        <option value="$PROJECT_DIR$/Program-3D/Scripts/Project.js" />
       </list>
     </option>
   </component>
@@ -252,8 +272,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,18 +313,21 @@
       <workItem from="1504147879083" duration="8352000" />
       <workItem from="1504244424501" duration="4366000" />
       <workItem from="1504255016620" duration="11000" />
+      <workItem from="1504850181578" duration="5253000" />
+      <workItem from="1505199546812" duration="35718000" />
+      <workItem from="1505350674374" duration="14629000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12729000" />
+    <option name="totallyTimeSpent" value="68329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17324094" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17803837" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -330,11 +353,129 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Meshing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="24" column="43" lean-forward="false" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Cutting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="30" column="63" lean-forward="true" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/InitScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/ObjectStruct.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/Project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3132">
+          <caret line="87" column="12" lean-forward="false" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
+          <folding>
+            <element signature="e#10028#15735#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/controls/TransformControls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28944">
+          <caret line="804" column="52" lean-forward="false" selection-start-line="804" selection-start-column="52" selection-end-line="804" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Meshing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Segment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5472">
+          <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding>
+            <marker date="1504257783357" expanded="false" signature="313:329" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/TopBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3924">
+          <caret line="109" column="22" lean-forward="true" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
+          <folding>
+            <marker date="1505358094324" expanded="true" signature="214:923" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="214:1012" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="245:645" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="272:619" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="377:473" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="679:923" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="706:923" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/ObjectStruct.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/Project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="55" column="13" lean-forward="false" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+          <folding>
+            <element signature="e#10028#15735#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Cutting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Meshing.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -348,7 +489,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1502068421049" expanded="false" signature="313:329" ph="..." />
+            <marker date="1504257783357" expanded="false" signature="313:329" ph="..." />
           </folding>
         </state>
       </provider>
@@ -357,7 +498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1332">
           <caret line="37" column="57" lean-forward="false" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -366,12 +506,54 @@
         <state relative-caret-position="2916">
           <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
           <folding>
-            <marker date="1504246656615" expanded="true" signature="214:967" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="245:645" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="272:619" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="377:473" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="679:949" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="706:927" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="214:923" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="214:1012" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="245:645" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="272:619" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="377:473" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="679:923" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="706:923" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Meshing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Segment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1504257783357" expanded="false" signature="313:329" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1332">
+          <caret line="37" column="57" lean-forward="false" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/TopBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2916">
+          <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+          <folding>
+            <marker date="1505358094324" expanded="true" signature="214:923" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="214:1012" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="245:645" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="272:619" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="377:473" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="679:923" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="706:923" ph="..." />
           </folding>
         </state>
       </provider>
@@ -387,7 +569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1332">
           <caret line="37" column="57" lean-forward="false" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -403,12 +584,13 @@
         <state relative-caret-position="2988">
           <caret line="83" column="91" lean-forward="true" selection-start-line="83" selection-start-column="91" selection-end-line="83" selection-end-column="91" />
           <folding>
-            <marker date="1504246656615" expanded="true" signature="214:967" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="245:645" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="272:619" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="377:473" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="679:949" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="706:927" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="214:923" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="214:1012" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="245:645" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="272:619" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="377:473" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="679:923" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="706:923" ph="..." />
           </folding>
         </state>
       </provider>
@@ -420,71 +602,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/InitScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="37" column="57" lean-forward="false" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4320">
-          <caret line="120" column="38" lean-forward="false" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Segment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1502068421049" expanded="false" signature="313:329" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Program-3D/obj/Release/Package/PackageTmp/Scripts/Project.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="901" column="13" lean-forward="false" selection-start-line="901" selection-start-column="13" selection-end-line="901" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/ObjectStruct.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/TopBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2916">
-          <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
-          <folding>
-            <marker date="1504246656615" expanded="true" signature="214:967" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="245:645" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="272:619" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="377:473" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="679:949" ph="..." />
-            <marker date="1504246656615" expanded="true" signature="706:927" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/Project.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="722" column="0" lean-forward="true" selection-start-line="722" selection-start-column="0" selection-end-line="722" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -495,11 +616,132 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="797">
+          <caret line="37" column="57" lean-forward="false" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Segment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1805">
+          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding>
+            <marker date="1504257783357" expanded="false" signature="313:329" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="977">
+          <caret line="180" column="0" lean-forward="false" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/libs/three.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="5867" column="16" lean-forward="false" selection-start-line="5867" selection-start-column="16" selection-end-line="5867" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Project-3D/js/Objects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="24" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/ObjectStruct.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="27" column="31" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/TopBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="108" column="45" lean-forward="false" selection-start-line="108" selection-start-column="45" selection-end-line="108" selection-end-column="45" />
+          <folding>
+            <marker date="1505358094324" expanded="true" signature="214:923" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="214:1012" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="245:645" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="272:619" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="377:473" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="679:923" ph="..." />
+            <marker date="1505358094324" expanded="true" signature="706:923" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/controls/TransformControls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="800" column="0" lean-forward="false" selection-start-line="800" selection-start-column="0" selection-end-line="800" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/InitScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="41" column="63" lean-forward="false" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/controls/EditorControls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="65" column="58" lean-forward="false" selection-start-line="65" selection-start-column="58" selection-end-line="65" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Meshing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="18" column="75" lean-forward="false" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
+        <state relative-caret-position="257">
+          <caret line="24" column="43" lean-forward="false" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/modules/Cutting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/Viewport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="38" column="77" lean-forward="false" selection-start-line="38" selection-start-column="77" selection-end-line="38" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program-3D/Scripts/Project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+          <folding>
+            <element signature="e#10028#15735#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

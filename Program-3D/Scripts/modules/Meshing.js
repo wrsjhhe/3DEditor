@@ -23,6 +23,8 @@ class Meshing
         for ( let v of dataArray) {
             if(v.uuid === this.uuid) {
                 v.geometry.type = "Meshed";
+                v.geometry.vertices = JSON.stringify(new PROJECT.GetObjectByUuid(objects,this.uuid).geometry.vertices);
+                v.geometry.faces= JSON.stringify(new PROJECT.GetObjectByUuid(objects,this.uuid).geometry.faces);
                 v.materials.material = JSON.stringify(new PROJECT.GetObjectByUuid(objects,this.uuid).material.toJSON());
                 v.obj = JSON.stringify(mesh.toJSON());
                 INDEXDB.putData(myDB.db,myDB.ojstore.name,dataArray);

@@ -21,27 +21,18 @@
     <ClInclude Include="stdafx.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="tetgen.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="TG.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="dllmain.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="predicates.cxx">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="tetgen.cxx">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Meshing.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

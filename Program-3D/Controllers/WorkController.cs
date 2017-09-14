@@ -78,11 +78,19 @@ namespace Program_3D.Controllers
         //    var result = await Task.Run(() => getVandF.TransformVF());
         //    return result.ToJson(jsonWriterSettings);
         //}
-        public string Modify(string vertices, string faces)
+        public string Meshing(string vertices, string faces)
         {
             var jsonWriterSettings = new JsonWriterSettings { OutputMode = JsonOutputMode.Strict };
-            GetVandF getVandF = new GetVandF(vertices, faces);
-            var result =  getVandF.TransformVF();
+            MeshingModel meshModel = new MeshingModel(vertices, faces);
+            var result = meshModel.TransformVF();
+            return result.ToJson(jsonWriterSettings);
+        }
+
+        public string Cutting(string vertices, string faces)
+        {
+            var jsonWriterSettings = new JsonWriterSettings { OutputMode = JsonOutputMode.Strict };
+            CutModel cutModel = new CutModel(vertices, faces);
+            var result = cutModel.Cutting();
             return result.ToJson(jsonWriterSettings);
         }
 
