@@ -47,6 +47,8 @@ THREE.EditorControls = function ( object, domElement ) {
 
 		var distance = object.position.distanceTo( center );
 
+
+
 		delta.multiplyScalar( distance * scope.panSpeed );
 		delta.applyMatrix3( normalMatrix.getNormalMatrix( object.matrix ) );
 
@@ -61,8 +63,7 @@ THREE.EditorControls = function ( object, domElement ) {
 
 		var distance = object.position.distanceTo( center );
 
-		delta.multiplyScalar( distance * scope.zoomSpeed );
-
+		delta.multiplyScalar( distance * scope.zoomSpeed);
 		if ( delta.length() > distance ) return;
 
 		delta.applyMatrix3( normalMatrix.getNormalMatrix( object.matrix ) );

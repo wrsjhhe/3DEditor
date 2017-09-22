@@ -796,7 +796,9 @@
 			camRotation.setFromRotationMatrix( tempMatrix.extractRotation( camera.matrixWorld ) );
 
 			scale = worldPosition.distanceTo( camPosition ) / 6 * scope.size;
-			this.position.copy( worldPosition );
+
+  			this.position.copy( worldPosition );
+
 			this.scale.set( scale, scale, scale );
 
 			if ( camera instanceof THREE.PerspectiveCamera ) {

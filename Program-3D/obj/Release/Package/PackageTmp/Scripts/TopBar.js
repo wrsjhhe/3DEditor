@@ -25,6 +25,7 @@ class TopBar {
                         <li id='segment'>分割</li>
                         <li id='remarks'>备注</li>
                         <li id='meshing'>网格化</li>
+                        <li id='cut'>切割</li>
                     </ul>
                 </li>
             </ul>`);
@@ -70,11 +71,11 @@ class TopBar {
                 SOI.openWindow();
             });
 
-            $("#meshing").click(function () {
+            $("#meshing").click(function () {                                              //四面体网格化
                 let tmpuuid = uuid;
                 $.ajax({
                     type: 'post',
-                    url: '../Work/Modify',
+                    url: '../Work/Meshing',
                     dataType: 'json',
                     data: {
                         vertices: new PROJECT.GetObjectDataByUuid(dataArray, tmpuuid).geometry.vertices,
@@ -90,6 +91,15 @@ class TopBar {
 
                 });
             });
+
+            $("#cut").click(function () {                                              //切割
+                let tmpuuid = uuid;
+                let cutting = new Cutting(tmpuuid);
+                cutting.init();
+
+            });
+
+
 
 
             $('#file').find("li")[0].addEventListener("click",function () {            //打开

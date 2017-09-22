@@ -1,5 +1,6 @@
 
 (function (global,factory) {
+    "use strict";
     factory((global.PROJECT = global.PROJECT || {}));
 })(this,(function (exports) {
 
@@ -76,11 +77,12 @@
 
         if( !(obj instanceof THREE.Group)) {
             obj.geometry.verticesNeedUpdate = true;
-            obj.geometry.computeVertexNormals();
+
+                obj.geometry.computeVertexNormals();
+
             obj.geometry.computeBoundingBox();
             let centroid = new THREE.Vector3();
             centroid.addVectors(obj.geometry.boundingBox.min, obj.geometry.boundingBox.max).divideScalar(2);
-            console.log(centroid);
             obj.geometry.center();
             obj.position.copy(centroid);
         }
@@ -858,8 +860,9 @@
        
     }
 
-    function DeleteObject(e,flag,ifDeleted) {
+    function DeleteObject(e,flag,ifDeleted,_uuid) {
 
+        _uuid!==undefined&&(uuid = _uuid);
         if( flag ===true || (e.keyCode === 68&&e.ctrlKey ) )
         {
             flag!==true&&e.preventDefault();
@@ -880,6 +883,7 @@
             }
 
             $("#objDiv").data("kendoGrid").dataSource.read();
+            transformControls.detach();
             if(ifDeleted!==undefined)ifDeleted();
         }
     }
@@ -899,7 +903,7 @@
         $("#objDiv").data("kendoGrid").dataSource.read();
 
         INDEXDB.clearData(myDB.db,myDB.ojstore.name);
-
+        transformControls.detach();
     }
 
     function RemoveFromScene(obj) {

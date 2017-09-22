@@ -94,26 +94,9 @@ class TopBar {
 
             $("#cut").click(function () {                                              //切割
                 let tmpuuid = uuid;
-                let object = new PROJECT.GetObjectByUuid(objects,tmpuuid);
-                let faces = new PROJECT.GetObjectDataByUuid(dataArray, tmpuuid).geometry.faces;
-                let vertices = JSON.stringify(new PROJECT.GetCurrentVertices(object));
-                $.ajax({
-                    type: 'post',
-                    url: '../Work/Cutting',
-                    dataType: 'json',
-                    data: {
-                        vertices: vertices,
-                        faces: faces
-                    },
-                    success: function (result) {
-                        let cutting = new Cutting(result.ResultV, result.ResultF1, result.ResultF2, tmpuuid);
-                        cutting.begin();
-                    },
-                    error: function (message) {
-                        alert('error!');
-                    }
+                let cutting = new Cutting(tmpuuid);
+                cutting.init();
 
-                });
             });
 
 

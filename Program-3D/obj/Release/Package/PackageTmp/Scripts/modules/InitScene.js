@@ -4,6 +4,42 @@ let getAllData =  setInterval(function () {
     if (myDB.db!==null){
         INDEXDB.getAllData(myDB.db, myDB.ojstore.name,initModels);
         clearInterval(getAllData);
+       /* let v = [
+            new THREE.Vector3(-100,30,10),
+            new THREE.Vector3(-100,30,-10),
+            new THREE.Vector3(-100,-10,10),
+            new THREE.Vector3(-100,-10,-10),
+            new THREE.Vector3(-110,30,-10),
+            new THREE.Vector3(-110,30,10),
+            new THREE.Vector3(-110,-10,-10),
+            new THREE.Vector3(-110,-10,10)
+        ];
+        let f = [
+            new THREE.Face3(0,2,1),
+            new THREE.Face3(2,3,1),
+            new THREE.Face3(4,6,5),
+            new THREE.Face3(6,7,5),
+            new THREE.Face3(4,5,1),
+            new THREE.Face3(5,0,1),
+            new THREE.Face3(7,6,2),
+            new THREE.Face3(6,3,2),
+            new THREE.Face3(5,7,0),
+            new THREE.Face3(7,2,0),
+            new THREE.Face3(1,3,4),
+            new THREE.Face3(3,6,4)
+        ];
+        let g = new THREE.Geometry();
+        g.mergeVertices();
+        g.vertices = v;g.faces = f;
+        g.computeBoundingBox();
+        let centroid = new THREE.Vector3();
+        centroid.addVectors(g.boundingBox.min, g.boundingBox.max).divideScalar(2);
+        g.center();
+
+        let m = new THREE.MeshBasicMaterial({color:0xff0000,side:THREE.DoubleSide});
+        let mm = new THREE.Mesh(g,m);mm.position.copy(centroid);
+        scene.add(mm);
+        new PROJECT.AddObject(mm,"q",objects,dataArray,null);*/
     }
 });
 

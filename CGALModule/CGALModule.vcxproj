@@ -93,7 +93,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <MinimalRebuild>false</MinimalRebuild>
-      <FloatingPointModel>Strict</FloatingPointModel>
+      <FloatingPointModel>Fast</FloatingPointModel>
       <FloatingPointExceptions>false</FloatingPointExceptions>
     </ClCompile>
     <Link>

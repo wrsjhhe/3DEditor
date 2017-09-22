@@ -16,6 +16,28 @@ class Meshing
         let geometry = new THREE.Geometry();
         geometry.vertices = v;
         geometry.faces = f;
+/*        let colorArray = [];
+        geometry.vertices.forEach(function (e) {
+            colorArray.push({v:e,c:new THREE.Color(Math.random()*0xffffff) })
+        });
+        geometry.faces.forEach(function (e) {
+            let a =  colorArray.find(f=>f.v===geometry.vertices[e.a]);
+            let b =  colorArray.find(f=>f.v===geometry.vertices[e.b]);
+            let c =  colorArray.find(f=>f.v===geometry.vertices[e.c]);
+
+            e.vertexColors[0] = a.c;e.vertexColors[1] = b.c;e.vertexColors[2] = c.c;
+        });
+
+        new PROJECT.GetObjectByUuid(objects,this.uuid).geometry = geometry;
+        new PROJECT.GetObjectByUuid(objects,this.uuid).material.side = 2;
+        new PROJECT.GetObjectByUuid(objects,this.uuid).material.vertexColors = THREE.VertexColors;
+        let material = new THREE.MeshBasicMaterial({
+            side:THREE.DoubleSide,
+            vertexColors: THREE.VertexColors
+        });
+        let mesh = new THREE.Mesh(geometry,material);*/
+
+
         new PROJECT.GetObjectByUuid(objects,this.uuid).geometry = geometry;
         new PROJECT.GetObjectByUuid(objects,this.uuid).material.wireframe = true;
         let mesh = new THREE.Mesh(geometry,new PROJECT.GetObjectByUuid(objects,this.uuid).material);

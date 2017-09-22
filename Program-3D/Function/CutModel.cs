@@ -10,19 +10,20 @@ namespace Program_3D.Function
     {
         [DllImport("../../Debug/CGALModule.dll", CallingConvention = CallingConvention.Winapi)]
         public extern static double Cut(double[] pList, int[] fList, int pn, int fn, double[] m, int[] fout1, int[] fout2, int[] sides, int[] outpn);
-        public CutModel(string StrVertices, string StrFaces) : base(StrVertices, StrFaces)
+        private double[] HelperVertices;
+        public CutModel(string StrVertices, string StrFaces,double[] helperVertices) : base(StrVertices, StrFaces)
         {
+            HelperVertices = helperVertices;
             StringToArray();
         }
 
         public FaceOut Cutting()
         {
-            double[] m = { 1, 0, 0, 0, 1, 0, 0, 0, 0 };
             int[] fout1 = new int[1000000];
             int[] fout2 = new int[1000000];
             int[] sides = new int[2];
             int[] outpn = new int[1];
-            double flag = Cut(verticeArray, faceArray, verticesNum, facesNum, m, fout1, fout2, sides, outpn);
+            double flag = Cut(verticeArray, faceArray, verticesNum, facesNum, HelperVertices, fout1, fout2, sides, outpn);
             int numofside1 = sides[0];
             int numofside2 = sides[1];
             List<Face> resultF1 = new List<Face>();

@@ -78,7 +78,11 @@ class Viewport {
 
          document.addEventListener("keydown",deleteObject,false);
          function deleteObject(e) {
-             new PROJECT.DeleteObject(e)
+             new PROJECT.DeleteObject(e,null,ifDeleted)
+         }
+
+         function ifDeleted() {
+             transformControls.detach();
          }
 
          function ifSelected (obj){
@@ -100,9 +104,9 @@ class Viewport {
                  $("#objDiv").data("kendoGrid").dataSource.read();
 
              });
-             transformControls.attach(obj);
+                 transformControls.attach(obj);
 
-         };
+         }
 
          function cancelSelected() {
 

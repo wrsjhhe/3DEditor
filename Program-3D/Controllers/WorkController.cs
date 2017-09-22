@@ -86,10 +86,10 @@ namespace Program_3D.Controllers
             return result.ToJson(jsonWriterSettings);
         }
 
-        public string Cutting(string vertices, string faces)
+        public string Cutting(string vertices, string faces,double[] helpervertices)
         {
             var jsonWriterSettings = new JsonWriterSettings { OutputMode = JsonOutputMode.Strict };
-            CutModel cutModel = new CutModel(vertices, faces);
+            CutModel cutModel = new CutModel(vertices, faces, helpervertices);
             var result = cutModel.Cutting();
             return result.ToJson(jsonWriterSettings);
         }
