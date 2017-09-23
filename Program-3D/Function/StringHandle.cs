@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json.Linq;
+using System;
 
 namespace Program_3D
 {
@@ -23,6 +24,7 @@ namespace Program_3D
         public static List<T> JSONStringToList<T>(string JsonStr)
         {
             JavaScriptSerializer Serializer = new JavaScriptSerializer();
+            Serializer.MaxJsonLength = Int32.MaxValue;
             List<T> objs = Serializer.Deserialize<List<T>>(JsonStr);
             return objs;
         }

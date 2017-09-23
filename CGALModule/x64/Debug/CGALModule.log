@@ -1,0 +1,7 @@
+﻿  Cut.cpp
+    正在创建库 C:\Users\Administrator\Documents\GitHub\3D-Program\x64\Debug\CGALModule.lib 和对象 C:\Users\Administrator\Documents\GitHub\3D-Program\x64\Debug\CGALModule.exp
+Cut.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) void __cdecl CGAL::assertion_fail(char const *,char const *,int,char const *)" (__imp_?assertion_fail@CGAL@@YAXPEBD0H0@Z)，该符号在函数 "public: __cdecl CGAL::Interval_nt<1>::Test_runtime_rounding_modes::Test_runtime_rounding_modes(void)" (??0Test_runtime_rounding_modes@?$Interval_nt@$00@CGAL@@QEAA@XZ) 中被引用
+D:/dev/CGAL-4.11-beta1/build/lib/Debug\..\..\..\auxiliary\gmp\lib\libmpfr-4.lib : warning LNK4272: 库计算机类型“X86”与目标计算机类型“x64”冲突
+D:/dev/CGAL-4.11-beta1/build/lib/Debug\..\..\..\auxiliary\gmp\lib\libgmp-10.lib : warning LNK4272: 库计算机类型“X86”与目标计算机类型“x64”冲突
+D:/dev/CGAL-4.11-beta1/build/lib/Debug\..\..\lib\Debug\CGAL-vc140-mt-gd-4.11.lib : warning LNK4272: 库计算机类型“X86”与目标计算机类型“x64”冲突
+C:\Users\Administrator\Documents\GitHub\3D-Program\x64\Debug\CGALModule.dll : fatal error LNK1120: 1 个无法解析的外部命令

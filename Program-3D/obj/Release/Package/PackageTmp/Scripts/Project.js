@@ -1,5 +1,6 @@
 
 (function (global,factory) {
+    "use strict";
     factory((global.PROJECT = global.PROJECT || {}));
 })(this,(function (exports) {
 
@@ -53,25 +54,38 @@
         return intersects[0];
     }
 
+    function GetCurrentVertices(object) {
+        let position = object.position;
+        let rotation = object.rotation;
+        let scale = object.scale;
+
+        let quaternion = new THREE.Quaternion();
+        quaternion.setFromEuler(rotation);
+
+        let matrix = new THREE.Matrix4();
+        matrix.compose(position,quaternion,scale);
+        let vertices = [];
+        object.geometry.vertices.forEach(function (e) {
+            let v = new THREE.Vector3(e.x,e.y,e.z);
+            v.applyMatrix4(matrix);
+           vertices.push(v) ;
+        });
+        return vertices;
+    }
+
     function AddObject(obj,ModelType,objects,dataArray,objectProperty) {
 
         if( !(obj instanceof THREE.Group)) {
-            obj.geometry.computeBoundingSphere();
-            obj.position.set(
-                obj.geometry.boundingSphere.center.x,
-                obj.geometry.boundingSphere.center.y,
-                obj.geometry.boundingSphere.center.z
-            );
-            let matrix = new THREE.Matrix4(); //定义一个偏移矩阵 ，将圆心偏移，从而使鼠标点击的点为圆心
-            matrix.set(
-                1, 0, 0, -obj.geometry.boundingSphere.center.x,
-                0, 1, 0, -obj.geometry.boundingSphere.center.y,
-                0, 0, 1, -obj.geometry.boundingSphere.center.z,
-                0, 0, 0, 1
-            );
-            obj.geometry.applyMatrix(matrix);
-        }
+            obj.geometry.verticesNeedUpdate = true;
 
+                obj.geometry.computeVertexNormals();
+
+            obj.geometry.computeBoundingBox();
+            let centroid = new THREE.Vector3();
+            centroid.addVectors(obj.geometry.boundingBox.min, obj.geometry.boundingBox.max).divideScalar(2);
+            obj.geometry.center();
+            obj.position.copy(centroid);
+        }
 
         obj.name = ModelType;
 
@@ -196,7 +210,6 @@
 
                     {
                         RemoveFromScene(scene.getObjectByName("TempMesh"));
-
                     }
 
                     //根据鼠标与基准面位置确定绘图最终坐标
@@ -636,7 +649,7 @@
                 0, 0, 0, 1
             );
             geometry.applyMatrix(matrix);
-            let material = new THREE.MeshPhongMaterial({color: document.getElementById("ColorInput").value || 0x171c21});
+            let material = new THREE.MeshPhongMaterial({color: document.getElementById("ColorInput").value || 0x171c21,side:THREE.DoubleSide});
             let mesh = new THREE.Mesh(geometry, material);
             mesh.name = 'TempMesh';
             scene.add(mesh);
@@ -795,11 +808,11 @@
 
         this.active = function(){
             DOM.bind('click',select)
-        }
+        };
 
         this.remove = function(){
             DOM.unbind('click',select)
-        }
+        };
 
         function select(event) {
             for (let i in dataArray) {
@@ -847,8 +860,9 @@
        
     }
 
-    function DeleteObject(e,flag) {
+    function DeleteObject(e,flag,ifDeleted,_uuid) {
 
+        _uuid!==undefined&&(uuid = _uuid);
         if( flag ===true || (e.keyCode === 68&&e.ctrlKey ) )
         {
             flag!==true&&e.preventDefault();
@@ -869,6 +883,8 @@
             }
 
             $("#objDiv").data("kendoGrid").dataSource.read();
+            transformControls.detach();
+            if(ifDeleted!==undefined)ifDeleted();
         }
     }
 
@@ -887,7 +903,7 @@
         $("#objDiv").data("kendoGrid").dataSource.read();
 
         INDEXDB.clearData(myDB.db,myDB.ojstore.name);
-
+        transformControls.detach();
     }
 
     function RemoveFromScene(obj) {
@@ -951,6 +967,7 @@
     exports.LinesToFace = LinesToFace;
     exports.SelectObject = SelectObject;
     exports.SaveString = SaveString;
+    exports.GetCurrentVertices = GetCurrentVertices;
 
     exports.Param = Param;
 
